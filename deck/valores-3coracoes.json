@@ -1,0 +1,15 @@
+{
+  "CLIENTE": "3 Corações",
+  "genero": "f",
+  "NOME_DA_INICIATIVA": "Recomendação de SKU B2B",
+  "FRENTE_OU_ESCOPO": "NBO e MBA · Prova de Valor",
+  "DIA": "27",
+  "MES": "Outubro",
+  "ANO": "2026",
+  "CONTATO_CLIENTE": "[CONTATO DA 3 CORAÇÕES A CONFIRMAR]",
+  "OBJETIVO_DA_PROPOSTA": "uma recomendação algorítmica de SKU para o canal B2B, no lugar da escolha manual de itens nas campanhas, medida por teste A/B em faturamento e margem.",
+  "RESUMO_DA_SOLUCAO": "propomos uma prova de valor que recomenda a próxima melhor oferta por cliente e as combinações de itens, comparada ao processo atual, com caminho para a produção.",
+  "NOME_ASSINANTE": "[NOME DO ASSINANTE A CONFIRMAR]",
+  "CARGO_ASSINANTE": "[CARGO A CONFIRMAR]",
+  "LOGO_CLIENTE_PNG": "assets/logo-3coracoes.png"
+}

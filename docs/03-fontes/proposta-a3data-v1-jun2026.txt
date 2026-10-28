@@ -1,0 +1,612 @@
+ PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Modelo de Recomendação
+de SKUs Hiperpersonalizado
+para B2B
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Proposta
+Comercial
+
+Junho de 2026.
+
+À 3 Corações -- Aos cuidados de Marcus Bruno e Thiago Costa,
+Em primeiro lugar, gostaríamos de agradecer a confiança da 3 Corações e de
+seus executivos e corpo técnico, depositada na A3Data, com o objetivo de
+desenvolver uma POC de Recomendação de SKU personalizada para o canal
+B2B. A iniciativa aplica algoritmos de NBO (Next Best Offer) e MBA (Market
+Basket Analysis) para otimizar as campanhas de CRM -- combos, mais-por-
+menos e descontos -- substituindo a seleção manual de produtos e validando o
+ganho por teste A/B.
+
+Reiteramos nosso agradecimento pela nossa participação nesta oportunidade
+e asseguramos que o time A3Data está profundamente motivado,
+comprometido com o êxito e confiante de ofertar à 3 Corações uma
+abordagem que assegura os elementos para o sucesso deste projeto.
+
+Atenciosamente,
+
+                                  Paulo Laurentys
+                                  Sponsor · A3Data
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Quem
+somos
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+EMPOWERING PEOPLE THROUGH DATA                                                  BIG NUMBERS
+
+12 anos de                                                             Nossos números contam nossa história:
+Vanguarda na
+Década da IA.                                                          +350 PROJETOS DE DADOS & IA              JÁ DESTRAVAMOS
+                                                                       +75 CLIENTES DISTINTOS
+NOSSA ESSÊNCIA                                                         88% NPS EM ZONA DE EXCELÊNCIA     +R$3 bi
+
+Uma consultoria que combina hiperespecialização                                                          EM RESULTADOS APURADOS
+técnica com profundo entendimento de negócios.                                                             PARA NOSSOS CLIENTES
+
+NOSSO FOCO
+
+Business + Tech + ROI.
+Não vendemos hype. Vendemos "Engenharia de Decisão"
+com Retorno sobre Investimento real.
+
+Líderes em Data Science & AI            Certificados, por cinco anos          EXAME.COM.BR
+Services, AWS Enterprise Data           consecutivos, como umas das
+Modernization and AI Services;          melhores empresas para se      Crescemos 2100%
+Generative AI Strategy and              trabalhar pela Great Place To  em cinco anos:
+Deployment.                             Work® Brasil.
+                                                                       A A3Data soma mais de 12 anos de
+LOUCOS POR DADOS APAIXONADOS POR GENTE                                 experiência em projetos de IA e
+                                                                       analytics em grandes clientes de
+                                                                       setores como Saúde, Finanças,
+                                                                       Automotivo e Multimercado.
+EMPOWERING PEOPLE THROUGH DATA
+
+O mercado reconhece:
+Somos líderes no Brasil.
+
+Uma das únicas consultoria 100% brasileira
+nomeada como Líder em 4 quadrantes dos
+renomados estudos do ISG Provider LensTM:
+
+     Data Science & AI Services
+     (Midsize)
+
+     AWS Ecosystem:
+     Data Modernization and AI Services
+
+     Generative AI:
+     Strategy and Consulting Services
+
+     Generative AI:
+     Development and Deployment Services
+
+O ISG Provider LensTM é uma avaliação anual reconhecida por sua
+influência no mercado de tecnologia, que oferece análises sobre
+provedores de serviços tecnológicos, permitindo que as empresas
+encontrem parceiros qualificados e soluções inovadoras para tomadas
+de decisão mais seguras.
+
+LOUCOS POR DADOS APAIXONADOS POR GENTE
+EMPOWERING PEOPLE THROUGH DATA
+
+Generative AI Competency:
+somos a 3ª empresa no Brasil
+a receber esse reconhecimento.
+
+Esse marco reflete nossa capacidade de antecipar e adotar
+as tecnologias mais inovadoras, oferecendo soluções
+eficazes e transformadoras para nossos clientes e parceiros.
+
+Capacidade de desenhar            Time altamente                          Excelência,
+e prototipar soluções de          qualificado.                            segurança e
+IA Generativa.                                                            agilidade.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+EMPOWERING PEOPLE THROUGH DATA          A3Data: AWS
+LOUCOS POR DADOS APAIXONADOS POR GENTE  Consulting Partner
+                                        of the Year 2026.
+
+                                        Partner Awards Brazil - Rising Star.
+                                        Combinação de excelência, capacidade,
+                                        coragem e muita paixão.
+EMPOWERING PEOPLE THROUGH DATA
+
+Portfólio
+A3Data
+
+FRAMEWORKS
+ACELERADORES
+
+Uma abordagem sistemática de                                              Um ecossistema pré-configurado   EML.
+Governança de Dados que assegura a                                        de aplicações que acelera a
+qualidade, segurança, conformidade e                                      implementação de Agentes de IA.  Um conjunto de diretrizes, códigos e
+gestão eficaz dos dados, alinhando-os                                                                      estruturas que estabelece um ponto
+com os objetivos de negócios.                                                                              de partida eficiente para desenvolver,
+                                                                                                           treinar e implementar modelos de
+                                                                                                           Machine Learning.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+COMO FAZER DAR CERTO                                                            TOP GEN AI PERFORMERS                             ENGAJAMENTO DOS C-LEVELS:
+
+ Como                                                                     Se destacam em cinco                                   Clareza e direção vindas do board.
+ fazer dar                                                                capacidades principais:
+ certo?                                                                                                                           CLAREZA NO OBJETIVO DO PROJETO DE IA:
+                                                                          01
+                                                                                                                                 Qual problema a IA deve resolver
+                                                                                  FORTE APOIO DA LIDERANÇA                       e quais são os resultados desejados.
+
+                                                                          02                                                      DADOS PRECISAM SER PAUTA FREQUENTE:
+
+                                                                                  INFRAESTRUTURA TECNOLÓGICA MODERNA             Data Literacy e preparação para trabalhar com IA
+
+                                                                          03                                                      CONVOCAR AS PESSOAS CERTAS PARA O PROJETO:
+
+                                                                                  LIGAÇÃO CLARA COM O DESEMPENHO ORGANIZACIONAL  Especialistas em IA, time das áreas de negócio e
+                                                                                                                                 membros da alta direção.
+                                                                          04
+                                                                                                                                  COMEÇAR PEQUENO E ESCALAR COM SUCESSO:
+                                                                                  FORTES CAPACIDADES DE DADOS
+                                                                                                                                 Especialistas em IA, time das áreas de negócio e
+                                                                          05                                                     membros da alta direção.
+
+                                                                                  IA RESPONSÁVEL                                  GARANTIR A QUALIDADE DOS DADOS:
+
+                                                                                                                                 Crucial investir em estrutura de dados sólida, de
+                                                                                                                                 alta qualidade e relevantes.
+
+                                                                                                                                  EXPERIÊNCIA DO USUÁRIO DEVE SER O CORAÇÃO DA IA:
+
+                                                                                                                                 Facilidade de uso e efetividade da IA na execução
+                                                                                                                                 de tarefas de negócio
+
+                                                                                                                                  COESÃO DIGITAL PARA MAXIMIZAR RETORNOS:
+
+                                                                                                                                 Pré-requisitos técnicos, recursos compartilhados,
+                                                                                                                                 formas de trabalhar
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+COMO FAZER DAR CERTO
+
+   Unir estratégia e IA
+
+     Valor da IA depende diretamente dessa conexão.
+
+NÃO ORIENTADA                     ISOLADA                                 ALINHADA    INTRÍNSECA
+
+ESTRATÉGIA                        ESTRATÉGIA                              ESTRATÉGIA   ESTRATÉGIA
+DE NEGÓCIO                        DE NEGÓCIO                              DE NEGÓCIO   DE NEGÓCIO
+
+                                                                                       ESTRATÉGIA
+                                                                                            DE IA
+
+ESTRATÉGIA                        ESTRATÉGIA                              ESTRATÉGIA
+     DE IA                             DE IA                                   DE IA
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+EMPOWERING PEOPLE THROUGH DATA
+
+A abordagem
+da
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Seu contexto
+de negócio
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Situação Atual
+
+A seleção de centenas de SKU e dezenas de
+marcas para centenas de milhares de clientes
+B2B para as ofertas é feita de forma manual e
+sem inteligência analítica para recomendações
+com maior chance de conversão.
+
+Há um alto volume de clientes sem compra
+recente e dificuldade em personalizar as
+ofertas por PDV, região e canal -- o que limita
+o impacto das campanhas de CRM no B2B.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+ PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Objetivo com o Projeto
+
+ Aumentar a penetração de SKUs-alvo e o ticket médio via recomendações de combos
+ (MBA) e próximas melhores ofertas (NBO).
+
+  Elevar a conversão de clientes sem compra, recomendando o produto certo para cada PDV e abertura de negócio.
+  Dar escala e rastreabilidade às campanhas de CRM, substituindo a seleção manual por algoritmos.
+  Validar o ganho de forma rigorosa por teste A/B -- margem de contribuição (principal), faturamento, sortimento,
+  frequência e conversão.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+                                                                                           Solução
+                                                                                           proposta
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+           PROPOSTA TÉCNICA E COMERCIAL · 3 Corações                                               Escopo do Projeto
+
+SOLUÇÃO DE RECOMENDAÇÃO                                                                    O escopo é uma prova de conceito (POC) focada em validar, com rigor, se a
+DE SKU (NBO / MBA) · B2B                                                                   recomendação algorítmica supera o baseline gerencial nas três mecânicas de oferta
+                                                                                           do B2B -- antes de uma expansão futura (aplicação no app, inferência online e novas
+                                                                                           mecânicas).
+
+                                                                                           Tipos de experimento (cada um um teste A/B):
+                                                                                           · Combo (via MBA) -- itens de alta afinidade de compra conjunta.
+                                                                                           · Mais-por-Menos / Escalonada (via NBO) -- ranking de itens para a oferta.
+                                                                                           · Desconto (via NBO) -- itens para conversão de clientes sem compra.
+
+                                                                                           Piloto inicial: 1-2 famílias de produto e aberturas priorizadas (canal/regional),
+                                                                                           definidas no kickoff. A modelagem considera as aberturas mínimas (canal, geografia,
+                                                                                           área do vendedor, qualificação de SKU e janela temporal). A 3 Corações é
+                                                                                           responsável pela engenharia de dados, BI, integração das recomendações e pelas
+                                                                                           ações de venda/campanha.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+Velocidade e CustoPROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Estratégia Híbrida Sugerida
+
+Capturar benefícios rapidamente com solução de plataforma em baixa escala e avaliar um modelo
+próprio (custom) na alta escala.
+
+                                Solução Inicial -- Plataforma (Amazon
+                                Personalize)
+
+                                   · Início e benefício rápido
+                                   · Aprendizado rápido
+                                   · Alto custo na escala
+                                   · Menor customização
+
+                                                                                           Solução Desafiante -- OpenSource (custom)
+
+                                                                                           · Maior controle
+                                                                                           · Maior customização
+                                                                                           · Menor custo na escala
+
+                                                                                           Controle e Customização
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+                      PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Escopo Inicial Sugerido
+
+                       Mês 1                                                     Mês 2                          Mês 3                                    Mês 4                             Mês 5
+             Setup, Design & EDA                                          PoC Personalize                MVP Personalize                          PoC Challenger             Champion vs Challenger
+
+Macro        · Workshop Personalize                                     · Coleta de dados da PoC         · Melhorias no modelo           · Definição e infra da PoC        · Melhorias no challenger
+Atividades   · discovery de dados                                       · 1ª inferência via Personalize  · endpoint de inferência (API)  desafiante                        · champion vs challenger (A/B)
+             (users/items/interactions) e                               · análise vs baseline            · storage de inferências        · preparação de dados             · sustentação da plataforma
+             ambientes                                                  · início da plataforma de        (NoSQL)                         · 1ª inferência do challenger     (3C)
+             · config Personalize (AWS)                                 mensuração/experimentação/s      · API-REST de retrieve por      · análise comparativa             · plano de continuidade e
+             · definição da PoC + campanha                              erving                           CNPJ                            · sustentação do Personalize      evolução (Tracker, Bandit,
+             teste                                                      · 1ª campanha teste (3C)         · integração com canal de       (3C)                              Intenção Quente, resposta por
+             · método de experimentação                                                                  comunicação (3C)                                                  LLM)
+             · coleta de baseline
+
+Principais   · Arquitetura da PoC + key-                                · 1ª inferência Personalize      · Pipeline de dados             · PoC desafiante (1ª inferência)  · Modelo vencedor
+Entregáveis  features de EML                                            · análise comparativa            · endpoint (API)                · análise comparativa             consolidado
+             · linha de base de desempenho                              · plataforma de mensuração       · storage NoSQL                 champion×challenger               · plano de continuidade e
+                                                                        (início)                         · API-REST por CNPJ                                               evolução
+                                                                                                         · integração de canal
+
+Premissas: Dados disponíveis e confiáveis · Pipeline batch 100% manual
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  Junho 2026
+           PROPOSTA TÉCNICA E COMERCIAL · 3 Corações                                             Infraestrutura Estimado AWS & Funding
+
+INVESTIMENTO AWS -- CUSTO DA POC                                                           Item                                         Valor
+
+                                                                                           Personalize + infraestrutura (DEV/HML/PROD)  ~ US$ 924 / mês  R$ 5.450 / mês
+
+                                                                                           Custo AWS na POC -- 5 meses                  ~ R$ 27.000
+                                                                                           Funding AWS
+                                                                                                                                        Possibilidade de funding AWS para esta POC em
+                                                                                                                                        avaliação junto à AWS -- condições a confirmar
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+           PROPOSTA TÉCNICA E COMERCIAL · 3 Corações                                          Premissas & Governança
+
+PREMISSAS DE EXECUÇÃO E                                                                    # Premissa                                                                                    Resp.
+GOVERNANÇA
+                                                                                           1  Engenharia de Dados e Feature Store de Produtos disponível no M1 (gate do MBA/combos) 3C
+
+                                                                                           2  Plano experimental A/B pré-registrado antes da 1ª campanha (KPI, controle, MDE)            A3Data
+
+                                                                                           3  Data-readiness gate + RACI nas 2 primeiras semanas (acessos, qualidade, chaves)            3C
+
+                                                                                           4  Contrato da tabela de recomendação no Snowflake (schema, model_version, fallback)          3C
+
+                                                                                           5 Execução de campanha, disponibilização de dados de retorno e mensuração no Salesforce, com dono nominal 3C
+
+                                                                                           6  Critérios de comparação champion/challenger definidos antes dos resultados                 A3Data
+
+                                                                                           7  Continuidade de Eng. ML nos M4-M5 via change request, se a operação exigir                 3C
+
+                                                                                           8  Custos AWS (Personalize/Bedrock) faturados à parte; possibilidade de funding AWS           3C
+
+                                                                                           9  Dados (users, items e interactions) disponíveis e confiáveis no Snowflake no início do M1  3C
+
+                                                                                           10 Pipelines de dados e IA                                                                    3C
+
+                                                                                           11 Configuração do AWS Personalize e modelagem custom de RecSys                               A3Data
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações                                                      A3DATA                                                                       3 Corações
+
+Cronograma Inicial
+
+ATIVIDADES                               K.O                              M1               M2          M3                                                                   M4          M5
+
+M1 · Setup, Design & EDA --              PLANEJAMENTO (KICK OFF)
+Personalize + método de
+experimentação + baseline
+
+M2 · PoC Personalize -- 1ª inferência +
+análise vs baseline + 1ª campanha (3C)
+
+M3 · MVP Personalize -- endpoint/API
+por CNPJ + integração com canal
+
+M4-M5 · PoC Challenger + Champion
+vs Challenger -- comparativo, plano de
+continuidade
+
+Integração e mensuração no Salesforce
+(3 Corações)
+
+                                                         TIME 3 CORAÇÕES:
+                                                             *Concessão de Acessos aos dados origem, ambiente sandbox disponibilizado com os devidos acessos e permissões.
+                                                             *Apoio durante todo o período da prototipação, em reuniões de cadências e validações dos entregáveis.
+
+Planejamento macro sugerido, em tempo de proposta. A ser refinado e atualizado na etapa de planejamento de kickoff.
+Qualquer alteração por indisponibilidade do cliente em reuniões de trabalho de planejamento que acarretem atraso no cronograma, serão tratados via change request.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Equipe composta MVP
+
+Negócio                                                                                  Consultor Líder de Projeto          Advisor Founder
+                                                                                         (Meses 1 a 5; part time)            Advisor COO
+       Usuários de Negócio                                                               Cientista de Dados Sênior           Account Manager
+       Source / Systems / Infrastructure / Others                                        (Meses 1 a 5; fulltime)
+                                                                                         Engenheiro de ML Sênior       Recomendação para o negócio;
+Front                                                                                    (Meses 1 a 3; fulltime)       Otimização dos processos operacionais;
+                                                                                         Advisor                       Novas perspectivas para novos insights.
+       IT-Executive                                                                      (Meses 1 a 5; 2h/semana)
+       Time de Dados                                                                                                                             APOIO
+                                                                                                         OPERAÇÃO
+CASOS DE USO                      INCUBAÇÃO                               CASOS x DADOS                                             A3DATA CENTRO DE EXPERTISE
+                                                                                                             SPRINTS
+                                   DADOS
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  Junho 2026
+             PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Investimento -- Squad, Tarifa Hora & Fluxo de Caixa
+
+Perfil                                                                                     Tarifa hora  M1-M3 (h/mês)   M4-M5 (h/mês)   Total (h)
+Cientista de Dados Sênior                                                                   R$ 275,00            168              168       840
+Engenheiro de Machine Learning Sênior                                                       R$ 324,50            168               --       504
+Advisor -- Arquiteto de Dados (pontual)                                                     R$ 352,00             16               12        72
+Consultor Líder de Projetos (50%)                                                           R$ 280,00             84               84       420
+TOTAL
+                                                                                                             436 h/mês       264 h/mês   1.836 h
+
+O Advisor atua de forma pontual (16h/mês em M1-M3; 12h/mês em M4-M5) -- governança técnica e decisão champion/challenger. Não é alocação part-time contínua.
+
+Fluxo de Caixa -- faturamento mensal
+
+      M1                               M2                                      M3                           M4              M5             TOTAL
+R$ 129.868                        R$ 129.868                              R$ 129.868                    R$ 73.944       R$ 73.944       R$ 537.492
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Papéis, Artefatos e Processos de Gestão
+
+RITOS DE GESTÃO
+
+ESTRATÉGICO                       TÁTICO (PLANNING)                                        TÁTICO (DAILY)                    ENTREGAS
+
+Um olhar para um alinhamento      Um olhar para definição do plano                         Um olhar para o acompanhamento    Um olhar para a formação dos
+estratégico do que construímos e  tático das estratégias definidas,                        das atividades, remoção de        usuários das áreas de negócio nos
+vamos construir juntos, quem      acompanhamento do ritmo de                               impedimentos e alinhamento        indicadores e dashboards entregues,
+precisamos engajar e quais os     entregas e trocas de feedbacks.                          contínuo de regras de negócios e  além de coleta de feedbacks.
+impactos esperados e obtidos.                                                              entregas parciais.
+                                  Touchpoint semanal.                                                                        Touchpoint mensal/quinzenal.
+Touchpoint quinzenal.                                                                      Touchpoint Diário
+                                                                                                                             Participam o Sponsor, o PO, Account
+Participam o Sponsor, o PO,       Participam o PO, o CLP e                                 Participam o PO, o CLP e o time   Manager, usuários da área de
+Diretoria e o Account Manager.    o time do projeto.                                       do projeto.                       negócio, o CLP e o time do projeto.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Responsabilidades:
+
+METODOLOGIAS E GOVERNANÇA DO PROJETO
+
+    A3DATA                                                                                                                                                             3 Corações
+                                                                                                                                                              01 Destacar um recurso para acompanhamento dos trabalhos realizados pela A3Data e principal ponto de contato.
+01  Disponibilizar os recursos conforme plano acordado entre a cliente e a A3Data.
+
+02  Disponibilizar equipe de trabalho dimensionada para desenvolver o escopo solicitado.
+
+                                                                                                                                                              02 Disponibilizar os recursos humanos necessários para as entrevistas e levantamento de informações dos processos e ambientes envolvidos.
+
+03 Promover os levantamentos e a transcrição das informações levantadas, a fim de alinhar o entendimento e subsidiar o planejamento das etapas e atividades.  03 Disponibilizar a infraestrutura necessária ao projeto e demais itens sob sua responsabilidade conforme o planejamento do projeto.
+
+04 Realizar o levantamento de requisitos detalhados considerando as necessidades apontadas pela cliente.                                                      04  Executar a homologação das entregas, incluindo testes de segurança.
+
+05  Elaborar o plano de execução do projeto.                                                                                                                  05 Após a entrega do termo de aceite dos produtos, a cliente terá até 3 dias úteis para proceder ao seu efetivo recebimento e aceitação.
+
+06  Elaborar e apresentar os indicadores de evolução periódicos.                                                                                              06 Em caso de recusa da entrega, a cliente deverá manifestar-se formalmente dentro do prazo especificado, indicando objetivamente as suas justificativas.
+
+07 Elaborar e entregar todos os documentos passíveis de aprovação pela cliente nos padrões normatizados e/ou acordados entre as partes.                       07  Proporcionar os acessos necessários para que a A3Data exerça suas atividades.
+
+    Dar conhecimento a cliente, de qualquer evento que possa impactar os prazos, os                                                                           08 Monitorar e verificar se o trabalho da A3Data está progredindo de acordo com o planejado.
+                                                                                                                                                              09 Realizar reuniões e apresentações de entendimento de escopo quanto julgar necessário.
+08  custos ou que possa causar desvio no cumprimento das metas e objetivos
+
+    estabelecidos.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Proposta Comercial
+e Condições Gerais.
+
+    INVESTIMENTO
+    CONDIÇÕES GERAIS
+    PREMISSAS GERAIS
+    FATORES DE SUCESSO
+    FORA DE ESCOPO
+    TERMO DE CONFIDENCIALIDADE
+    CONTATOS
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE
+PROPOSTA TÉCNICA E COMERCIAL · 3 Corações                                                  SERVIÇO       Recomendação de SKU · POC NBO/MBA (B2B)
+
+Investimento                                                                               PRAZO         20 SEMANAS (5 MESES)
+do Projeto:
+                                                                                           INVESTIMENTO  R$ 537.492,00
+CONDIÇÕES GERAIS PARA A PROPOSTA COMERCIAL                                                 TOTAL
+
+Esta proposta contempla o desenvolvimento de uma POC de
+Recomendação de SKU (NBO/MBA) para o canal B2B,
+executada pela A3Data sobre a stack Snowflake da 3
+Corações.
+O investimento é em modelo Time & Material, com
+faturamento mensal ao longo das 20 semanas.
+Qualquer alteração no racional utilizado para dimensionar o
+esforço desta proposta poderá acarretar Change Request,
+impactando diretamente o esforço, o tempo e o custo do
+projeto.
+O modelo é Bodyshop com tarifa hora por perfil -- squad,
+horas mensais e fluxo de caixa detalhados no slide seguinte.
+Proposta pronta para aditivos: o squad pode ser ampliado com
+os perfis e tarifas do Anexo, via change request.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+             PROPOSTA TÉCNICA E COMERCIAL · 3 Corações
+
+Perfis e Tarifas para Aditivos
+
+Possibilidade de extensão e inclusão de novos perfis conforme tarifas abaixo:
+
+Perfil                                                                    Tarifa hora      Perfil                           Tarifa hora
+Cientista de Dados Pleno                                                   R$ 210,00       Engenheiro de Dados Sênior        R$ 255,00
+Cientista de Dados Sênior                                                  R$ 275,00       Analista de Dados Sênior          R$ 210,00
+Especialista Ciência de Dados                                              R$ 330,00       Desenvolvedor Full Stack Pleno    R$ 217,80
+Eng. de Machine Learning Pleno                                             R$ 247,80       Desenvolvedor Full Stack Sênior   R$ 280,50
+Eng. de Machine Learning Sênior                                            R$ 324,50       Designer UI/UX Sênior             R$ 200,00
+Eng. de Machine Learning Especialista                                      R$ 389,40       Arquiteto de Dados (Advisor)      R$ 352,00
+Engenheiro de Dados Pleno                                                  R$ 198,00       Consultor Líder de Projetos       R$ 280,00
+
+Tarifas hora (R$) para expansão do squad via aditivo/change request -- faturamento mensal conforme alocação. Vigência: condições desta
+proposta.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 CORAÇÕES                                                                                                                                                              09 Os trabalhos serão prestados de maneira remota. Eventuais custos de viagem e hospedagem não estão inclusos nesta proposta.
+                                                                                                                                                                                                       10 Será considerado um prazo de até 30 (trinta) dias para início do projeto após a assinatura de ambas partes - Prazo estipulado para formação do time necessário para atender ao projeto.
+Premissas Gerais
+                                                                                                                                                                                                               Será necessário interação constante entre a A3Data e a cliente em tempo de projeto. É imprescindível
+PROPOSTA COMERCIAL
+                                                                                                                                                                                                       11 que as equipes responsáveis e envolvidas no desenvolvimento do projeto da cliente, estejam disponíveis
+            Este documento é um resumo do plano da POC. Neste momento, as informações contidas no documento                                                                                                    para as solicitações de processos e informativos da A3Data;
+   01 podem ser contestadas por ambas as partes, desde que havendo consenso quanto à condução das
+                                                                                                                                                                                                       12 Cada fase deverá ser aprovada formalmente, principalmente o início da execução que deverá ser realizada segundo informações como volumetria, requisitos e regras de negócio validadas pela cliente.
+            atividades, e seus respectivos impactos em prazo, custo e escopo.
+                                                                                                                                                                                                                Eventuais indisponibilidades dos responsáveis pela validação das entregas pela cliente que impactem o
+            Atividades que dependam da ação da cliente necessitarão de atenção imediata, de forma a não impactar                                                                                       13 desenvolvimento das atividades planejadas serão contabilizadas e deduzidas do consumo de horas do
+   02 nos prazos do projeto. A cliente sempre será notificado com antecedência sobre as atividades que vão
+                                                                                                                                                                                                                projeto.
+            requerer sua atenção.
+                                                                                                                                                                                                       14 O Cliente deve viabilizar um Gerente de Projetos que será o ponto de contato primário para escalonamento de questões relativas ao projeto com outras áreas internas.
+            Toda atividade que não for realizada por uma quebra de premissa ou por não cumprir com as definições
+            estabelecidas pelo plano do projeto ou apresentar não conformidade com o documento de                                                                                                      VALIDADE DA PROPOSTA  30 DIAS
+   03 gerenciamento do escopo ou informações contidas neste documento, será considerada fora de escopo, e
+            as horas e estimativas de custo e prazo contidas neste documento e nos documentos gerados pelo
+            projeto não poderão se aplicar a elas em momentos posteriores.
+
+            Todas as necessidades de mudança de escopo serão formalizadas através de um comitê de
+   04 gerenciamento da mudança, onde as referidas modificações serão analisadas em termos de impacto e
+
+            obterão um aceite específico.
+
+   05 Todas as reuniões poderão ser registradas em ATA.
+
+            Assume-se que todos os recursos de hardware e software necessários para a execução das tarefas no
+   06 site da cliente ou remotamente (ssh, vpn, onsite ou outros meios) estejam disponíveis antes do início das
+
+            atividades.
+
+            A A3Data não é responsável pela solução de questões relativas a compatibilidade ou problemas que não
+   07 possam ser solucionados pelo fabricante, tampouco pela configuração de hardware ou software contrária
+
+            às configurações suportadas pelo fabricante;
+
+   08 Toda a Infraestrutura necessária para o assessment, bem como a disponibilidade de recursos de conectividade como por exemplo VPN deverá ser custeada e fornecida pela cliente- caso necessário.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 CORAÇÕES                                                  DECISÃO EFICAZ                             ENGAJAMENTO
+
+Fatores                                                                                    A celeridade desejada para atingir os      Engajamento e prioridade na agenda dos
+de Sucesso                                                                                 objetivos do projeto de acordo com esta    envolvidos na estrutura da cliente para a
+                                                                                           proposta só é conseguida se o processo de  implementação do projeto.
+A A3Data, como base em sua                                                                 tomada de decisão for eficaz, bem como a
+experiência na execução de projetos                                                        aprovação dos documentos, o que passa      RELACIONAMENTO
+desta característica, considera os itens                                                   pela definição de mecanismos eficientes
+abaixo importantes para que                                                                (competências e prazos), bem como um       Proximidade entre o cliente e a equipe de
+tenhamos uma boa execução das                                                              livre acesso a quem tem de decidir, sendo  desenvolvimento para esclarecimento de
+atividades em nosso projeto.                                                               o envolvimento da cliente fundamental.     dúvidas e validações
+
+INTERLOCUTORES                                                                                                                        COMUNICAÇÃO
+
+Nomeação pelo cliente dos interlocutores com responsabilidades de Gestão, com objetivo de proceder o                                  Posicionamento de comunicação
+monitoramento permanente da evolução dos trabalhos, do Controle da Operação e da tomada das decisões                                  transparente em todos os níveis: deverá ser
+necessárias de forma a garantir o desenrolar das atividades previstas dentro dos prazos estabelecidos.                                garantida a divulgação interna do projeto
+                                                                                                                                      pelos diversos níveis da 3 Corações, para que
+O cliente deve garantir a interlocução A3Data somente com pontos focais de sua própria equipe, ou se aplicável ser                    haja maior colaboração e envolvimento dos
+empoderada junto aos seus parceiros.                                                                                                  colaboradores na execução.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+PROPOSTA TÉCNICA E COMERCIAL · 3 CORAÇÕES
+
+Termo de
+Confidencialidade:
+
+A A3Data compromete-se a manter sigilo sobre todas as
+informações e dados confidenciais a que tiver acesso em
+virtude do trabalho a ser realizado, reconhecendo-os como
+uso reservado do cliente.
+
+As informações contidas neste documento poderão trazer
+substanciais vantagens a concorrentes da A3Data que
+oferecem serviços similares e também potenciais vantagens
+aos concorrentes do cliente, deste modo, consideramos que
+todas as informações contidas neste documento são
+consideradas privilegiadas e confidenciais e somente devem
+ser transitadas entre A3Data e cliente.
+
+Com isso acreditamos ser possível continuar e manter
+saudável o relacionamento que a A3Data desenvolve com seus
+clientes neste tipo de serviço, permitindo que o planejamento
+das ações continuem sendo realizadas de forma conjunta e
+transparente.
+
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  V1 / Junho 2026
+© 2026 · A3DATA CONSULTORIA S/A.  LOUCOS POR DADOS APAIXONADOS POR GENTE  A3DATA.COM.BR
+

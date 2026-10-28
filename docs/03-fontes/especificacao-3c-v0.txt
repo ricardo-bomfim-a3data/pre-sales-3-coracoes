@@ -1,0 +1,292 @@
+                                                                    POC - Recomendação de SKU (NBO / MBA) - B2B
+                                                                                                                    3corações
+                                                                                                                            1/ 7
+
+       1. VISÃO GERAL E OBJETIVO
+
+ O objetivo é disponibilizar recomendações de SKU personalizadas por PDV (B2B), com base em coleções de
+dados do cliente (Feature Store do cliente / Base Visão 360° *), habilitando estratégias de NBO (Next Best
+Offer) ou "Próxima melhor oferta" para ranking do item mais provável para nova conversão) e MBA
+(Marketing Basket Analysis) ou "Análise da cesta de compras" para avaliação de itens frequentemente
+comprados juntos), utilizando-se tanto as mecânicas promocionais já disponíveis no Sírius+B2B quanto novas
+mecânicas a serem detalhadas neste documento.
+
+ De forma geral, a principal hipótese a ser testada (via prova de conceito) é se a personalização das ofertas,
+através de algoritmos de machine learning, será capaz de otimizar os resultados das campanhas de CRM no
+segmento B2B, em termos de faturamento, margem de contribuição, sortimento, frequência de compras, ticket
+médio e cobertura/conversão.
+
+ Atualmente, temos três mecânicas de ofertas já estabelecidas no Sírius (em desenvolvimento no B2B)
+baseadas em escolhas de SKU: 1-Combos (objetivo: aumento da penetração de SKU específico); 2- "Mais por
+Menos" ou "Escalonada" (objetivo: atingimento de meta de volume); 3- Descontos (Objetivo: Retenção de
+clientes sem compras). O que se observa no processo atual é que as escolhas dos SKUs para composição das
+ofertas são, frequentemente, pautadas apenas por decisões gerenciais da diretoria comercial ou por
+solicitações das filiais, oportunizando a adoção de estratégias mais robustas (escaláveis, com maior
+rastreabilidade e com maior impacto financeiro), através de algoritmos de Machine Learning. Tendo em vista
+os objetivos de cada mecânica, serão definidos os seguintes KPIs para a POC: 1- Combo: Cobertura do SKU
+`alvo' ; 2- Mais por menos: Volume médio do SKU ofertado ; 3- Conversão dos clientes sem compras. Todos os
+KPIs deverão ser avaliados comparativamente entre os grupos A/B.
+
+ Espera-se, ao final da POC, concluir se há melhora dos KPIs citados , em relação às três mecânicas atuais no
+B2B e Sírius ao se utilizar algoritmos. O teste consistirá em eleger, aleatoriamente, metade do público para ser
+impactado pelas ofertas como estão, enquanto a outra metade deverá ser impactada pelas campanhas que
+utilizem os produtos recomendados por algoritmos, mantendo-se os descontos e benefícios equivalentes entre
+ambos os grupos. A definição de sucesso para a prova em questão consiste em encontrar, nas aberturas
+pertinentes para o negócio (ex: área de atuação, canal de vendas, etc), quais ofertas apresentam variação
+positiva nos principais indicadores de negócios (margem de contribuição, em especial), em favor dos
+algoritmos, indicando o benefício da troca de estratégias.
+
+       2. APLICAÇÃO
+
+2.1 - Mecânicas já ativas no Sírius e em desenvolvimento no B2B
+
+         2.1.1- Combos: Consiste na junção de 2 ou mais SKUs em um novo, considerado-se o primeiro SKU
+como âncora (frequentemente vendido), com o objetivo de atrair o cliente para a compra conjunta do
+segundo, seja pela necessidade de aumentar a penetração deste SKU ou, simplesmente, pelo aumento do
+ticket médio da compra. Considerando-se o objetivo de aumento do ticket médio, quando os SKUs não são
+definidos previamente, os algoritmos de MBA deverão ser capazes de fornecer um ranking em tabela (ou lista)
+em cada abertura de negócio, contendo os itens mais indicados para composição do combo.
+                                          POC - Recomendação de SKU (NBO / MBA) - B2B
+                                                                                          3corações
+                                                                                                 2/ 7
+
+         2.1.2- Escalonado (Mais por menos): A mecânica está baseada na oferta de mais itens por um valor
+reduzido, frequentemente utilizada com um único SKU, com o objetivo de atingir metas de vendas (em volume)
+e/ou escoamento de produtos. Com o objetivo de recomendar os melhores itens para cada abertura de
+negócio, o algoritmo de NBO deverá ser capaz de estabelecer um ranking em tabela (ou lista), contendo os
+itens mais indicadores para a oferta.
+
+  2.1.3- Desconto: Baseia-se na oferta de desconto, frequentemente utilizada com o público sem
+
+compras por 60 dias ou mais, com o objetivo de retenção de base para atingimento da meta de base ativa.
+
+Com o objetivo de recomendar os melhores itens para cada abertura de negócio, o algoritmo de NBO deverá
+
+ser capaz de estabelecer um ranking em tabela (ou lista), contendo os itens mais indicadores para a oferta.
+
+2.2 - Mecânicas sugeridas Pós-POC [Não serão testadas via POC, mas tem potencial de utilização dos
+algoritmos]:
+
+         2.2.1- Pedido Sugerido: Composição de um pedido pré-definido a ser disponibilizado para o vendedor,
+através do Sirius, e para o cliente no B2B. O algoritmo deverá listar os itens ideais para cada cliente e compor
+um pedido sugerido, levando-se em consideração seu histórico de compras e deixando as quantidades de cada
+produto em aberto para edição.
+
+         2.2.2- Personalização de home B2B: Consiste na composição personalizada de itens da home do B2B
+com base nos itens recomendados.
+
+         2.2.3- WXAX (Who `x' Also `x'): Atuará de forma transacional como a fonte de recomendações de itens
+a serem adicionados em um carrinho, com base nos dados de acesso e compras, possibilitando a
+implementação de estratégias do tipo "Quem viu também viu" / "Quem comprou também comprou" / "Quem
+Clicou também clicou", diretamente nas telas de compras do B2B.
+
+       3. GESTOR RESPONSÁVEL
+
+XXXXXXXX - Definir focais nesta reunião*
+
+       4. DESCRIÇÃO DAS REGRAS
+
+4.1- Definições gerais
+
+         4.1- Aberturas Mínimas: Para o desenvolvimento dos algorítmos de machine learning deverão ser
+consideradas as seguintes aberturas de negócio que definirão os conjuntos de dados para treinamento e teste,
+considerando características do previamente definidas. A saber:
+
+         4.1.1- Canal de vendas:
+                                                     POC - Recomendação de SKU (NBO / MBA) - B2B
+                                                                                                     3corações
+                                                                                                            3/ 7
+
+  -Varejo / Food / B2B
+
+  4.1.2- Componente geográficos e administrativos
+  - Regionais / Filiais / UFs / Capital x Interior
+  4.1.3- - Área de atuação do vendedor responsável
+  - Canal Verde / Especialista Food / Fine Dining / Varejo Multi / Office / Segmentada /
+
+  4.1.4- Qualificação de SKU
+
+  - Itens já comprados / Itens que ainda não foram comprados.
+
+  4.1.5- Janela temporal (últimos meses fechados e performados)
+
+  - 1 mês / 3 meses / 6 meses / 9 meses / 12 meses.
+
+  4.2. Dados de Entrada para desenvolvimentos
+
+               4.2.1- Feature Store de Clientes (Disponível na camada de dados): Coleções de dados
+
+disponíveis para desenvolvimento com histórico a partir de Mai/25 (Base Visão 360°):
+
+   - Cadastro - canal de venda/organização, hierarquia comercial, geografia, status/bloqueios e
+       idade.
+
+   - Faturamento - Pedidos em quantidade, valor e frequência.
+   - Visitação -
+   - Segmentação - Cluster RFV (Recência, Frequência e Valor).
+   - Produtos - Lista de SKUs adquiridos e quantidades (últimos 3,6,9 e 12 meses).
+   - Regras de negócios para composição do público - Canais de vendas e áreas de atuação
+
+       selecionadas, com faturamento nos últimos 6 meses.
+   - Dicionário de dados Feature Store Clientes
+
+               4.2.2- Feature Store de produtos (a desenvolver)
+
+   - Taxonomia - Família (4 níveis) / sabores / variações (Diet-zero-light-normal- zero lact)
+
+   - Cadastro de produto - Peso / Dimensões / Tipo de embalagens / Data de criação
+
+   - Especificações técnicas - Insumos / Especificações de armazenamento e transporte.
+
+   - Dicionário de dados Feature Store Produtos
+
+  4.3. Processamento
+
+               4.3.1- Aplicação das aberturas mínimas: Conforme já estabelecido, as seguintes regras de
+
+negócio deverão ser consideradas como aberturas mínimas para a implementação dos algoritmos de NBO e
+
+MBA. A saber:
+                                                              POC - Recomendação de SKU (NBO / MBA) - B2B
+                                                                                                              3corações
+                                                                                                                     4/ 7
+
+           REGRAS DE NEGÓCIOS                                 CORTES                          MECÂNICAS
+
+Canais de  Componentes              Área de                   Qualificação          JANELA    NBO  MBA
+ Vendas       Geo Adm               Atuação                        SKU            TEMPORAL
+
+Varejo / B2B Regionais / filiais /        Canal Verde /       Itens novos/ Itens  1,3,6,9,12   Desconto Combos
+    / Food capital x interior       Especialista Food / Fine    já comprados.       meses     Escalonada
+
+                                     Dining / Varejo Multi /
+                                     Office / Segmentada /
+
+         4.3.1.1- Um exemplo prático para demonstrar a necessidade de se utilizar as aberturas mínimas é
+evitar recomendações de SKU pertinentes para a regional Sul sejam feitas para a região Norte (vice-versa). O
+mesmo raciocínio é válido para as demais aberturas.
+
+         4.3.1.2- A qualificação dos SKUs consiste em treinar algoritmos separados que considerem itens
+"novos" (nunca adquiridos) versus itens gerais (já conhecidos pelo cliente), habilitando a adoção das
+recomendações de SKU em mecânicas de penetração de novos produtos para o cliente B2B ou recomendações
+mais genéricas, quando o objetivo é apenas a recompra de qualquer item (ex: Cliente sem compra por 60 dias
+que se busca reter na base ativa).
+
+         4.4. Entregável (O que se espera)
+
+         4.4.1- Notebooks python desenvolvidos com a stack interna da 3corações, totalmente integrado com
+os dados da camada de dados Snowflake. Os notebooks devem conter funções capazes de automatizar a
+execução dos algoritmos nos passos descritos pelos requisitos detalhados neste documento (item 5).
+
+         4.4.2- Orquestração da execução semanal via Airflow. Os algoritmos de recomendação deverão ser
+executados após o fechamento de cada semana, atualizando as recomendações personalizadas para a semana
+seguinte.
+
+         4.4.3- Execução manual a qualquer tempo, possibilitando atualizações dentro de cada semana, quando
+necessário. As tabelas geradas.
+
+         4.5. Implementação de testes (POC)
+
+         4.5.1- Mecânica de combos via MBA - Geradas as recomendações de itens frequentemente
+comprados juntos na visão de cliente, deverão ser feitas as agregações nos níveis de Regional/Filial
+considerando-se os combos mais frequentes para sugestão das campanhas. O time de inteligência comercial
+deverá escolher os combos e seguir o fluxo de aprovação de price para implementar o teste A/B, versus os
+processos atuais. Durante a vigência da campanha, faremos a comparação dos grupos quanto aos KPIs de
+negócios, segundo as aberturas mínimas.
+                                                                    POC - Recomendação de SKU (NBO / MBA) - B2B
+                                                                                                                    3corações
+                                                                                                                            5/ 7
+
+         4.5.2- Mecânica desconto via NBO - Geradas as recomendações de itens por clientes com foco em
+conversão, deverá ser feita a escolha dos SKUs para campanhas de clientes sem compras. O time de
+inteligência comercial deverá escolher os itens e o público elegível, segundo com o fluxo de aprovação em price
+para implementar o Teste A/B, versus os processos atuais.
+
+         4.5.3- Mecânica "Mais por menos" - Geradas as recomendações de itens por clientes com foco em
+conversão, deverá ser feita a escolha do público a ser impactado pela campanha. Estando definido o SKU por
+regra de negócio e/ou necessidade de escoamento do produto, deverá o time de inteligência comercial
+implementar as regras gerais de elegibilidade à campanha, seguindo com o fluxo de aprovação em price para
+implementar o Teste A/B, versus os processos atuais.
+
+       5. REQUISITOS FUNCIONAIS (RF)
+
+RF01 - Leitura dos dados de entrada (item 4.2) - Importação dos dados da camada snowflake ou arquivos de
+texto (txt /csv/ json).
+
+RF02 - Exportação de relatório pré-execução de modelo - Tabela de distribuição das variáveis de entrada das
+últimas execuções, com o objetivo de evitar registros sem recomendação ou recomendações incoerentes,
+causadas por domínio desconhecido.
+
+RF03 - Pré-processamento - Implementação dos tratamentos necessários antes da aplicação de algoritmos.
+Inclui as revisões dos itens por regras de negócios como a retirada por falta de item no estoque ou pela compra
+recente (itens já comprados no mês não serão sugeridos).
+
+RF04 - Processamento - Implementação de algoritmos de machine learning para NBO.
+
+RF05 - Processamento - Implementação de algoritmos de machine learning para MBA.
+
+RF06 - Exportação das recomendações em tabela única - Tabela de referência contendo os resultados da
+última execução dos algoritmos, conforme formato especificado.
+
+RF07 - Exportação das recomendações em tabela SCD - Tabela de referência contendo os resultados da última
+execução dos algoritmos, conforme formato especificado, versão Slowchange (SCD).
+
+       6. MÉTRICAS GERAIS (KPIs de negócios)
+
+Para medir o sucesso da implementação e o impacto no negócio das três mecânicas avaliadas, as seguintes
+métricas foram propostas, considerando-se as diferenças entre os grupos A (como é hoje) vs B (proposta com
+algoritmos), durante a vigência das campanhas:
+
+               Faturamento: Valor líquido faturado.
+               Margem de contribuição: Efeito do faturamento, subtraindo os descontos/benefícios.
+               Sortimento: Contagem de SKUs distintos pedidos, segundo a base de faturamento.
+               Frequência de compras: Quantidade de pedidos distintos.
+                                                      POC - Recomendação de SKU (NBO / MBA) - B2B
+                                                                                                       3corações
+                                                                                                              6/ 7
+
+ Conversão: Quantidade de clientes que ativaram no mês / Quantidade de clientes existentes.
+
+7. DEPENDÊNCIAS DE DEFINIÇÃO (MACRO ETAPAS A DETALHAR)
+
+Item Categoria    Dependência Técnica / Operacional            Responsável Data Solicitação
+
+RNF01 D&A - Produto e Feature Store de Produto                 - Marcus Bruno     TBD
+
+Engenharia        Desenvolvimento do processo de atualização,
+
+                  dos detalhamentos de produto, incluindo      - João Pedro
+                  Slowchange (SCD) com dados básicos de        Felismino
+                  produtos consolidados.
+
+RNF02 Data Viz    Dashboard de resultado de campanhas  - Camila CRM?              TBD
+
+                  Desenvolvimento do processo dashboards
+
+                  com atualização D-1 para companhamento
+
+                  dos resultados.
+
+RNF03 Implementação Implementação das campanhas                Inteligência       TBD
+
+                  Desenvolvimento do processo dashboards       Comercial
+
+                  com atualização D-1 para companhamento
+
+                  dos resultados.
+
+                                                               - Helena / Camila
+
+RNF04 Algoritmos  Notebook Python com implementação de         TBD                TBD
+
+                  algoritmos  Desenvolvimento do NBO e
+
+                  MBA.
+
+8. ANEXOS E REFERÊNCIAS
+                                     POC - Recomendação de SKU (NBO / MBA) - B2B
+                                                                                     3corações
+                                                                                            7/ 7
+
+Módulo de Ofertas - Ecossistema B2B
+

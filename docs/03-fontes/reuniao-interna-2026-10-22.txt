@@ -1,0 +1,58 @@
+out. 22, 2026
+Interna - 3C - Recomendação SKU
+convidado Jonathas Castro Ricardo Farias Lopes Bomfim Ícaro Almeida Bruna Stefani Goncalves Daniel Xavier Wolbert
+Anexos Interna - 3C - Recomendação SKU
+Registros da reunião Transcrição 
+
+
+Resumo
+Reunião de alinhamento comercial discutindo estratégias para a propostaAprovação de proposta comercialProposta comercial aguarda agendamento de data para liberação de orçamento e início das compras.Discussão de Prova de ValorEquipe avaliou a viabilidade de introduzir uma Prova de Valor para mitigar riscos técnicos e operacionais.Estratégia comercial definidaProva de Valor será mantida como carta na manga caso o cliente questione o projeto integral.
+
+
+Decisões
+Alinhada
+Manutenção da POV como estratégia de contingência A equipe alinhou manter a realização de uma POV como uma estratégia de contingência caso seja necessário negociar com o cliente.
+
+
+Próximas etapas
+[Bruna Stefani Goncalves] Estrategiar Prova de Valor: Planejar com a equipe a inclusão de uma Prova de Valor na proposta do cliente para torná-la mais robusta.
+[Ricardo Farias Lopes Bomfim] Esclarecer documentação técnica: Identificar as discrepâncias entre a utilização de Snowflake e Amazon Simple Storage Service na documentação técnica do projeto.
+[Bruna Stefani Goncalves] Localizar memória de cálculo: Localizar e disponibilizar para a equipe o documento contendo a memória de cálculo da proposta atual.
+[Bruna Stefani Goncalves] Negociar financiamento: Entrar em contato com o representante da Amazon Web Services para discutir o financiamento de uma Prova de Valor.
+[Ricardo Farias Lopes Bomfim] Explorar histórico do projeto: Analisar documentos no drive para entender a arquitetura atual e restrições de exportação de dados do Snowflake. Mapear requisitos técnicos de ingestão de dados provenientes do sistema SAP.
+[Ricardo Farias Lopes Bomfim] Ativar equipe técnica: Acionar especialistas, analistas e engenheiros necessários para conduzir a etapa de análise da solução.
+[Bruna Stefani Goncalves] Solicitar funding Amazon Web Services: Gerenciar a solicitação de financiamento junto à Amazon Web Services após a finalização da arquitetura e da declaração de trabalho.
+
+
+Detalhes
+Status da proposta para a Três Corações: Bruna Stefani Goncalves relatou que a proposta de recomendação comercial para a Três Corações está na última fase de aprovação pela diretoria, com expectativa inicial de conclusão em outubro, aguardando o agendamento da data de apresentação para liberação do orçamento e início das compras (00:01:27). Daniel Xavier Wolbert acrescentou que a entidade cliente exigiu provas de valor prévias sem a execução do projeto, o que motivou pesquisas de benchmark público anteriores (00:02:21).
+
+Transição de POC para MVP e histórico do cliente: Jonathas Castro e Daniel Xavier Wolbert discutiram a substituição de uma Prova de Conceito tradicional pela execução direta de um Produto Mínimo Viável em ambiente produtivo, com validação inicial em uma filial antes do rollout e escala planejada para o segundo e terceiro meses (00:02:21). Bruna Stefani Goncalves mencionou que houve uma avaliação de inteligência artificial anterior na Três Corações que gerou uma imagem negativa e insatisfação da entidade cliente, tornando o cenário atual sensível (00:03:24).
+
+Estratégia de POV para mitigação de riscos: Ícaro Almeida e Bruna Stefani Goncalves ponderaram a viabilidade de introduzir uma Prova de Valor para recuperar a credibilidade da consultoria junto à Três Corações e mitigar os riscos de atraso ou resistência (00:04:05). Bruna Stefani Goncalves avaliou que a Prova de Valor pode ser apresentada como uma abordagem complementar para robustecer a proposta, embora exista o desejo da entidade cliente de iniciar o Produto Mínimo Viável ainda no ano corrente (00:05:00).
+
+Envolvimento de funding da AWS e viabilidade do cronograma: Jonathas Castro sugeriu envolver a Amazon Web Services para obter financiamento para a Prova de Valor e para a produção, enquanto Daniel Xavier Wolbert questionou o sentido de inserir uma Prova de Valor quando o projeto principal já se encontra nos trâmites finais de assinatura (00:06:49) (00:08:47). Bruna Stefani Goncalves reafirmou que a aprovação está em estágio avançado e que a equipe técnica necessária será garantida por Paulo para evitar atrasos (00:07:44).
+
+Recursos técnicos e custos do Amazon Personalize: Jonathas Castro levantou preocupações sobre a alocação de profissionais com experiência em Amazon Personalize, apontando que o custo estimado do serviço atinge cerca de 5.000 dólares mensais, além de taxas por gigabyte carregado (00:10:36). Bruna Stefani Goncalves confirmou a existência de profissionais especializados na ferramenta, embora estejam alocados em outros projetos (00:09:38).
+
+Perspectiva de Ricardo Farias Lopes Bomfim sobre a Prova de Valor e dúvidas arquiteturais: Ricardo Farias Lopes Bomfim expressou preocupação de que sugerir uma Prova de Valor em um cenário sensível possa soar como procrastinação por parte da entidade cliente, manifestando preferência por seguir diretamente para o Produto Mínimo Viável (00:12:15). Adicionalmente, Ricardo Farias Lopes Bomfim apontou ambiguidades na documentação fornecida em relação ao uso do Snowflake versus o armazenamento no S3, necessitando de esclarecimentos para planejar a arquitetura (00:13:22).
+
+Utilidade da Prova de Valor no Discovery e mitigação de riscos: Jonathas Castro e Daniel Xavier Wolbert argumentaram que a Prova de Valor atua como uma fase de discovery essencial para acessar dados, compreender o escopo aberto de sistemas de recomendação business-to-business e mitigar riscos operacionais antes da construção integrada do Produto Mínimo Viável (00:14:36). Bruna Stefani Goncalves reforçou que a abordagem comercial consistirá em propor a Prova de Valor como um incremento de robustez à proposta já existente (00:16:29).
+
+Casos reais de Provas de Valor anteriores na Cantú e Stellantis: Jonathas Castro compartilhou exemplos de projetos anteriores, destacando o caso da Cantú com pneus, onde uma Prova de Valor reduziu o erro de previsão em 25% e identificou mais de 360 milhões de reais em estoque parado, gerando um retorno estimado de 185 milhões de reais (00:19:06). Em contrapartida, Jonathas Castro mencionou o caso da Stellantis sobre elasticidade de preço, que enfrentou problemas devido à complexidade e à falta de dados de concorrentes, ilustrando os riscos associados (00:20:35).
+
+Análise da composição da equipe e ausência de memória de cálculo: Bruna Stefani Goncalves, Jonathas Castro e Ícaro Almeida examinaram os papéis listados na proposta comercial, constatando a ausência de uma memória de cálculo detalhada elaborada por Marcão e Fábio (00:22:58). Daniel Xavier Wolbert avaliou que a equipe designada na proposta assemelha-se mais à estrutura necessária para uma Prova de Valor do que para o projeto completo (00:24:12).
+
+Atribuições e custos de Engenheiros de Machine Learning: Ícaro Almeida e Ricardo Farias Lopes Bomfim discutiram a distinção de papéis, estabelecendo que Engenheiros de Machine Learning são alocados em iniciativas de inteligência artificial generativa e agêntica, embora possuam custos mais elevados no mercado em comparação a engenheiros de dados tradicionais (00:25:44). Jonathas Castro pontuou que tais profissionais também executam tarefas de ingestão e preparação de dados (00:26:27).
+
+Negociação de fundings da AWS na proposta comercial: Jonathas Castro e Bruna Stefani Goncalves debateram sobre a viabilidade de incorporar recursos financeiros da Amazon Web Services em uma proposta orçada em 500.000 que já se encontra em fase final de aprovação (00:27:15). Jonathas Castro exemplificou que em projetos anteriores da Cantú, o valor do funding da Amazon Web Services foi abatido do montante total pago pela entidade cliente, ponderando a dificuldade de aplicar essa estratégia retroativamente (00:28:19) (00:30:21).
+
+Definição da Prova de Valor como carta na manga: Jonathas Castro, Bruna Stefani Goncalves e Daniel Xavier Wolbert concluíram em consenso que a Prova de Valor deve ser mantida como uma carta na manga para ser acionada apenas caso a entidade cliente questione ou hesite em aprovar o projeto integral (00:33:28). Daniel Xavier Wolbert revisou brevemente os tópicos apresentados anteriormente à entidade cliente, cobrindo similaridade, regras de associação, modelos preditivos e MLOps (00:34:46).
+
+Precificação baseada em valor agregado: Jonathas Castro e Bruna Stefani Goncalves defenderam a mudança de diretriz comercial para vender projetos com base no valor agregado gerado para a entidade cliente e não apenas com base no custo de execução ou horas homem (00:36:58). Jonathas Castro citou novamente o projeto da Cantú, onde a precificação foi elevada de 400.000 para 700.000 devido ao alto retorno financeiro projetado (00:37:59).
+
+Requisitos de SOW, calculadora da Amazon Web Services e fontes de dados SAP: Jonathas Castro, Ricardo Farias Lopes Bomfim e Bruna Stefani Goncalves discutiram os trâmites para obtenção de funding da Amazon Web Services por meio do documento SOW e da calculadora de arquitetura completa, que garante repasses de 10% com valor mínimo de 50.000 reais (00:41:10). Ricardo Farias Lopes Bomfim e Bruna Stefani Goncalves mapearam as fontes de dados da entidade cliente, identificando o uso do SAP como sistema de origem e o Snowflake como ambiente analítico, antes do encerramento da reunião (00:43:11) (00:46:05).
+
+
+Revise as anotações do Gemini para checar se estão corretas. Confira dicas e saiba como o Gemini faz anotações
+Como está a qualidade de destas observações? Responda a uma breve pesquisa para nos dar seu feedback, incluindo o quanto as observações foram úteis para o que você precisa.

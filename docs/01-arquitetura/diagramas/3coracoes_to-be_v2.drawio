@@ -1,0 +1,1243 @@
+<mxfile host="app.diagrams.net" pages="7">
+  <diagram name="1 Contexto" id="aba-contexto">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1820" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c_h" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Contexto · Recomendação de SKU por PDV (NBO/MBA) B2B · visão cliente e pré-vendas · Opção C (híbrido por fases)" vertex="1">
+          <mxGeometry height="40" width="1340" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="c_tit" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU (NBO/MBA) B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 1 Contexto&lt;br&gt;&lt;b&gt;Versão:&lt;/b&gt; v2 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-26&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto (rascunho de pré-vendas)&lt;br&gt;&lt;b&gt;Autor:&lt;/b&gt; ARQ · squad A3 · ADR-001 (proposto)" vertex="1">
+          <mxGeometry height="95" width="380" x="1420" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="c_zo" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FAFAFA;strokeColor=#7F7F7F;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Origem (3C)" vertex="1">
+          <mxGeometry height="300" width="210" x="20" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sap" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;SAP ERP&lt;/b&gt;&lt;br&gt;pedidos · faturamento · cadastro · estoque&lt;br&gt;(ECC ou S/4 · A VERIFICAR)" vertex="1">
+          <mxGeometry height="80" width="170" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="c_zp" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Plataforma de dados da 3C · Snowflake (nuvem/região A VERIFICAR) + Airflow da 3C" vertex="1">
+          <mxGeometry height="520" width="710" x="260" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_af" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Airflow da 3C&lt;/b&gt; · &lt;b&gt;&lt;u&gt;DAG semanal após o fechamento da semana&lt;/u&gt;&lt;/b&gt; + disparo manual parametrizado (E§4.4.2 e E§4.4.3)" vertex="1">
+          <mxGeometry height="50" width="670" x="280" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c_dados" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Camada de dados 3C&lt;/b&gt;&lt;br&gt;Faturamento&lt;div&gt;FS Clientes (Visão 360°, desde mai/25)&amp;nbsp;&lt;/div&gt;&lt;div&gt;Estoque&lt;/div&gt;&lt;div&gt;FS Produtos (RNF01)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="200" x="280" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_motor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;[F1] Motor de recomendação · campeão (não existe hoje: construído pela A3)&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;u&gt;Notebooks Python + Snowpark (E§4.4.1)&lt;br&gt;&lt;br&gt;&lt;/u&gt;&lt;/b&gt;NBO Desconto (novos × recompra)&lt;div&gt;Público Mais por Menos&lt;/div&gt;&lt;div&gt;MBA Combo&lt;br&gt;RF01 a RF05 · regras de estoque e compra recente · backoff por abertura&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="420" x="530" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="c_res" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Resultados A/B D-1&lt;/b&gt;&lt;br&gt;exposição · faturamento · margem · conversão" vertex="1">
+          <mxGeometry height="80" width="200" x="280" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c_out" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;[F1] RF06 tabela única · RF07 SCD&lt;/b&gt;&lt;br&gt;run_id · model_version · mecânica · abertura · rank · score · grupo_ab · validade" vertex="1">
+          <mxGeometry height="80" width="420" x="530" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="c_bm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;[F1b] Avaliação offline campeão × desafiante&lt;/b&gt;&lt;div&gt;Mesmo recorte, mesma janela, mesmas métricas (precision@k, cobertura, % PDVs com recomendação, margem esperada)&lt;/div&gt;&lt;div&gt;Resultado em tabela de benchmark no Snowflake&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="670" x="280" y="529" as="geometry" />
+        </mxCell>
+        <mxCell id="c_aws" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" value="Conta AWS da 3C (existência e governança A VERIFICAR)" vertex="1">
+          <mxGeometry height="300" width="710" x="260" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pers" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" value="Amazon Personalize&lt;br&gt;[F1b] desafiante · us-east-1" vertex="1">
+          <mxGeometry height="56" width="56" x="300" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="c_g0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="&lt;b&gt;Gate G0&lt;/b&gt;: parecer jurídico e DPO antes do 1º export. Personalize não existe em sa-east-1 (verificado 2026-10-26) → &lt;b&gt;&lt;u&gt;necessita de transferência internacional para&amp;nbsp;us-east-1, us-east-2 ou outra opção&lt;/u&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="300" x="420" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sm" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;" value="SageMaker AI sa-east-1&lt;br&gt;[C-BR] plano B do desafiante" vertex="1">
+          <mxGeometry height="56" width="56" x="800" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="c_api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;strike&gt;&lt;b&gt;[F2] API por cliente/CNPJ&lt;/b&gt; · API Gateway + Lambda + DynamoDB · sa-east-1 (dados no Brasil) · réplica de leitura da RF06&lt;/strike&gt;" vertex="1">
+          <mxGeometry height="70" width="670" x="280" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="c_zc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFAF3;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Consumo e áreas da 3C" vertex="1">
+          <mxGeometry height="850" width="380" x="1010" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_ic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Inteligência Comercial&lt;/b&gt;&lt;br&gt;escolhe combos, itens e público · fluxo de aprovação de price (E§4.5)" vertex="1">
+          <mxGeometry height="70" width="340" x="1030" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="c_crm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;CRM / Salesforce&lt;/b&gt; (nuvem A VERIFICAR)&lt;br&gt;campanhas A/B 50/50 · retorno de exposição e resposta" vertex="1">
+          <mxGeometry height="70" width="340" x="1030" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="c_sir" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Sírius&lt;/b&gt; (vendedor)&lt;br&gt;F1: lista semanal via view · F2: API" vertex="1">
+          <mxGeometry height="70" width="340" x="1030" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="c_dash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Dashboard D-1&lt;/b&gt; (RNF02, 3C)&lt;br&gt;KPIs por mecânica, abertura e grupo A/B" vertex="1">
+          <mxGeometry height="70" width="340" x="1030" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="c_b2b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;dashed=1;" value="&lt;strike&gt;&lt;b&gt;App B2B&lt;/b&gt; (F2+)&lt;br&gt;home personalizada · pedido sugerido · WXAX&lt;/strike&gt;" vertex="1">
+          <mxGeometry height="70" width="340" x="1030" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="c_leg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" value="&lt;b&gt;Setas (o que trafega · frequência · protocolo)&lt;/b&gt;&lt;br&gt;1 · SAP → Snowflake: ingestão da 3C (diária; ferramenta A VERIFICAR)&lt;br&gt;2 · Airflow dispara o motor (semanal, hipótese seg 06h; ou manual)&lt;br&gt;3 · Motor lê a camada de dados (SQL/Snowpark; snapshot por run_id)&lt;br&gt;4 · Motor publica RF06/RF07 (SWAP + MERGE, semanal)&lt;br&gt;5 · Áreas leem views de RF06 (semanal; leitura no Snowflake ou integração 3C)&lt;br&gt;6 · Retorno de campanha + faturamento D-1 → resultados A/B (integração 3C, diária)&lt;br&gt;7 · [F1b] Export pseudonimizado → Personalize → benchmark (3 a 6 rodadas, sob G0)&lt;br&gt;8 · [F2] RF06 → API sa-east-1 → Sírius e App B2B (HTTPS, sob demanda)&lt;br&gt;&lt;br&gt;&lt;b&gt;Cores&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(255, 128, 0);&quot;&gt;Laranja: sistemas e áreas da 3C&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(126, 166, 224);&quot;&gt;Azul: processamento A3&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(151, 208, 119);&quot;&gt;Verde: dados/tabelas&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(255, 217, 102);&quot;&gt;Amarelo: benchmark/pendência&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;color: rgb(181, 115, 157);&quot;&gt;Lilás: fase F2&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(234, 107, 102);&quot;&gt;Vermelho: risco ou gate&lt;br&gt;&lt;/span&gt;Linha cheia: fluxo do MVP&amp;nbsp;&lt;/div&gt;&lt;div&gt;Tracejada: opcional, fase futura ou retorno&lt;/div&gt;" vertex="1">
+          <mxGeometry height="380" width="380" x="1420" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c_why" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" value="&lt;b&gt;Por que a opção C&lt;/b&gt;&lt;br&gt;• Cumpre E§4.4.1 a 4.4.3 no caminho crítico&lt;br&gt;• Nenhum dado sai do Snowflake no MVP&lt;br&gt;• Personalize avaliado com dados reais, sem bloquear o MVP&lt;br&gt;• Escala online planejada em sa-east-1&lt;br&gt;• RF06/RF07 no Snowflake são fonte de verdade em todas as fases&lt;br&gt;&lt;br&gt;&lt;b&gt;Responsabilidades&lt;/b&gt;&lt;br&gt;A3: motor, RF01 a RF07, benchmark, análise A/B&lt;br&gt;3C: ingestão SAP, FS Produtos, integrações, campanhas, BI, deploy" vertex="1">
+          <mxGeometry height="230" width="380" x="1420" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="c_e1" edge="1" parent="1" source="c_sap" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="c_dados" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_e2" edge="1" parent="1" source="c_af" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="c_motor" value="2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_e3" edge="1" parent="1" source="c_dados" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="c_motor" value="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_e4" edge="1" parent="1" source="c_motor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="c_out" value="4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_e5a" edge="1" parent="1" source="c_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="c_ic" value="5">
+          <mxGeometry relative="1" x="-0.4618" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="430" />
+              <mxPoint x="980" y="150" />
+              <mxPoint x="1200" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_e5b" edge="1" parent="1" source="c_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="c_crm" value="5">
+          <mxGeometry relative="1" x="-0.0636" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="440" />
+              <mxPoint x="990" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_e5c" edge="1" parent="1" source="c_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="c_sir" value="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c_e6a" edge="1" parent="1" source="c_crm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;" target="c_res" value="6">
+          <mxGeometry relative="1" x="0.0767" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="315" />
+              <mxPoint x="1000" y="490" />
+              <mxPoint x="510" y="490" />
+              <mxPoint x="510" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_e6b" edge="1" parent="1" source="c_res" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;fillColor=#d5e8d4;strokeColor=#82b366;" target="c_dash" value="6">
+          <mxGeometry relative="1" x="0.0071" y="-15" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="380" y="510" />
+              <mxPoint x="990" y="510" />
+              <mxPoint x="990" y="535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_e7a" edge="1" parent="1" source="c_bm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="c_pers" value="7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="328" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_e7b" edge="1" parent="1" source="c_sm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="c_bm" value="7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="828" y="660" />
+              <mxPoint x="615" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_e8a" edge="1" parent="1" source="c_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="c_api" value="8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="440" />
+              <mxPoint x="960" y="840" />
+              <mxPoint x="615" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="c_e8b" edge="1" parent="1" source="c_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="c_b2b" value="8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2 Técnica" id="aba-tecnica">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="2000" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t_h" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Técnica · serviços, integrações e fronteiras · Opção C (F1 MVP · F1b benchmark · F2 serving)" vertex="1">
+          <mxGeometry height="40" width="1300" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="t_tit" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU (NBO/MBA) B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 2 Técnica&lt;br&gt;&lt;b&gt;Versão:&lt;/b&gt; v2 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-26&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto (rascunho de pré-vendas)&lt;br&gt;Nomes de objetos são propostos (A VERIFICAR padrão 3C)" vertex="1">
+          <mxGeometry height="95" width="390" x="1600" y="-35" as="geometry" />
+        </mxCell>
+        <mxCell id="t_zo" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FAFAFA;strokeColor=#7F7F7F;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="On-premises / SaaS da 3C (A VERIFICAR)" vertex="1">
+          <mxGeometry height="300" width="190" x="20" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sap" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;SAP ERP&lt;/b&gt;&lt;br&gt;ECC/S4 · on-prem ou RISE&lt;br&gt;ingestão pela 3C" vertex="1">
+          <mxGeometry height="80" width="160" x="35" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="t_zs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Conta Snowflake da 3C · nuvem/região A VERIFICAR (hipótese: &lt;u style=&quot;&quot;&gt;AWS sa-east-1&lt;/u&gt;) · database RECO_{AMBIENTE}" vertex="1">
+          <mxGeometry height="640" width="760" x="230" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_src" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Bases 3C (somente leitura)&lt;/b&gt;&lt;br&gt;FATURAMENTO&lt;div&gt;FS_CLIENTES&lt;/div&gt;&lt;div&gt;ESTOQUE&lt;/div&gt;&lt;div&gt;PRODUTO / FS_PRODUTOS&lt;/div&gt;&lt;div&gt;HIERARQUIAS&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="190" x="250" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="t_stg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;RECO.STG&lt;/b&gt;&lt;br&gt;snapshot de entrada por run_id (CTAS ou clone)" vertex="1">
+          <mxGeometry height="60" width="190" x="250" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="t_proc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Stored procedures Snowpark Python&lt;/b&gt;&lt;br&gt;pacote reco_3c versionado no Git da 3C&lt;br&gt;RF01 · RF02 · RF03 · NBO · Público MpM · MBA&lt;div&gt;pós · publicação&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="300" x="470" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="t_nb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Notebooks&lt;/b&gt;&lt;br&gt;importam reco_3c (E§4.4.1)&amp;nbsp;&lt;div&gt;stack A VERIFICAR&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="145" x="470" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="t_reg" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Model Registry&lt;/b&gt;&lt;br&gt;ou stage + OPS.MODELO_VERSAO" vertex="1">
+          <mxGeometry height="60" width="145" x="625" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="t_wh" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Warehouse WH_RECO&lt;/b&gt;&lt;br&gt;S dev&lt;div&gt;M prod&lt;/div&gt;&lt;div&gt;resource monitor&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="170" x="800" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="t_alert" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Snowflake ALERT&lt;/b&gt;&lt;br&gt;não execução: seg 12h sem run publicada → e-mail" vertex="1">
+          <mxGeometry height="70" width="170" x="800" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="t_ops" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;RECO.OPS&lt;/b&gt;&lt;br&gt;EXECUCAO_LOG · PERFIL_ENTRADA · EXCLUSOES_RESUMO · ATRIBUICAO_AB · BENCHMARK_RESULTADO" vertex="1">
+          <mxGeometry height="80" width="190" x="250" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="t_out" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;RECO.OUT&lt;/b&gt;&lt;br&gt;RF06 RECOMENDACAO_ATUAL · RF07 RECOMENDACAO_HIST&lt;br&gt;views: VW_RECO_SIRIUS · VW_RECO_CRM · VW_COMBOS_REGIONAL · VW_RESULTADO_AB" vertex="1">
+          <mxGeometry height="80" width="300" x="470" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="t_exp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;RECO.EXPORT&lt;/b&gt; [F1b]&lt;br&gt;views pseudonimizadas, colunas mínimas" vertex="1">
+          <mxGeometry height="70" width="190" x="250" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="t_si" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Storage integration + external stage&lt;/b&gt;&lt;br&gt;role IAM com external ID · STORAGE_ALLOWED_LOCATIONS restrito ao bucket do projeto" vertex="1">
+          <mxGeometry height="70" width="300" x="470" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="t_unl" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;dashed=1;" value="&lt;b&gt;Unload RF06&lt;/b&gt; [F2]&lt;br&gt;stage sa-east-1 · Parquet" vertex="1">
+          <mxGeometry height="70" width="170" x="800" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="t_roles" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Roles Snowflake&lt;/b&gt;: &lt;br&gt;RECO_ADMIN (3C)&lt;div&gt;RECO_SVC (usuário de serviço do Airflow, key-pair)&lt;/div&gt;&lt;div&gt;RECO_DEV (A3, dados pessoais mascarados)&lt;/div&gt;&lt;div&gt;RECO_READ (Sírius, CRM, BI: só OUT)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="720" x="250" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="t_za" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFAF3;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Airflow da 3C (MWAA, Astronomer, autogerenciado: A VERIFICAR) · conexão Snowflake por key-pair em secrets backend" vertex="1">
+          <mxGeometry height="130" width="760" x="230" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="t_dag1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;DAG reco_semanal&lt;/b&gt;&lt;br&gt;seg 06h BRT (hipótese) + manual com parâmetros · CALL procedures" vertex="1">
+          <mxGeometry height="60" width="340" x="250" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="t_dag2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;DAG reco_benchmark&lt;/b&gt; [F1b]&lt;br&gt;manual · COPY INTO @stage e carga do resultado · sem credencial AWS" vertex="1">
+          <mxGeometry height="60" width="350" x="620" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="t_cloud" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" value="AWS Cloud" vertex="1">
+          <mxGeometry height="950" width="610" x="1020" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_acct" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_account;strokeColor=#CD2264;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#CD2264;dashed=0;" value="Conta(s) AWS da 3C · reco-dev / reco-prod (A VERIFICAR) · Organizations · IAM Identity Center · CloudTrail organizacional" vertex="1">
+          <mxGeometry height="865" width="580" x="1035" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="t_rus" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" value="us-east-1 · [F1b] benchmark Personalize · só após G0" vertex="1">
+          <mxGeometry height="420" width="550" x="1050" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="t_s3us" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" value="S3 troca&lt;br&gt;SSE-KMS · lifecycle 7d" vertex="1">
+          <mxGeometry height="56" width="56" x="1080" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="t_eb" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.eventbridge;" value="EventBridge&lt;br&gt;manifesto no S3" vertex="1">
+          <mxGeometry height="56" width="56" x="1210" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sfn" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.step_functions;" value="Step Functions&lt;br&gt;import · treino · lote" vertex="1">
+          <mxGeometry height="56" width="56" x="1340" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="t_pers" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" value="Amazon Personalize&lt;br&gt;UP-v2 (NBO) · Item-Affinity (público)" vertex="1">
+          <mxGeometry height="56" width="56" x="1480" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="t_kms1" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.key_management_service;" value="KMS CMK&lt;br&gt;por ambiente" vertex="1">
+          <mxGeometry height="56" width="56" x="1080" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="t_iam" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.identity_and_access_management;" value="IAM roles&lt;br&gt;Snowflake · Personalize · SFN" vertex="1">
+          <mxGeometry height="56" width="56" x="1210" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="t_cw" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudwatch_2;" value="CloudWatch + SNS&lt;br&gt;alarmes · Budgets" vertex="1">
+          <mxGeometry height="56" width="56" x="1340" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="t_ct" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudtrail;" value="CloudTrail&lt;br&gt;gestão + dados do bucket" vertex="1">
+          <mxGeometry height="56" width="56" x="1480" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="t_risk" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" value="Dados pseudonimizados fora do Brasil = transferência internacional (LGPD art. 33). Só após parecer jurídico (G0). Exclusão do dataset group e do bucket ao fim do benchmark." vertex="1">
+          <mxGeometry height="70" width="520" x="1065" y="525" as="geometry" />
+        </mxCell>
+        <mxCell id="t_rsa" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" value="sa-east-1 · [F2] serving (dados no Brasil) · [C-BR] desafiante" vertex="1">
+          <mxGeometry height="350" width="550" x="1050" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="t_s3sa" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" value="S3 carga F2&lt;br&gt;SSE-KMS" vertex="1">
+          <mxGeometry height="56" width="56" x="1080" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="t_lcar" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" value="Lambda carga&lt;br&gt;lote semanal" vertex="1">
+          <mxGeometry height="56" width="56" x="1210" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="t_ddb" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;" value="DynamoDB&lt;br&gt;recs por cliente · CMK" vertex="1">
+          <mxGeometry height="56" width="56" x="1340" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="t_waf" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.waf;" value="AWS WAF" vertex="1">
+          <mxGeometry height="56" width="56" x="1480" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="t_kms2" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.key_management_service;" value="KMS CMK" vertex="1">
+          <mxGeometry height="56" width="56" x="1080" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sm" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;" value="SageMaker AI&lt;br&gt;[C-BR] treino/lote" vertex="1">
+          <mxGeometry height="56" width="56" x="1210" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="t_lapi" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" value="Lambda API&lt;br&gt;GET por cliente" vertex="1">
+          <mxGeometry height="56" width="56" x="1340" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="t_apigw" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" value="API Gateway REST&lt;br&gt;IAM/Cognito ou chave" vertex="1">
+          <mxGeometry height="56" width="56" x="1480" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="t_zc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFAF3;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Consumo (3C)" vertex="1">
+          <mxGeometry height="950" width="320" x="1660" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t_ic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Inteligência Comercial&lt;/b&gt;&lt;br&gt;views de combos e ranking" vertex="1">
+          <mxGeometry height="60" width="280" x="1680" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="t_sir" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Sírius&lt;/b&gt;&lt;br&gt;F1 view semanal · F2 API" vertex="1">
+          <mxGeometry height="60" width="280" x="1680" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="t_crm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Salesforce / CRM&lt;/b&gt;&lt;br&gt;público + SKUs · retorno de exposição" vertex="1">
+          <mxGeometry height="60" width="280" x="1680" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="t_bi" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;BI 3C · Dashboard D-1&lt;/b&gt;&lt;br&gt;lê VW_RESULTADO_AB" vertex="1">
+          <mxGeometry height="60" width="280" x="1680" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="t_b2b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;dashed=1;" value="&lt;b&gt;App B2B&lt;/b&gt; (F2+)&lt;br&gt;HTTPS · p95 alvo abaixo de 100 ms (hipótese)" vertex="1">
+          <mxGeometry height="60" width="280" x="1680" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="t_leg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" value="&lt;b&gt;Legenda das setas (o que trafega · frequência · protocolo)&lt;/b&gt;&lt;br&gt;1 · SAP → bases 3C: ingestão da 3C, diária (ferramenta A VERIFICAR)&lt;br&gt;2 · DAG reco_semanal → procedures: CALL via provider Snowflake, semanal + manual&lt;br&gt;3 · Bases 3C → STG: snapshot por run_id (SQL), semanal&lt;br&gt;4 · STG → procedures: leitura Snowpark DataFrame&lt;br&gt;5 · Procedures → OUT: SWAP RF06 + MERGE RF07 (transação)&lt;br&gt;6 · Procedures → OPS: log, perfil RF02, exclusões, métricas&lt;br&gt;7 · OUT → consumo: SELECT em views (RECO_READ), semanal&lt;br&gt;8 · OPS → ALERT: verificação de não execução (seg 12h)&lt;br&gt;9 · EXPORT → stage → S3 us-east-1: COPY INTO CSV, TLS, SSE-KMS (3 a 6 rodadas)&lt;br&gt;10 · S3 → EventBridge → Step Functions → Personalize: import, treino, batch inference&lt;br&gt;11 · Personalize → S3 (JSON) → stage → OPS.BENCHMARK_RESULTADO: COPY INTO&lt;br&gt;12 · DAG reco_benchmark aciona export/carga (só SQL no Snowflake; sem credencial AWS no Airflow)&lt;br&gt;13 · [F2] OUT → unload Parquet → S3 sa-east-1 → Lambda carga → DynamoDB, semanal&lt;br&gt;14 · [F2] App B2B / Sírius → WAF → API Gateway → Lambda API → DynamoDB, HTTPS sob demanda&lt;br&gt;15 · CRM/Sírius → bases 3C: retorno de exposição e resposta (integração 3C), diária&lt;br&gt;&lt;br&gt;Linha cheia: MVP (F1) · Tracejada amarela: benchmark (F1b) · Tracejada lilás: F2 · Tracejada cinza: retorno" vertex="1">
+          <mxGeometry height="290" width="970" x="20" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e1" edge="1" parent="1" source="t_sap" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="t_src" value="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e2" edge="1" parent="1" source="t_dag1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;fillColor=#ffe6cc;strokeColor=#d79b00;" target="t_proc" value="2">
+          <mxGeometry relative="1" x="0.7138" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="450" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e3" edge="1" parent="1" source="t_src" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="t_stg" value="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e4" edge="1" parent="1" source="t_stg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="t_proc" value="4">
+          <mxGeometry relative="1" x="0.125" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="390" y="280" />
+              <mxPoint x="440" y="280" />
+              <mxPoint x="440" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e5" edge="1" parent="1" source="t_proc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="t_out" value="5">
+          <mxGeometry relative="1" x="0.0833" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="210" />
+              <mxPoint x="790" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e6" edge="1" parent="1" source="t_nb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="t_ops" value="6">
+          <mxGeometry relative="1" x="0.585" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="542.5" y="360" />
+              <mxPoint x="345" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e7a" edge="1" parent="1" source="t_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" target="t_sir" value="7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1000" y="440" />
+              <mxPoint x="1000" y="1050" />
+              <mxPoint x="1645" y="1050" />
+              <mxPoint x="1645" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e8" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" value="8">
+          <mxGeometry relative="1" x="-0.0862" as="geometry">
+            <Array as="points">
+              <mxPoint x="392.5" y="376" />
+              <mxPoint x="885" y="376" />
+            </Array>
+            <mxPoint x="392.5" y="386" as="sourcePoint" />
+            <mxPoint x="885" y="316" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e9a" edge="1" parent="1" source="t_exp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="t_si" value="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e9b" edge="1" parent="1" source="t_si" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="t_s3us" value="9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="600" />
+              <mxPoint x="1040" y="600" />
+              <mxPoint x="1040" y="288" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e10a" edge="1" parent="1" source="t_s3us" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="t_eb" value="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e10b" edge="1" parent="1" source="t_eb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="t_sfn" value="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e10c" edge="1" parent="1" source="t_sfn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="t_pers" value="10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e11" edge="1" parent="1" source="t_pers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="t_s3us" value="11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1508" y="230" />
+              <mxPoint x="1108" y="230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e12" edge="1" parent="1" source="t_dag2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" target="t_si" value="12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="795" y="740" />
+              <mxPoint x="700" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e13a" edge="1" parent="1" source="t_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="t_unl" value="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e13b" edge="1" parent="1" source="t_unl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="t_s3sa" value="13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="885" y="738" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t_e13c" edge="1" parent="1" source="t_s3sa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="t_lcar" value="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e13d" edge="1" parent="1" source="t_lcar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="t_ddb" value="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e14a" edge="1" parent="1" source="t_b2b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="t_apigw" value="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e14b" edge="1" parent="1" source="t_apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="t_lapi" value="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e14c" edge="1" parent="1" source="t_lapi" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" target="t_ddb" value="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t_e15" edge="1" parent="1" source="t_crm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#7F7F7F;" target="t_src" value="15">
+          <mxGeometry relative="1" x="0.323" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1970" y="400" />
+              <mxPoint x="1970" y="130" />
+              <mxPoint x="345" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3 Fluxo de dados" id="aba-fluxo">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="f_h" value="Fluxo de dados · camadas, tabelas, formatos, frequência e contratos RF06/RF07 (F1, dentro do Snowflake)" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f_tit" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU (NBO/MBA) B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 3 Fluxo de dados&lt;br&gt;&lt;b&gt;Versão:&lt;/b&gt; v2 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-26&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto (contrato a validar com a 3C, P§Premissa 4)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="10" width="390" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f_z1" value="Fontes 3C (leitura)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FAFAFA;strokeColor=#7F7F7F;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="110" width="240" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="f_fat" value="&lt;b&gt;FATURAMENTO&lt;/b&gt;&lt;br&gt;linhas PDV × SKU × data · qtd · valor · desconto · diário" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="145" width="210" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="f_fsc" value="&lt;b&gt;FS_CLIENTES&lt;/b&gt; (Visão 360°)&lt;br&gt;cadastro · RFV · produtos 3/6/9/12m · desde mai/25" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="235" width="210" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="f_est" value="&lt;b&gt;ESTOQUE&lt;/b&gt;&lt;br&gt;filial/CD · frescor A VERIFICAR (ARQ-Q12)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="325" width="210" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f_fsp" value="&lt;b&gt;FS_PRODUTOS&lt;/b&gt; (RNF01, 3C)&lt;br&gt;mínimo M1: sku, status, família 1-2, marca, embalagem" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="410" width="210" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="f_hier" value="&lt;b&gt;HIERARQUIAS&lt;/b&gt;&lt;br&gt;canal · regional · filial · UF · capital×interior · área de atuação" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="500" width="210" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="f_ret" value="&lt;b&gt;RETORNO DE CAMPANHA&lt;/b&gt;&lt;br&gt;exposição e resposta (Salesforce/Sírius) · diário" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="590" width="210" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="f_z2" value="Preparação · RECO.STG / OPS" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="110" width="270" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="f_rf01" value="&lt;b&gt;RF01 · leitura e snapshot&lt;/b&gt;&lt;br&gt;STG.*_{run_id} · tabelas Snowflake (CSV/JSON só se exigido)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="305" y="150" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f_rf02" value="&lt;b&gt;RF02 · perfil de entrada&lt;/b&gt;&lt;br&gt;OPS.PERFIL_ENTRADA · novos domínios, nulos, volume × últimas N runs · gate alerta/bloqueio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="305" y="250" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f_rf03" value="&lt;b&gt;RF03 · pré-processamento&lt;/b&gt;&lt;br&gt;elegibilidade · sem estoque · comprado no mês · OPS.EXCLUSOES_RESUMO (agregado)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="305" y="360" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f_feat" value="&lt;b&gt;Features e candidatos&lt;/b&gt;&lt;br&gt;PDV × SKU candidato · janela (1/3/6/9/12m) como feature · co-ocorrência" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="305" y="470" width="240" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="f_z3" value="Modelos (RF04/RF05) · CORE" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="590" y="110" width="270" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="f_m1" value="&lt;b&gt;NBO Desconto · itens novos&lt;/b&gt;&lt;br&gt;ranking PDV × SKU nunca comprado (E§4.3.1.2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="605" y="150" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="f_m2" value="&lt;b&gt;NBO Desconto · recompra&lt;/b&gt;&lt;br&gt;ranking PDV × SKU já comprado (sem compra 60d+)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="605" y="235" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="f_m3" value="&lt;b&gt;Público Mais por Menos&lt;/b&gt;&lt;br&gt;propensão PDV para SKU fixo (grão A VERIFICAR, ARQ-Q30)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="605" y="320" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="f_m4" value="&lt;b&gt;MBA Combo&lt;/b&gt;&lt;br&gt;regras de associação por regional/filial · suporte, confiança, lift" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="605" y="405" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="f_m5" value="&lt;b&gt;Baseline popularidade&lt;/b&gt;&lt;br&gt;por abertura · piso de comparação e fallback" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="605" y="490" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="f_m6" value="&lt;b&gt;[F1b] Personalize / [C-BR] SageMaker&lt;/b&gt;&lt;br&gt;desafiante offline · só benchmark" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="605" y="590" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="f_z4" value="Pós-processamento" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="890" y="110" width="250" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="f_p1" value="&lt;b&gt;Backoff por abertura&lt;/b&gt;&lt;br&gt;filial → regional → canal → nacional · nivel_backoff" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="905" y="150" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f_p2" value="&lt;b&gt;Regras de mecânica&lt;/b&gt;&lt;br&gt;top-N · estoque_ok · janela vencedora · regra_versao" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="905" y="250" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f_p3" value="&lt;b&gt;Join OPS.ATRIBUICAO_AB&lt;/b&gt;&lt;br&gt;grupo_ab fixo por campanha (não por run)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="905" y="350" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f_p4" value="Testes de contrato ok?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="935" y="450" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f_z5" value="Saída · RECO.OUT / OPS" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F3FAF0;strokeColor=#82b366;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="110" width="270" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="f_rf06" value="&lt;b&gt;RF06 · OUT.RECOMENDACAO_ATUAL&lt;/b&gt;&lt;br&gt;última execução válida · SWAP atômico · ~12 M linhas/semana (premissa)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="150" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f_rf07" value="&lt;b&gt;RF07 · OUT.RECOMENDACAO_HIST&lt;/b&gt;&lt;br&gt;SCD2 · MERGE idempotente por semana_ref · retenção A VERIFICAR" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="265" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f_log" value="&lt;b&gt;OPS.EXECUCAO_LOG · MODELO_VERSAO&lt;/b&gt;&lt;br&gt;run_id · status · parâmetros · contagens · métricas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="380" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f_keep" value="&lt;b&gt;Falha&lt;/b&gt;: não publica · RF06 mantém a última versão válida · alerta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="475" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f_bm" value="&lt;b&gt;OPS.BENCHMARK_RESULTADO&lt;/b&gt;&lt;br&gt;métricas offline campeão × desafiante" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1185" y="590" width="240" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="f_z6" value="Consumo (views RECO_READ)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFAF3;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="110" width="250" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="f_v1" value="&lt;b&gt;VW_RECO_SIRIUS&lt;/b&gt;&lt;br&gt;PDV → top-N por mecânica" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1485" y="150" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f_v2" value="&lt;b&gt;VW_RECO_CRM&lt;/b&gt;&lt;br&gt;público + SKUs por campanha e grupo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1485" y="240" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f_v3" value="&lt;b&gt;VW_COMBOS_REGIONAL&lt;/b&gt;&lt;br&gt;combos por regional/filial para a IC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1485" y="330" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f_v4" value="&lt;b&gt;VW_RESULTADO_AB&lt;/b&gt; (D-1)&lt;br&gt;faturamento · margem · sortimento · frequência · conversão" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1485" y="420" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="f_v5" value="&lt;b&gt;VW_RELATORIO_PRE_EXECUCAO&lt;/b&gt;&lt;br&gt;RF02 exportável" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1485" y="520" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f_c6" value="&lt;b&gt;Contrato RF06 · OUT.RECOMENDACAO_ATUAL&lt;/b&gt; (nomes A VERIFICAR com padrão 3C)&lt;br&gt;run_id VARCHAR(36) NN · semana_ref DATE NN · dt_geracao TIMESTAMP_TZ NN · tipo_execucao (AGENDADA | MANUAL | REPROCESSO)&lt;br&gt;mecanica (COMBO | MAIS_POR_MENOS | DESCONTO) · grao (PDV_SKU | SKU_PDV | ABERTURA_COMBO)&lt;br&gt;cod_cliente (nulo em ABERTURA_COMBO; CNPJ fica no cadastro) · sku_id NN · sku_ancora_id (combo)&lt;br&gt;canal · regional · filial · uf · capital_interior · area_atuacao&lt;br&gt;qualificacao_sku (NOVO | RECOMPRA | GERAL) · janela_meses (1, 3, 6, 9, 12) · nivel_backoff (FILIAL | REGIONAL | CANAL | NACIONAL)&lt;br&gt;rank SMALLINT NN · score FLOAT NN · score_tipo (PROPENSAO | LIFT | POPULARIDADE) · suporte · confianca · lift&lt;br&gt;estoque_ok BOOLEAN · motor (SNOWPARK | PERSONALIZE | BASELINE) · model_name · model_version · regra_versao&lt;br&gt;grupo_ab (A_CONTROLE | B_ALGORITMO, de OPS.ATRIBUICAO_AB) · campanha_id · valido_de · valido_ate&lt;br&gt;&lt;b&gt;Chave lógica&lt;/b&gt;: semana_ref, mecanica, grao, cod_cliente ou &#39;*&#39;, abertura, sku_ancora_id, sku_id, qualificacao_sku · cluster por (mecanica, regional)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="730" width="1000" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="f_c7" value="&lt;b&gt;Contrato RF07 · OUT.RECOMENDACAO_HIST&lt;/b&gt; (SCD tipo 2)&lt;br&gt;colunas de negócio da RF06 + sk_registro (hash da chave, sem semana_ref) · hash_atributos · vigencia_inicio · vigencia_fim (nulo = vigente) · flag_atual · run_id_inicio · run_id_fim&lt;br&gt;&lt;b&gt;Reprocesso idempotente&lt;/b&gt; da mesma semana_ref, numa transação: (a) apaga versões abertas na semana; (b) reabre versões fechadas pela semana; (c) novo MERGE&lt;br&gt;&lt;b&gt;Decisão pendente (ARQ-D05)&lt;/b&gt;: score muda toda semana → SCD2 vira snapshot. Opções: rastrear só (sku, rank, model_version) com score tipo 1, ou snapshot append-only por semana_ref com view SCD" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="940" width="1000" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f_leg" value="&lt;b&gt;Setas (o que trafega · frequência · formato)&lt;/b&gt;&lt;br&gt;1 · Fontes → RF01: SQL, semanal (snapshot por run_id); retorno de campanha diário&lt;br&gt;2 · RF01 → RF02 → RF03 → features: Snowpark DataFrames, mesma execução&lt;br&gt;3 · Features → modelos: tabelas CORE; modelos treinados semanalmente (hipótese)&lt;br&gt;4 · Modelos → pós: scores PDV × SKU e regras por abertura&lt;br&gt;5 · Pós → saída: só publica se testes de contrato passam&lt;br&gt;6 · Saída → views: SELECT pelos consumidores (RECO_READ)&lt;br&gt;&lt;br&gt;&lt;b&gt;Volume (premissa P4, A VERIFICAR)&lt;/b&gt;&lt;br&gt;300 mil PDVs · 500 SKUs · 30 M linhas em 12 meses&lt;br&gt;Saída ≈ PDVs × mecânicas × qualificações × top-N&lt;br&gt;&lt;br&gt;&lt;b&gt;Testes de contrato&lt;/b&gt;: unicidade da chave · rank contínuo · SKU ativo e com estoque · % PDVs sem recomendação abaixo do limiar · variação de contagem vs semana anterior · model_version registrado · grupo_ab coerente" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="730" width="670" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e1" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_z1" target="f_rf01">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="275" y="185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_e2a" value="2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_rf01" target="f_rf02">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e2b" value="2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_rf02" target="f_rf03">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e2c" value="2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_rf03" target="f_feat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e3" value="3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_feat" target="f_z3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e4" value="4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_z3" target="f_p1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e4b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="f_p1" target="f_p2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e4c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="f_p2" target="f_p3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e4d" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="f_p3" target="f_p4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e5a" value="5 · sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_p4" target="f_rf06">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1155" y="495" />
+              <mxPoint x="1155" y="195" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_e5b" value="não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;strokeColor=#b85450;" edge="1" parent="1" source="f_p4" target="f_keep">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1015" y="570" />
+              <mxPoint x="1160" y="570" />
+              <mxPoint x="1160" y="505" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f_e5c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;" edge="1" parent="1" source="f_rf06" target="f_rf07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e6" value="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="f_z5" target="f_z6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="f_e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;dashed=1;strokeColor=#d6b656;" edge="1" parent="1" source="f_m6" target="f_bm">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="4 Segurança e LGPD" id="aba-seguranca">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="s_h" value="Segurança e LGPD · onde o dado está, o que sai, quem acessa, quanto tempo fica" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s_tit" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU (NBO/MBA) B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 4 Segurança e LGPD&lt;br&gt;&lt;b&gt;Versão:&lt;/b&gt; v2 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-26&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · depende de parecer jurídico (G0)" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1490" y="10" width="390" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s_br" value="BRASIL" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#009900;strokeWidth=2;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=14;fontColor=#009900;" vertex="1" parent="1">
+          <mxGeometry x="20" y="110" width="1120" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="s_zs" value="Snowflake da 3C (região A VERIFICAR; hipótese sa-east-1) · dados identificados ficam aqui" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="740" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="s_base" value="&lt;b&gt;Bases 3C&lt;/b&gt;&lt;br&gt;CNPJ, razão social, contatos, vendedor · possível pessoa natural (MEI, contato, vendedor)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s_mask" value="&lt;b&gt;Masking policies / views mascaradas&lt;/b&gt;&lt;br&gt;RECO_DEV (A3) vê dado pessoal mascarado · edição Enterprise A VERIFICAR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s_motor" value="&lt;b&gt;Motor RECO&lt;/b&gt;&lt;br&gt;usa cod_cliente + atributos agregados · sem CNPJ, nome, contato" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="200" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s_map" value="&lt;b&gt;OPS.MAPA_PSEUDO&lt;/b&gt;&lt;br&gt;id aleatório por benchmark ↔ cod_cliente · acesso só RECO_ADMIN · descartado ao fim" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="330" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s_exp" value="&lt;b&gt;EXPORT views&lt;/b&gt; [F1b]&lt;br&gt;pdv_pseudo · sku · data · tipo · qtd · canal · regional · área · faixa RFV" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="330" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s_out" value="&lt;b&gt;RF06 / RF07&lt;/b&gt;&lt;br&gt;cod_cliente, sem CNPJ/nome · leitura RECO_READ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="540" y="330" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s_roles" value="&lt;b&gt;Identidades e papéis&lt;/b&gt;&lt;br&gt;RECO_ADMIN (3C): DDL, grants, mapa · RECO_SVC: usuário de serviço do Airflow, key-pair, sem senha · RECO_DEV (A3): dev, contas nominais com MFA, dados mascarados · RECO_READ: Sírius, CRM, BI, só OUT&lt;br&gt;Segredos no secrets backend do Airflow; rotação conforme política 3C (ARQ-Q25)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="460" width="690" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s_si" value="&lt;b&gt;Storage integration&lt;/b&gt;&lt;br&gt;role IAM + external ID · STORAGE_ALLOWED_LOCATIONS = bucket do projeto · stage externo só por integração (ARQ-Q38)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="300" y="590" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s_g0" value="&lt;b&gt;G0&lt;/b&gt; · parecer jurídico + DPO antes do 1º export · mecanismo de transferência internacional (art. 33)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="530" y="580" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="s_zsa" value="AWS sa-east-1 · [F2] serving" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="150" width="310" height="580" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ddb" value="DynamoDB&lt;br&gt;CMK · PITR" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#C925D1;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.dynamodb;" vertex="1" parent="1">
+          <mxGeometry x="840" y="210" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_api" value="API Gateway&lt;br&gt;TLS · autenticação" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="1">
+          <mxGeometry x="960" y="210" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_waf" value="AWS WAF" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.waf;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="210" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_kmsa" value="KMS CMK" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.key_management_service;" vertex="1" parent="1">
+          <mxGeometry x="840" y="330" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_idc" value="IAM Identity Center&lt;br&gt;acesso humano temporário" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.identity_and_access_management;" vertex="1" parent="1">
+          <mxGeometry x="960" y="330" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_satxt" value="F2: RF06 replicada no Brasil. CNPJ na chave da API só se o consumidor exigir (P§M3 fala em API por CNPJ); preferir cod_cliente. Sem VPC obrigatória; WAF + autenticação + throttling." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673a6;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="830" y="450" width="270" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="s_sm" value="SageMaker AI&lt;br&gt;[C-BR] sem saída do Brasil" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="330" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_us" value="EUA · us-east-1 (Personalize não existe em sa-east-1: verificado 2026-10-26)" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 4;fillColor=none;strokeColor=#b85450;strokeWidth=2;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=13;fontColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="110" width="710" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="s_s3" value="S3 troca&lt;br&gt;SSE-KMS obrigatório · TLS obrigatório · bloqueio público · lifecycle 7 dias" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
+          <mxGeometry x="1210" y="170" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_kmsu" value="KMS CMK&lt;br&gt;key policy: só roles Snowflake e Personalize" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.key_management_service;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="170" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_pers" value="Amazon Personalize&lt;br&gt;service role · dataset group excluído ao fim" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" vertex="1" parent="1">
+          <mxGeometry x="1590" y="170" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ctr" value="CloudTrail&lt;br&gt;gestão + eventos de dados do bucket" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudtrail;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="170" width="56" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="s_ustxt" value="&lt;b&gt;Pseudonimizado não é anônimo&lt;/b&gt;: a 3C mantém o mapa, então o dado continua pessoal e a exportação é transferência internacional. Sem CNPJ, nome, endereço, contato ou vendedor no export. Geografia só até regional. 3 a 6 rodadas, não semanal. Evidência de exclusão ao fim do benchmark." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="320" width="650" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="s_tab" value="&lt;b&gt;Controles por tema&lt;/b&gt;&lt;br&gt;• Papel: A3 é operadora (LGPD art. 39); DPA e registro da operação (ARQ-Q34)&lt;br&gt;• Minimização: motor e RF06/RF07 sem CNPJ, nome, contato ou vendedor&lt;br&gt;• Criptografia: Snowflake nativa · S3/DynamoDB com CMK por ambiente · TLS em trânsito&lt;br&gt;• Credenciais: sem chave IAM de longa duração · storage integration por role · key-pair para serviço Snowflake&lt;br&gt;• Acesso humano: IAM Identity Center com MFA e permission sets temporários; contas Snowflake nominais&lt;br&gt;• Retenção: S3 troca 7 dias · Personalize excluído ao fim · RF07, logs e snapshots conforme política 3C (ARQ-Q32)&lt;br&gt;• Auditoria: CloudTrail · histórico de acesso e consultas do Snowflake (por edição, A VERIFICAR)&lt;br&gt;• Exige parecer jurídico: exportação para us-east-1; uso do histórico de MEI para personalização; retenção da RF07" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="600" width="710" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="s_leg" value="&lt;b&gt;Setas&lt;/b&gt;: 1 · bases → masking → motor (SQL interno) · 2 · motor → RF06/RF07 · 3 · mapa + motor → EXPORT (só F1b) · 4 · EXPORT → storage integration → G0 → S3 us-east-1 (COPY INTO, TLS, SSE-KMS) · 5 · RF06 → DynamoDB sa-east-1 (F2, semanal)&lt;br&gt;Verde tracejado: fronteira Brasil · Vermelho tracejado: fora do Brasil · Lilás: controle de segurança · Vermelho: gate/risco" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="780" width="1120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s_e1a" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="s_base" target="s_mask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_e1b" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="s_mask" target="s_motor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_e2" value="2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="s_motor" target="s_out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_e3a" value="3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" edge="1" parent="1" source="s_map" target="s_exp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_e4a" value="4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#d6b656;" edge="1" parent="1" source="s_exp" target="s_si">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_e4b" value="4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#b85450;" edge="1" parent="1" source="s_si" target="s_g0">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s_e4c" value="4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#b85450;" edge="1" parent="1" source="s_g0" target="s_s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="645" y="760" />
+              <mxPoint x="1155" y="760" />
+              <mxPoint x="1155" y="198" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s_e5" value="5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;strokeColor=#9673a6;" edge="1" parent="1" source="s_out" target="s_ddb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="795" y="375" />
+              <mxPoint x="795" y="238" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="s_e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=11;dashed=1;strokeColor=#b85450;" edge="1" parent="1" source="s_s3" target="s_pers">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1238" y="150" />
+              <mxPoint x="1618" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="5 Operação" id="aba-operacao">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="o_h" value="Operação · DAG semanal, alarmes, detecção de não execução e reprocessamento" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="o_tit" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU (NBO/MBA) B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 5 Operação&lt;br&gt;&lt;b&gt;Versão:&lt;/b&gt; v2 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-26&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · horários e limiares são hipóteses" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="10" width="390" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="o_zd" value="Airflow da 3C · DAG reco_semanal · max_active_runs=1 · catchup=False · retries=1 por tarefa" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFAF3;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="110" width="1810" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t0" value="&lt;b&gt;Início&lt;/b&gt;&lt;br&gt;cron seg 06h BRT (hipótese) ou manual com parâmetros" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="35" y="215" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t1" value="Dados da semana prontos?&lt;br&gt;(sensor, timeout 4h)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="185" y="205" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t2" value="&lt;b&gt;RF01&lt;/b&gt;&lt;br&gt;snapshot STG por run_id · lock em EXECUCAO_LOG" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="355" y="220" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t3" value="&lt;b&gt;RF02&lt;/b&gt;&lt;br&gt;perfil de entrada" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="495" y="220" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t4" value="Gate RF02 ok?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="625" y="215" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t5" value="&lt;b&gt;RF03&lt;/b&gt;&lt;br&gt;elegibilidade, estoque, comprado no mês" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="765" y="220" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t6a" value="&lt;b&gt;NBO Desconto&lt;/b&gt;&lt;br&gt;novos · recompra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="910" y="145" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t6b" value="&lt;b&gt;Público Mais por Menos&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="910" y="228" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t6c" value="&lt;b&gt;MBA Combo&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="910" y="311" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t7" value="&lt;b&gt;Pós&lt;/b&gt;&lt;br&gt;backoff · regras · top-N · join A/B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="220" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t8" value="Testes de contrato ok?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1205" y="210" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t9" value="&lt;b&gt;Publicar&lt;/b&gt;&lt;br&gt;SWAP RF06 + MERGE RF07 · idempotente por semana_ref" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1355" y="215" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t10" value="&lt;b&gt;Log + aviso&lt;/b&gt;&lt;br&gt;EXECUCAO_LOG = PUBLICADA · e-mail/Teams para IC com resumo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1525" y="215" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="o_t11" value="&lt;b&gt;Fim&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1700" y="225" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="o_f1" value="Timeout → falha controlada · alerta Eng. Dados 3C · nada publicado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="185" y="380" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="o_f2" value="Bloqueio → alerta + relatório RF02 · mantém última RF06 · reexecução manual com justificativa" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="600" y="380" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="o_f3" value="Falha → não publica · mantém última RF06 válida · alerta A3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1195" y="380" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="o_w" value="&lt;b&gt;Detecção de não execução (independe do Airflow)&lt;/b&gt;&lt;br&gt;Snowflake ALERT agendado seg 12h: se não houver run PUBLICADA para a semana_ref em OPS.EXECUCAO_LOG → e-mail via notification integration para A3 e Eng. Dados 3C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="20" y="510" width="430" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="o_r" value="&lt;b&gt;Execução manual e reprocesso (E§4.4.3)&lt;/b&gt;&lt;br&gt;Parâmetros: semana_ref · mecanicas · modo (normal | dry_run | reprocesso) · usar_snapshot · ignorar_gate_rf02 + justificativa&lt;br&gt;dry_run grava em sandbox e não publica · reprocesso refaz RF07 da semana de forma idempotente · rollback: republicar RF06 a partir da RF07 ou Time Travel · recomendação já enviada a campanha não é alterada (campanha referencia run_id)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="470" y="510" width="620" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="o_b" value="&lt;b&gt;DAG reco_benchmark [F1b], separado e manual&lt;/b&gt;&lt;br&gt;EXPORT → COPY INTO S3 us-east-1 → EventBridge → Step Functions (import, treino, lote) → COPY INTO OPS.BENCHMARK_RESULTADO&lt;br&gt;Falha de Step Functions → EventBridge → SNS e-mail · AWS Budgets 50/80/100% · nunca bloqueia o reco_semanal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="510" width="720" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="o_al" value="&lt;b&gt;Alarmes e acionamento&lt;/b&gt; (POC → pós-POC)&lt;br&gt;• Falha de tarefa · on_failure_callback do Airflow → canal 3C (ARQ-Q27) · Alta · Eng. ML A3 em horário comercial → sustentação 3C&lt;br&gt;• Não execução · Snowflake ALERT seg 12h · Alta · A3 + Eng. Dados 3C → sustentação 3C&lt;br&gt;• Dados não prontos · sensor com timeout · Média · Eng. Dados 3C (origem)&lt;br&gt;• Gate RF02 bloqueado · log + relatório · Média · cientista A3, IC informada&lt;br&gt;• Teste de contrato falhou · não publica · Alta · A3&lt;br&gt;• Degradação de qualidade · % PDVs com recomendação, % backoff nacional, cobertura de catálogo, deriva de score · Média · A3&lt;br&gt;• Custo Snowflake · resource monitor 80% aviso, 100% suspende dev · Média · 3C&lt;br&gt;• Benchmark AWS · SNS + Budgets · Média · A3&lt;br&gt;• API F2 · CloudWatch 5xx, latência p95, throttling DynamoDB, erros Lambda · Alta · a definir no ADR de F2" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="20" y="650" width="1070" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="o_sla" value="&lt;b&gt;SLAs (hipóteses a validar: ARQ-Q23, ARQ-Q24)&lt;/b&gt;&lt;br&gt;• Frescor: recomendações da semana S publicadas até seg 12h BRT, se os dados de domingo estiverem no Snowflake até 06h&lt;br&gt;• Duração da DAG: alvo abaixo de 2h no warehouse M (medir em M1)&lt;br&gt;• Disponibilidade de leitura: a do Snowflake da 3C (SWAP evita leitura parcial)&lt;br&gt;• Reprocesso: no mesmo dia útil&lt;br&gt;• F2: herda SLAs de API Gateway, Lambda e DynamoDB; alvo p95 a definir com o B2B&lt;br&gt;&lt;br&gt;&lt;b&gt;Runbook mínimo (entregável A3)&lt;/b&gt;: como reprocessar, como liberar gate com justificativa, como republicar a semana anterior, contatos e matriz de acionamento" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="650" width="720" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t0" target="o_t1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e1" value="sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="o_t1" target="o_t2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e1n" value="não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#FFFFFF;strokeColor=#b85450;" edge="1" parent="1" source="o_t1" target="o_f1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t2" target="o_t3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t3" target="o_t4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e4" value="sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="o_t4" target="o_t5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e4n" value="não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#FFFFFF;strokeColor=#b85450;" edge="1" parent="1" source="o_t4" target="o_f2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e5a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t5" target="o_t6a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e5b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t5" target="o_t6b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e5c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t5" target="o_t6c">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e6a" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t6a" target="o_t7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e6b" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t6b" target="o_t7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e6c" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t6c" target="o_t7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t7" target="o_t8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e8" value="sim" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="o_t8" target="o_t9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e8n" value="não" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#FFFFFF;strokeColor=#b85450;" edge="1" parent="1" source="o_t8" target="o_f3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t9" target="o_t10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o_e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" edge="1" parent="1" source="o_t10" target="o_t11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="6 Fases e roadmap" id="aba-fases">
+    <mxGraphModel dx="2776" dy="1004" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="r_h" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Fases e roadmap · F0 POV (opcional) · F1 MVP · F1b benchmark · F2 escala · F3 longo prazo" vertex="1">
+          <mxGeometry height="40" width="1300" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="r_tit" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU (NBO/MBA) B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 6 Fases e roadmap&lt;br&gt;&lt;b&gt;Versão:&lt;/b&gt; v2 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-26&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · cronograma a refinar no kickoff (P§Cronograma)" vertex="1">
+          <mxGeometry height="80" width="390" x="1490" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="Pré-contrato" vertex="1">
+          <mxGeometry height="40" width="190" x="220" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="M1" vertex="1">
+          <mxGeometry height="40" width="190" x="410" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="M2" vertex="1">
+          <mxGeometry height="40" width="190" x="600" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="M3" vertex="1">
+          <mxGeometry height="40" width="190" x="790" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="M4" vertex="1">
+          <mxGeometry height="40" width="190" x="980" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="M5" vertex="1">
+          <mxGeometry height="40" width="190" x="1170" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="Médio prazo (6 a 12 meses)" vertex="1">
+          <mxGeometry height="40" width="260" x="1360" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_c7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=11;" value="Longo prazo (12+ meses)" vertex="1">
+          <mxGeometry height="40" width="260" x="1620" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="r_l0" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" value="F0 · POV (opcional)" vertex="1">
+          <mxGeometry height="90" width="190" x="20" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="r_l1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=11;" value="F1 · MVP batch na stack 3C (caminho crítico)" vertex="1">
+          <mxGeometry height="130" width="190" x="20" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="r_l2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=11;" value="F1b · Benchmark desafiante (sob G0)" vertex="1">
+          <mxGeometry height="90" width="190" x="20" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="r_l3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=11;" value="F2 · Escala e serving online" vertex="1">
+          <mxGeometry height="90" width="190" x="20" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="r_l4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=11;" value="F3 · Novas mecânicas e tempo real" vertex="1">
+          <mxGeometry height="90" width="190" x="20" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="r_l5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=11;" value="Gates de decisão" vertex="1">
+          <mxGeometry height="110" width="190" x="20" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="r_b0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;dashed=1;" value="POV como carta na manga (R§): discovery de dados + baseline, só se o cliente hesitar" vertex="1">
+          <mxGeometry height="70" width="180" x="225" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="r_b1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="Setup, acessos, data readiness, EDA, baseline, contrato RF06/RF07, plano A/B pré-registrado" vertex="1">
+          <mxGeometry height="110" width="180" x="415" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="r_b2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="Pipeline Snowpark v0 (MBA + NBO baseline), DAG semanal, 1ª campanha piloto (1 filial, 1 a 2 famílias)" vertex="1">
+          <mxGeometry height="110" width="180" x="605" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="r_b3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="Modelos v1 (novos × recompra, público MpM), testes de contrato, alertas, ampliação do piloto" vertex="1">
+          <mxGeometry height="110" width="180" x="795" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="r_b45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="A/B em vigência, mensuração D-1, champion × challenger, runbook, handover e plano de continuidade" vertex="1">
+          <mxGeometry height="110" width="370" x="985" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="r_bb" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;dashed=1;" value="Benchmark Personalize us-east-1 (3 a 6 rodadas, mesmo recorte) ou C-BR: SageMaker AI sa-east-1 · resultado em OPS.BENCHMARK_RESULTADO" vertex="1">
+          <mxGeometry height="70" width="560" x="605" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="r_bf2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" value="Rollout para todas as filiais e famílias · camada de consumo AWS em sa-east-1 (S3 + Glue/Lake Formation + Athena + Bedrock AgentCore + QuickSight, ADR-002) · API por cliente só se surgir consumidor online · motor = vencedor do G2 · MLOps · sustentação 3C" vertex="1">
+          <mxGeometry height="80" width="250" x="1365" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="r_bf3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" value="Pedido sugerido · home B2B · WXAX em tempo real (clickstream) · bandits orientados a margem · explicação por LLM (opcional)" vertex="1">
+          <mxGeometry height="80" width="250" x="1625" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="r_g0" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" value="G0 jurídico&lt;br&gt;transferência internacional" vertex="1">
+          <mxGeometry height="90" width="140" x="245" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="r_g1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" value="G1 data readiness&lt;br&gt;2 semanas (P§Premissa 3)" vertex="1">
+          <mxGeometry height="90" width="140" x="435" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="r_g2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" value="G2 champion × challenger&lt;br&gt;critérios pré-registrados" vertex="1">
+          <mxGeometry height="90" width="140" x="1195" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="r_g3" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;" value="G3 ADR de F2&lt;br&gt;consumidor online pronto" vertex="1">
+          <mxGeometry height="90" width="140" x="1420" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="r_note" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" value="&lt;b&gt;O que muda em relação à proposta V1 (P§Escopo Inicial Sugerido)&lt;/b&gt;&lt;br&gt;• Personalize deixa de ser o motor de M1 a M3 e vira desafiante offline (F1b), sob G0&lt;br&gt;• Campeão = modelos próprios em Snowpark/notebooks, atendendo E§4.4.1 a 4.4.3&lt;br&gt;• Endpoint/API e storage NoSQL saem do M3 e vão para F2 (sa-east-1), quando houver consumidor&lt;br&gt;• Eng. ML M1 a M3 constrói pipeline Snowpark + DAG + contratos em vez de pipeline Personalize + API&lt;br&gt;• Mensuração no Salesforce e integrações seguem com a 3C (P§Premissas 5 e 10)&lt;br&gt;• Preço e prazo da proposta não mudam por esta reordenação (inferência; validar com o comercial)" vertex="1">
+          <mxGeometry height="140" width="1100" x="20" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="r_leg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=6;fillColor=#FFFFFF;strokeColor=#666666;fontSize=10;" value="&lt;b&gt;Legenda&lt;/b&gt;&lt;br&gt;Azul: F1 caminho crítico · Amarelo tracejado: opcional/benchmark · Lilás: fases futuras · Vermelho: gate&lt;br&gt;Setas: dependência entre entregas (o resultado do G2 define o motor de F2)" vertex="1">
+          <mxGeometry height="80" width="740" x="1140" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e1" edge="1" parent="1" source="r_b1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="r_b2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e2" edge="1" parent="1" source="r_b2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="r_b3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e3" edge="1" parent="1" source="r_b3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="r_b45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e4" edge="1" parent="1" source="r_bb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;dashed=1;strokeColor=#d6b656;" target="r_g2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e5" edge="1" parent="1" source="r_g2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="r_g3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e6" edge="1" parent="1" source="r_g3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;" target="r_bf2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e7" edge="1" parent="1" source="r_bf2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;dashed=1;strokeColor=#9673a6;" target="r_bf3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_e8" edge="1" parent="1" source="r_g0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;dashed=1;strokeColor=#b85450;" target="r_bb">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="445" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r_e9" edge="1" parent="1" source="r_g1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#b85450;" target="r_b2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="395" />
+              <mxPoint x="695" y="395" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="7 Opção D · viés AWS" id="aba-opcao-d">
+    <mxGraphModel dx="1187" dy="429" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1250" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="d_h" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Opção D · viés AWS · motor na stack 3C (E§4.4) + IA, consumo e benchmark na AWS · dados fora do país só sob parecer jurídico (G0)" vertex="1">
+          <mxGeometry height="40" width="1540" x="20" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="d_tit" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU (NBO/MBA) B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 7 Opção D · viés AWS&lt;br&gt;&lt;b&gt;Versão:&lt;/b&gt; v2.1 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-26&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · opção escolhida (ADR-002)&lt;br&gt;Nomes de objetos são propostos (A VERIFICAR padrão 3C)" vertex="1">
+          <mxGeometry height="95" width="390" x="1590" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="d_zo" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FAFAFA;strokeColor=#7F7F7F;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="On-premises / SaaS da 3C (A VERIFICAR)" vertex="1">
+          <mxGeometry height="260" width="190" x="20" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d_sap" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;SAP ERP&lt;/b&gt;&lt;br&gt;ingestão pela 3C" vertex="1">
+          <mxGeometry height="70" width="160" x="35" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="d_ic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;Inteligência Comercial&lt;/b&gt;&lt;br&gt;escolhe itens e público · fluxo de aprovação de preço · ativa no Sírius / B2B" vertex="1">
+          <mxGeometry height="90" width="160" x="35" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="d_zs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Conta Snowflake da 3C · nuvem/região A VERIFICAR (hipótese: AWS sa-east-1) · database RECO_{AMBIENTE} · F1 igual à Opção C" vertex="1">
+          <mxGeometry height="470" width="660" x="230" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d_src" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;Bases 3C (somente leitura)&lt;/b&gt;&lt;br&gt;FATURAMENTO · FS_CLIENTES · ESTOQUE · PRODUTO / FS_PRODUTOS" vertex="1">
+          <mxGeometry height="100" width="190" x="250" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="d_proc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Motor campeão · Snowpark Python (não existe hoje: construído pela A3 na F1)&lt;/b&gt;&lt;br&gt;notebooks + stored procedures (pacote reco_3c)&lt;br&gt;RF01 · RF02 · RF03 · NBO · Público MpM · MBA&lt;br&gt;cumpre E§4.4.1 e E§4.4.3" vertex="1">
+          <mxGeometry height="100" width="400" x="470" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="d_out" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="&lt;b&gt;RECO.OUT&lt;/b&gt;&lt;br&gt;RF06 RECOMENDACAO_ATUAL · RF07 RECOMENDACAO_HIST&lt;br&gt;OPS.ATRIBUICAO_AB · OPS.EXPOSICAO" vertex="1">
+          <mxGeometry height="70" width="400" x="470" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="d_exp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;RECO.EXPORT&lt;/b&gt;&lt;br&gt;a) agregados por abertura e saídas RF06/RF07 sem dado pessoal (consumo)&lt;br&gt;b) interações pseudonimizadas, colunas mínimas (benchmark, só após G0-a)" vertex="1">
+          <mxGeometry height="80" width="400" x="250" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="d_si" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Storage integration + external stages&lt;/b&gt;&lt;br&gt;role IAM com external ID · um stage por bucket · STORAGE_ALLOWED_LOCATIONS restrito" vertex="1">
+          <mxGeometry height="80" width="200" x="670" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="d_roles" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Roles&lt;/b&gt;: RECO_ADMIN (3C) · RECO_SVC (Airflow) · RECO_DEV (A3, mascarado) · RECO_READ (BI/IC: só OUT) · RECO_EXPORT (só EXPORT)" vertex="1">
+          <mxGeometry height="60" width="620" x="250" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="d_za" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FFFAF3;strokeColor=#d79b00;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" value="Airflow da 3C (A VERIFICAR) · cumpre E§4.4.2 · conexão Snowflake por key-pair · sem credencial AWS nas DAGs" vertex="1">
+          <mxGeometry height="130" width="660" x="230" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="d_dag1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="&lt;b&gt;DAG reco_semanal&lt;/b&gt;&lt;br&gt;cron semanal + manual · CALL procedures" vertex="1">
+          <mxGeometry height="60" width="190" x="250" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="d_dag2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;DAG reco_publicar_aws&lt;/b&gt; [F2]&lt;br&gt;após publicação: COPY INTO @stage_lake (Parquet/Iceberg)" vertex="1">
+          <mxGeometry height="60" width="200" x="460" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="d_dag3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;DAG reco_benchmark&lt;/b&gt; [F1b · G0-a]&lt;br&gt;manual · COPY INTO @stage_troca · carga do resultado" vertex="1">
+          <mxGeometry height="60" width="190" x="680" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="d_cloud" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" value="AWS Cloud" vertex="1">
+          <mxGeometry height="900" width="1060" x="920" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="d_acct" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_account;strokeColor=#CD2264;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#CD2264;dashed=0;" value="Conta(s) AWS da 3C · reco-dev / reco-prod (A VERIFICAR) · IAM Identity Center · CloudTrail · KMS CMK por bucket · Budgets com alerta" vertex="1">
+          <mxGeometry height="860" width="1030" x="935" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="d_rsa" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" value="sa-east-1 (São Paulo) · [F2] camada de consumo · dado armazenado no Brasil" vertex="1">
+          <mxGeometry height="520" width="1000" x="950" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="d_s3lake" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" value="S3 reco-lake&lt;br&gt;Parquet/Iceberg · SSE-KMS&lt;br&gt;só saídas e agregados" vertex="1">
+          <mxGeometry height="56" width="56" x="980" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="d_glue" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;" value="Glue Data Catalog&lt;br&gt;+ Lake Formation&lt;br&gt;camada semântica: views de negócio" vertex="1">
+          <mxGeometry height="56" width="56" x="1120" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="d_athena" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.athena;" value="Athena&lt;br&gt;motor de consulta&lt;br&gt;(ou Redshift Serverless: A VERIFICAR)" vertex="1">
+          <mxGeometry height="56" width="56" x="1260" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="d_qs" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.quicksight;" value="QuickSight (sa-east-1)&lt;br&gt;painéis do A/B e D-1&lt;br&gt;sem Amazon Q (indisponível na região)" vertex="1">
+          <mxGeometry height="56" width="56" x="1420" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="Gc5HFhkrfKg5jDSWWfsW-1" edge="1" parent="1" source="d_kb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;" target="d_sec" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_kb" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;" value="Bedrock Knowledge Base&lt;br&gt;dado estruturado (NL→SQL)&lt;br&gt;inferência cross-region (G0-b)" vertex="1">
+          <mxGeometry height="56" width="56" x="1120" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="d_agent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5f5e3;strokeColor=#01A88D;fontSize=11;" value="Bedrock AgentCore · agente da IC&lt;br&gt;ferramentas: consultar camada semântica · explicar recomendação (RF06/RF07) · gerar lista de campanha&lt;br&gt;Guardrails: só tabelas publicadas, sem dado pessoal" vertex="1">
+          <mxGeometry height="80" width="330" x="1260" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="d_ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Interface da IC&lt;/b&gt;&lt;br&gt;Teams ou página web simples (Cognito / Identity Center)" vertex="1">
+          <mxGeometry height="80" width="260" x="1660" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="d_sec" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;Governança&lt;/b&gt;: Lake Formation concede por tabela/coluna · CloudWatch Logs do agente com retenção · sem CPF/contato no lake · CNPJ pseudonimizado se o jurídico exigir · custo: Athena por TB lido, Bedrock por token, QuickSight por usuário (A VERIFICAR)" vertex="1">
+          <mxGeometry height="60" width="940" x="980" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="d_xri" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;dashed=1;" value="Inferência cross-region: prompts e resultados podem ser processados fora da geografia; dado armazenado fica em sa-east-1 (FATO, docs AWS 2026-10-26)" vertex="1">
+          <mxGeometry height="40" width="940" x="980" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="d_rus" parent="1" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" value="us-east-1 (N. Virgínia) · só após parecer jurídico G0 · dados pseudonimizados ou agregados" vertex="1">
+          <mxGeometry height="250" width="1000" x="950" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="d_s3us" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" value="S3 troca&lt;br&gt;SSE-KMS · lifecycle 7d" vertex="1">
+          <mxGeometry height="56" width="56" x="980" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="d_pers" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" value="Personalize [F1b · G0-a]&lt;br&gt;desafiante offline · batch inference&lt;br&gt;indisponível em sa-east-1 (FATO)" vertex="1">
+          <mxGeometry height="56" width="56" x="1120" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="d_qq" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=1;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=10;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.quicksight;" value="Amazon Q in Quick [alternativa · G0-c]&lt;br&gt;BI generativo sobre agregados replicados&lt;br&gt;conta Quick e datasets em us-east-1" vertex="1">
+          <mxGeometry height="56" width="56" x="1420" y="800" as="geometry" />
+        </mxCell>
+        <mxCell id="d_qqn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;dashed=1;" value="Só se o parecer cobrir dados agregados armazenados nos EUA e o squad não tiver competência Bedrock. Menos esforço, menos controle (sem ferramentas de explicação e lista de campanha)." vertex="1">
+          <mxGeometry height="70" width="360" x="1560" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="d_persn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="Mesmo recorte e métricas offline do campeão (precision@k, cobertura, margem esperada) · resultado volta para OPS.BENCHMARK_RESULTADO · ou C-BR: SageMaker AI sa-east-1 se G0-a for negativo" vertex="1">
+          <mxGeometry height="60" width="580" x="980" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="d_leg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="&lt;b&gt;O que sai do Brasil e sob qual gate&lt;/b&gt;&lt;br&gt;G0-a · benchmark Personalize: interações pseudonimizadas (CNPJ→hash, sem MEI/EI, colunas mínimas) para us-east-1, bucket com lifecycle 7 dias&lt;br&gt;G0-b · Bedrock KB estruturada em sa-east-1: só prompts e resultados agregados podem ser processados fora da geografia; dado armazenado fica no Brasil&lt;br&gt;G0-c · Amazon Q in Quick (alternativa): agregados por abertura armazenados em us-east-1&lt;br&gt;&lt;b&gt;Nada do caminho crítico (F1) sai do Snowflake.&lt;/b&gt; Se G0 for negativo em tudo: F1 segue igual; benchmark vira C-BR; consumo vira QuickSight sa-east-1 sem IA generativa ou Cortex no Snowflake." vertex="1">
+          <mxGeometry height="150" width="870" x="20" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="d_dec" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="&lt;b&gt;Escolha (ADR-002)&lt;/b&gt;: Opção D = Opção C com a F2 substituída pela camada de consumo AWS. Bedrock (sa-east-1) preferido ao Amazon Q in Quick (us-east-1).&lt;br&gt;&lt;b&gt;Variante descartada D-full&lt;/b&gt;: motor NBO/MBA em Personalize ou SageMaker. Exigiria revogar E§4.4.1 por escrito, colocaria a transferência internacional no caminho crítico e não resolve o MBA (regras de associação por abertura ficam no Snowflake de qualquer forma)." vertex="1">
+          <mxGeometry height="110" width="870" x="20" y="950" as="geometry" />
+        </mxCell>
+        <mxCell id="d_legc" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="&lt;b&gt;Legenda&lt;/b&gt;: azul F1/F2 caminho principal · amarelo tracejado opcional/benchmark/alternativa · lilás segurança · vermelho gate jurídico · setas numeradas = ordem do fluxo semanal" vertex="1">
+          <mxGeometry height="30" width="870" x="20" y="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e1" edge="1" parent="1" source="d_sap" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_src" value="1 ingestão 3C">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e2" edge="1" parent="1" source="d_dag1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_proc" value="2 CALL">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="345" y="600" />
+              <mxPoint x="460" y="600" />
+              <mxPoint x="460" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_e3" edge="1" parent="1" source="d_src" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_proc" value="3 lê">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e4" edge="1" parent="1" source="d_proc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_out" value="4 publica RF06/RF07">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e5" edge="1" parent="1" source="d_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_exp" value="5 views">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e6" edge="1" parent="1" source="d_dag2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_si" value="6 COPY INTO">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e7" edge="1" parent="1" source="d_si" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_s3lake" value="7 Parquet/Iceberg">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="905" y="430" />
+              <mxPoint x="905" y="278" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_e8" edge="1" parent="1" source="d_s3lake" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_glue" value="8 catálogo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e9" edge="1" parent="1" source="d_glue" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_athena" value="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e10" edge="1" parent="1" source="d_athena" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_qs" value="10 painéis">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e11" edge="1" parent="1" source="d_kb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_glue" value="11 NL→SQL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e12" edge="1" parent="1" source="d_agent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;" target="d_kb" value="12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e13" edge="1" parent="1" source="d_ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;startArrow=block;startFill=1;" target="d_agent" value="13 pergunta / lista de campanha">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e14" edge="1" parent="1" source="d_ic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;dashed=1;" target="d_ui" value="14 IC usa painéis e agente">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="115" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_e15" edge="1" parent="1" source="d_dag3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;dashed=1;strokeColor=#d6b656;fontSize=10;" target="d_s3us" value="B1 export pseudonimizado (G0-a)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="775" y="828" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_e16" edge="1" parent="1" source="d_s3us" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;dashed=1;strokeColor=#d6b656;fontSize=10;startArrow=block;startFill=1;" target="d_pers" value="B2 import / treino / batch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_e17" edge="1" parent="1" source="d_s3lake" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;dashed=1;strokeColor=#d6b656;fontSize=10;" target="d_qq" value="C1 réplica de agregados (G0-c)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1008" y="725" />
+              <mxPoint x="1448" y="725" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
