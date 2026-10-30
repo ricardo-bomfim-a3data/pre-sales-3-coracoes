@@ -48,3 +48,4 @@ Regra para a tabela: a "meta acordada" é o que a 3C aceita como prova de valor;
 | NBO | cobertura | ____ | ____ | ____ | ____ |
 | Mais por menos | precisão@10 | ____ | ____ | ____ | ____ |
 | Cesta | aderência aos pares por lift | ____ | ____ | ____ | ____ |
+| Cesta | cobertura de itens âncora | ____ | ____ | ____ | ____ |
