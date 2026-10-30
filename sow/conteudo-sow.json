@@ -129,6 +129,7 @@
   "diagram_image": "diagrama-arquitetura-sow.png",
   "aws_calculator_url": "https://calculator.aws/#/estimate?id=0edcebcbffa366d21ee795fea937e496d455c230",
   "calculator_print_image": "print-arr-calculadora.png",
+  "calculator_print_width_in": 6.3,
   "team": null,
   "contribution": null,
   "residue_terms": [
