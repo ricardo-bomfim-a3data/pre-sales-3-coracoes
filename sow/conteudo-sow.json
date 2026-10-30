@@ -44,7 +44,7 @@
     "Generative AI components",
     "Daily dashboard (D-1) and the weekly production Airflow DAG (during the PoC, exports and loads are started manually), which belong to the production phase"
   ],
-  "scope_paragraph": "The PoC will be delivered in 7 weeks, from kickoff (W0) to W6, in four phases, with weekly checkpoints with the 3corações team. Acceptance tests of NBO and basket run in W1 so that the go/no-go per mechanic is taken early; A/B campaigns are launched in W4 to W6, with a first directional read at the end of the PoC. The A3Data team is a Project Leader for the whole project (W0 to W6), a Data Architect in the first two weeks (W0 to W1), a Machine Learning Engineer for six weeks (W1 to W6) and a Data Scientist for two weeks of effort distributed over W0 to W6 (success criteria, acceptance tests, offline evaluation and A/B read).",
+  "scope_paragraph": "The PoC will be delivered in 7 weeks, from kickoff (W0) to W6, in four phases, with weekly checkpoints with the 3corações team. Acceptance tests of NBO and basket run in W1 so that the go/no-go per mechanic is taken early; A/B campaigns are launched in W4 to W6, with a first directional read at the end of the PoC. The A3Data team is a Project Leader for the whole project (W0 to W6), a Data Architect in the first two weeks (W0 to W1), a Machine Learning Engineer for six weeks (W1 to W6), who also delivers the consumption projection, the runbook and the handover session in W6, and a Data Scientist for two weeks (W4 to W5) for the offline evaluation and the A/B read.",
   "phases": [
     {
       "name": "1. Alignment & Access",
@@ -145,7 +145,7 @@
       "role": "Machine Learning Engineer (6 weeks, W1 to W6)"
     },
     {
-      "role": "Data Scientist (2 weeks of effort, distributed over W0 to W6)"
+      "role": "Data Scientist (2 weeks, W4 to W5)"
     }
   ]
 }
