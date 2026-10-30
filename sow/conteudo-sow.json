@@ -127,7 +127,8 @@
   "project_overview": "The solution exports weekly cuts of orders, customers and products from Snowflake to Amazon S3, with a manifest file that triggers AWS Step Functions through Amazon EventBridge. AWS Glue prepares the inputs; Amazon Personalize trains the NBO and basket models and generates batch recommendations; AWS Glue calculates support, confidence and lift for the basket and formats and filters the outputs. A success file releases the load of the results back into Snowflake, where A/B groups, exposure and measurement tables live. Path to production: after the PoC, the same architecture is planned to be extended to all branches and product families (about 300 thousand PDVs), to additional 3corações use cases in the same AWS account and, later, to real-time serving for the sales force app; the production-phase consumption projection is made with the AWS Pricing Calculator using the same Amazon Personalize recipes as the PoC.",
   "architecture_summary": "The architecture is hosted in the 3corações AWS account in us-east-1 and uses Amazon S3 (input and output with a 30-day lifecycle), AWS Glue, Amazon Personalize (User-Personalization-v2, Item-Affinity and SIMS recipes), AWS Step Functions and Amazon EventBridge. Security and governance rely on AWS IAM Identity Center with named access, AWS KMS encryption, AWS CloudTrail auditing, Amazon CloudWatch monitoring, AWS Budgets and VPC endpoints for S3 access from the pipeline. The Snowflake integration uses an IAM role assumed by Snowflake with an external ID. Customer identifiers are pseudonymized with the SAP customer code in the copies sent to AWS.",
   "diagram_image": "diagrama-arquitetura-sow.png",
-  "aws_calculator_url": null,
+  "aws_calculator_url": "https://calculator.aws/#/estimate?id=0edcebcbffa366d21ee795fea937e496d455c230",
+  "calculator_print_image": "print-arr-calculadora.png",
   "team": null,
   "contribution": null,
   "residue_terms": [

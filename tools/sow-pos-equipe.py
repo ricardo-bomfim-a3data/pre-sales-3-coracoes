@@ -19,5 +19,14 @@ for row, m in zip(body, c["team_roles"]):
 p = fs.find_par(doc, "1 USD = BRL", startswith=True)
 if p:
     fs.set_par_text(p, "1 USD = BRL ____ (reference exchange rate). Team total: US$ ____ (R$ ____).")
+img = c.get("calculator_print_image")
+pp = fs.find_par(doc, "<Print of ARR of calculator>")
+if pp and img:
+    from pathlib import Path
+    from docx.shared import Inches
+    fs.set_par_text(pp, "")
+    base = Path(sys.argv[1]).resolve().parent
+    path = Path(img) if Path(img).is_absolute() else base / img
+    pp.runs[0].add_picture(str(path), width=Inches(c.get("calculator_print_width_in", 5.8)))
 doc.save(sys.argv[2])
 print("equipe ok")
