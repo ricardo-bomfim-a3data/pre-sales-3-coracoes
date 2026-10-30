@@ -116,7 +116,7 @@ Protocolo proposto (HIPÓTESE): split **temporal** pelo fechamento semanal (E§4
 | O11 | leverage / conviction (opcional) | suporte(A,B) − suporte(A)·suporte(B) | abertura | Para filtrar pares triviais |
 | O12 | estabilidade temporal das regras | sobreposição (Jaccard) do top-N de combos entre janelas (1/3/6/9/12m) | abertura × janela | Responde ao efeito sazonal e à janela E§4.1.5 |
 
-Suporte/confiança/lift mínimos: **não há valor na especificação**. HIPÓTESE de partida (a calibrar na EDA, M1): suporte absoluto ≥ N cestas por abertura (N a definir após perfil P04), lift ≥ 1,2, confiança ≥ 20%; sem dados não fixamos números. Definir também "cesta" (pedido vs PDV-mês) e se pares envolvem SKUs da mesma família (E§4.2.2 prevê 4 níveis).
+Suporte/confiança/lift mínimos: **não há valor na especificação**. Atualização de 28/10: suporte, confiança e lift são calculados pelo job do Glue (o Personalize SIMS ranqueia os pares; ver ADR-003). HIPÓTESE de partida (a calibrar na EDA, W1): suporte absoluto ≥ N cestas por abertura (N a definir após perfil P04), lift ≥ 1,2, confiança ≥ 20%; sem dados não fixamos números. Definir também "cesta" (pedido vs PDV-mês) e se pares envolvem SKUs da mesma família (E§4.2.2 prevê 4 níveis).
 
 ```sql
 -- MBA: suporte/confiança/lift de pares por abertura (pseudocódigo)

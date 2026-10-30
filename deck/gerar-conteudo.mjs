@@ -295,7 +295,7 @@ function notas(s, texto) { s.addNotes(texto); }
 // 9 · Dados e segurança
 // =====================================================================================
 {
-  const s = novoSlide('Dados e segurança', 'Dados e Segurança: Acesso Rigoroso e Retenção Curta', { legenda: 'Detalhe na aba 5 do diagrama de arquitetura' });
+  const s = novoSlide('Dados e segurança', 'Dados e Segurança: Acesso Rigoroso e Retenção Curta', { legenda: 'Detalhe na aba 3 do diagrama de arquitetura' });
   const xs = [165, 593, 1021, 1449];
   cardTexto(s, xs[0], 290, 402, 470, '01', 'O que fica onde', 'Snowflake guarda, AWS calcula', [
     'Snowflake: dados, histórico, grupos e medição, sem prazo',
@@ -457,7 +457,7 @@ function notas(s, texto) { s.addNotes(texto); }
     fontFace: 'Lato', valign: 'middle', border: { type: 'solid', color: C.HAIR, pt: 0.75 }, margin: [6, 12, 6, 12] });
   faixaEscura(s, 'Alternativas', 'Se o motor não puder sair do Snowflake', [
     { big: 'No Snowflake', text: 'motor em Python e Snowpark, com tabelas no próprio Snowflake' },
-    { big: 'Controle na AWS', text: 'Desenho 2: sorteio, medição e painel também na AWS' },
+    { big: 'Piso em SQL', text: 'regras de cesta e popularidade no Snowflake, se o Personalize não confirmar a cesta' },
     { big: 'Fim da W1', text: 'decisão com base nos testes de aceite, no piso e no desempenho offline' }], 165, 800, 1685, 190);
   notas(s, 'Mensagem: os dois riscos altos têm tratamento definido, e há um plano alternativo se o motor não puder sair do Snowflake.\nPontos a confirmar: aceite da 3C; posição do jurídico; se o Sírius registra a exposição.\n[Sources] Arquitetura proposta v4 (seções 4.7, 4.8 e 11), revisão do especialista (docs/08, seção 9).');
 }
@@ -482,7 +482,7 @@ function notas(s, texto) { s.addNotes(texto); }
   faixaEscura(s, 'Obrigado', 'A A3Data agradece a confiança da 3 Corações', [
     { big: '[NOME]', text: 'responsável da A3Data pela proposta [A CONFIRMAR]' },
     { big: '[E-MAIL]', text: 'contato para dúvidas e próximos passos [A CONFIRMAR]' }], 165, 740, 1685, 250);
-  notas(s, 'Mensagem: quatro passos levam do alinhamento à primeira rodada com teste A/B.\nPontos a confirmar: datas, responsáveis e contatos.\n[Sources] Arquitetura proposta v4, aba 6.');
+  notas(s, 'Mensagem: quatro passos levam do alinhamento à primeira rodada com teste A/B.\nPontos a confirmar: datas, responsáveis e contatos.\n[Sources] Arquitetura proposta v4, aba 4.');
 }
 
 const saida = process.argv[2] || 'saida/conteudo.pptx';

@@ -2,6 +2,7 @@
 
 Versão: v1 · 2026-10-26 · Autor: [ENG] · Status: rascunho para o coordenador (pré-vendas)
 Base: E§ (especificação v0), P§ (proposta V1 jun/2026), R§ (reunião interna 2026-10-22), diagramas v1 (opções A/B/C, DAG semanal, contexto F0/F1/F2).
+Nota de 28/10/2026: esta crítica é de 26/10 e analisa as opções A a C (v1/v2). A direção vigente é a Opção E (ADR-003): Personalize para NBO, mais por menos e MBA (SIMS, com as métricas no Glue), sem SageMaker AI, cronograma W0 a W6. Onde o texto citar SageMaker AI como alternativa (H3) ou "mês 1", leia como histórico.
 Escopo: implementabilidade, abordagem técnica recomendada, esforço, riscos e lacunas. Não decide arquitetura (ARQ) nem requisitos (NEG).
 
 Convenção: FATO (com fonte), INFERÊNCIA, SUPOSIÇÃO, A VERIFICAR.

@@ -10,7 +10,7 @@ Formato: item · fato verificado · URL · data de verificação. Só o coordena
 - Preços do Personalize (treino por hora, ingestão por GB, inferência em lote) em us-east-1.
 - Disponibilidade de lightgbm, implicit e mlxtend no canal Anaconda do Snowflake.
 - Execução de notebooks por SQL (EXECUTE NOTEBOOK) e Container Runtime na região/nuvem da conta Snowflake do cliente.
-- Condições do funding AWS (repasse ~10%, mínimo R$ 50 mil) citadas na reunião interna.
+- Condições do funding AWS (repasse ~10%, mínimo R$ 50 mil) citadas na reunião interna. Em 29/10 o Ricardo definiu a meta como US$ 100 mil de consumo anual projetado (repasse de US$ 10 mil); a AWS ainda deve confirmar o critério.
 
 ## Adicionadas pelo ARQ (2026-10-26)
 - Amazon SageMaker AI · disponível em sa-east-1 · AWS MCP get_regional_availability · 2026-10-26
@@ -37,9 +37,10 @@ Formato: item · fato verificado · URL · data de verificação. Só o coordena
 - Amazon Personalize, recomendações em lote: entrada JSON no S3 (lista de userIds nas receitas de usuário, lista de itemIds nas receitas de itens relacionados), saída no S3; sem lote na receita Trending-Now. https://docs.aws.amazon.com/personalize/latest/dg/batch-data-upload.html
 - Amazon Personalize, promoções e filtros por regra de negócio em recomendações em tempo real. https://docs.aws.amazon.com/personalize/latest/dg/promoting-items.html
 - Amazon Personalize, receitas v2 aceitam pesos por tipo de evento (por exemplo, compra com mais peso que clique); margem como objetivo não aparece na documentação consultada. https://docs.aws.amazon.com/personalize/latest/dg/event-values-types.html
-- Amazon SageMaker AI, job de processamento com imagem pronta de Apache Spark, limite de execução de 5 dias. https://docs.aws.amazon.com/sagemaker/latest/dg/use-spark-processing-container.html
-- Amazon Managed Grafana: fonte de dados Athena disponível sem plugin pago; Snowflake e outras fontes exigem plugin Enterprise com taxa por usuário ativo; autenticação por IAM Identity Center ou SAML; preço de exemplo US$ 9 por editor e US$ 5 por leitor ativo por mês, mais US$ 45 por usuário ativo no plugin Enterprise. https://docs.aws.amazon.com/grafana/latest/userguide/Athena-adding-AWS-config.html, https://docs.aws.amazon.com/grafana/latest/userguide/AMG-data-sources-enterprise.html e https://aws.amazon.com/grafana/pricing/
-- A VERIFICAR: preço do Glue (DPU-hora) e do SageMaker AI (processamento e notebooks) na calculadora; receita de itens relacionados do Personalize para cesta (não usada como MBA); critério de funding da AWS.
+- (Histórico: o SageMaker AI foi excluído da arquitetura em 28/10/2026.) Amazon SageMaker AI, job de processamento com imagem pronta de Apache Spark, limite de execução de 5 dias. https://docs.aws.amazon.com/sagemaker/latest/dg/use-spark-processing-container.html
+- (Histórico: o Desenho 2 foi descartado em 29/10.) Amazon Managed Grafana: fonte de dados Athena disponível sem plugin pago; Snowflake e outras fontes exigem plugin Enterprise com taxa por usuário ativo; autenticação por IAM Identity Center ou SAML; preço de exemplo US$ 9 por editor e US$ 5 por leitor ativo por mês, mais US$ 45 por usuário ativo no plugin Enterprise. https://docs.aws.amazon.com/grafana/latest/userguide/Athena-adding-AWS-config.html, https://docs.aws.amazon.com/grafana/latest/userguide/AMG-data-sources-enterprise.html e https://aws.amazon.com/grafana/pricing/
+- Verificado em 27 e 28/10/2026 (cesta no Personalize): a receita SIMS (`aws-sims`, RELATED_ITEMS) recebe uma lista de `itemId` no lote e devolve só `recommendedItems`, sem pontuação nem métrica; nenhuma receita documentada calcula suporte, confiança ou lift; o relato verbal de que o Personalize gerou as três métricas por pedido não é confirmado pela documentação (projeto apagado). Limites da SIMS: 500 M de interações consideradas (ajustável) e 750 mil itens; lote de até 1 GB, 50 M de registros por arquivo e 1.000 arquivos. Preços: receitas clássicas com treino de US$ 0,24 por hora e lote de US$ 0,067 por mil recomendações (primeiros 20 M). Fonte: documentação e página de preços do Personalize (https://docs.aws.amazon.com/personalize/latest/dg/limits.html e https://aws.amazon.com/personalize/pricing/).
+- A VERIFICAR: preço real do Glue (DPU-hora) na calculadora e horas de treino da SIMS (20 na base e 200 em escala são estimativas, medir na W1); se a SIMS agrega sobre pares ordenados por lift; critério de funding da AWS.
 
 ## Adicionadas pela revisão do ESP (2026-10-27)
 

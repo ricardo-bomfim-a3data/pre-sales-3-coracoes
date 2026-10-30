@@ -27,6 +27,8 @@ const ABSORVIDOS = {
   'NEG-Q18': 'DAD-Q01', 'ARQ-D08': 'DAD-Q01', 'ARQ-Q36': 'NEG-Q11', 'ENG-D11': 'NEG-Q11', 'DAD-Q24': 'NEG-Q11', 'NEG-Q40': 'ENG-Q18',
   'ENG-Q14': 'ARQ-Q14', // coordenador: conta AWS perguntada duas vezes
 };
+// Itens encerrados por decisão (não são consolidação em outro ID): ID → motivo
+const ENCERRADOS = { 'ARQ-Q47': 'Encerrada em 29/10/2026: Desenho 2 descartado' };
 // Canal de tratamento (ESP seção 3.3). Padrão: Escrito.
 const CANAL = {
   'ARQ-Q17': 'Interno A3/AWS', 'ARQ-Q29': 'Interno A3/AWS',
@@ -73,8 +75,8 @@ for (const [papel, rel] of SOURCES) {
   const rows = parseTables(readFileSync(p, 'utf8')).map(r => ({
     ...r, 'Origem (papel)': papel, Prioridade: prio(r),
     Canal: CANAL[r.ID] ?? 'Escrito',
-    'Consolidado em': ABSORVIDOS[r.ID] ?? '—',
-    Status: ABSORVIDOS[r.ID] ? 'Consolidado' : 'Aberto',
+    'Consolidado em': ABSORVIDOS[r.ID] ?? ENCERRADOS[r.ID] ?? '—',
+    Status: ABSORVIDOS[r.ID] ? 'Consolidado' : ENCERRADOS[r.ID] ? 'Encerrado' : 'Aberto',
     'Resposta do cliente': '',
   }));
   console.error(papel, rows.length, 'itens');

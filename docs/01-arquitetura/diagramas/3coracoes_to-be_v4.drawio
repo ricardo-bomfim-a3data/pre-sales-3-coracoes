@@ -1,171 +1,13 @@
-<mxfile host="app.diagrams.net" pages="7">
-  <diagram name="1 Comparativo" id="v4-comp">
-    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1640" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="v4-comp_title" value="Dois desenhos para a mesma entrega · o Desenho 1 é o oficial" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="20" y="20" width="1500" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 1 Comparativo · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.1 revisada pelo especialista" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1460" y="10" width="420" height="76" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_h0" value="&lt;b&gt;Função&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="100" width="360" height="44" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_h1" value="&lt;b&gt;Desenho 1 · oficial&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="100" width="700" height="44" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_h2" value="&lt;b&gt;Desenho 2 · alternativa com as funções de controle na AWS&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="100" width="760" height="44" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a0" value="&lt;b&gt;Motor da próxima melhor oferta (NBO) e do mais por menos&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="156" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b0" value="Amazon Personalize: receita por cliente para o desconto e receita de afinidade com item para o mais por menos, em lote toda semana; região e área por filtro; estoque e &quot;já comprado&quot; conferidos de novo na saída" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="156" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c0" value="Igual ao Desenho 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="156" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a1" value="&lt;b&gt;Motor da cesta de compras (MBA)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="252" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b1" value="SageMaker AI: job de processamento que calcula as regras de associação (suporte, confiança e lift) dos itens comprados juntos; notebooks de desenvolvimento" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="252" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c1" value="Igual ao Desenho 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="252" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a2" value="&lt;b&gt;Papel do Glue&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="348" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b2" value="Apoio: prepara os arquivos de entrada e formata as saídas dos dois motores, com o filtro final" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="348" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c2" value="Apoio ampliado: também sorteia os grupos A/B, calcula a medição e mantém o catálogo das tabelas de controle" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="348" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a3" value="&lt;b&gt;Orquestração&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="444" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b3" value="Step Functions orquestra a AWS; o arquivo de manifesto no S3 aciona o Step Functions; o Airflow da 3C só agenda, espera o arquivo de sucesso no S3 e carrega as tabelas (sem credencial AWS no Airflow)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="444" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c3" value="Igual ao Desenho 1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="444" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a4" value="&lt;b&gt;Grupos do teste A/B&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="540" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b4" value="Tabela no Snowflake; rotina escrita pela A3 sorteia na rodada, fixa por campanha e registra as trocas manuais da Inteligência Comercial" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="540" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c4" value="Tabela em formato aberto (Iceberg) no catálogo do Glue; o sorteio roda num job, uma vez por campanha; o grupo segue como coluna na tabela entregue ao Snowflake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="540" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a5" value="&lt;b&gt;Registro de quem recebeu a oferta&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="636" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b5" value="Snowflake, por carga feita pela 3C (hipótese: hoje o Sírius não registra a exposição, ARQ-Q21)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="636" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c5" value="Chega ao Snowflake por carga da 3C, como no Desenho 1, e segue para o S3 na exportação" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="636" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a6" value="&lt;b&gt;Medição do teste A/B&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="732" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b6" value="SQL no Snowflake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="732" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c6" value="Athena sobre as tabelas de controle no S3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="732" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a7" value="&lt;b&gt;Painel diário (dono: 3C)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="828" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b7" value="BI atual da 3C lendo o Snowflake, sem novo custo de ferramenta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="828" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c7" value="Amazon Managed Grafana lendo o Athena, com login corporativo; atende o painel, mas é uma ferramenta nova para a 3C operar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="828" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a8" value="&lt;b&gt;Tabelas entregues à Inteligência Comercial&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="924" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b8" value="Snowflake: recomendação da semana, histórico e regras de cesta (como a especificação pede)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="924" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c8" value="Snowflake, por carga de volta da AWS (a entrega continua atendendo a especificação)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="924" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a9" value="&lt;b&gt;O que fica na AWS&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="1020" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b9" value="Entradas e saídas de cada rodada por 30 dias; conjunto de dados do Personalize enquanto o modelo estiver ativo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1020" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c9" value="O mesmo, mais as tabelas de controle (grupos, exposição, medição): o histórico do teste passa a viver na AWS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="1020" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a10" value="&lt;b&gt;Vendas do SAP&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="1116" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b10" value="Só no Snowflake; exportação semanal para a AWS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1116" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c10" value="No Snowflake e no S3; semanal hoje, diária quando a 3C entregar a nova carga (basta trocar o parâmetro)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="1116" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a11" value="&lt;b&gt;Aderência à especificação da 3C&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="1212" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b11" value="Motor na AWS exige aceite por escrito da 3C (itens 4.1, 4.3.1.2, 4.4.1 a 4.4.3 e RNF04); controle e entrega seguem no Snowflake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1212" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c11" value="Desvio maior: o controle do teste também sai do Snowflake; exige aceite mais amplo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="1212" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a12" value="&lt;b&gt;Consumo e custo na AWS&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="1308" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b12" value="Menor: S3, Glue, Personalize (duas soluções), SageMaker AI, Step Functions, chaves de criptografia e auditoria" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1308" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c12" value="Maior: soma Athena, Grafana, mais Glue e S3 (valores a confirmar na calculadora da AWS)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="1308" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a13" value="&lt;b&gt;Principais riscos&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="1404" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b13" value="Entrega semanal passa a depender da AWS; custo de saída de dados do Snowflake; aceite da 3C; Personalize pode não cobrir bem filtros e o &quot;já comprado&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1404" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c13" value="Dois sistemas de registro; Grafana depende do Athena; exposição e vendas precisam chegar ao S3 com a mesma qualidade" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="1404" width="760" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_a14" value="&lt;b&gt;Quando escolher&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="20" y="1500" width="360" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_b14" value="Caminho oficial, para contratar e executar" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="400" y="1500" width="700" height="84" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-comp_n_c14" value="Alternativa, se a 3C aceitar a AWS como sistema de registro do teste e quiser menos dependência do BI atual" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1120" y="1500" width="760" height="84" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram name="2 Desenho 1 · visão geral" id="v4-d1g">
+<mxfile host="app.diagrams.net" pages="5">
+  <diagram name="1 Arquitetura · visão geral" id="v4-d1g">
     <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="960" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="v4-d1g_title" value="Desenho 1 (oficial) · recomendação de SKU para o B2B da 3 Corações · visão geral" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-d1g_title" value="Arquitetura oficial · recomendação de SKU para o B2B da 3 Corações · visão geral" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="20" y="20" width="1500" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1g_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 2 Desenho 1 · visão geral · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-d1g_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 1 Arquitetura · visão geral · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.4" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1460" y="10" width="420" height="76" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1g_z1" value="Já existe na 3 Corações" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FAFAFA;strokeColor=#7F7F7F;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
@@ -198,7 +40,7 @@
         <mxCell id="v4-d1g_b6" value="&lt;b&gt;6 · Teste A/B e painel diário&lt;/b&gt;&lt;br&gt;grupos sorteados na rodada e fixos por campanha, registro de quem recebeu a oferta e medição de faturamento, margem, sortimento, frequência e conversão" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1520" y="390" width="300" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1g_z3" value="AWS · conta da 3C · N. Virgínia (us-east-1) · motor de recomendação com Personalize e SageMaker AI · Glue como apoio" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
+        <mxCell id="v4-d1g_z3" value="AWS · conta da 3C · N. Virgínia (us-east-1) · motor de recomendação com Personalize (NBO, mais por menos e cesta) · Glue como apoio" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="20" y="600" width="1840" height="280" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1g_b2" value="&lt;b&gt;2 · Cópia para a AWS e preparo&lt;/b&gt;&lt;br&gt;exportação semanal para o S3 com chave de criptografia da 3C; o Glue monta os arquivos de entrada dos dois motores" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7AA116;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
@@ -207,13 +49,13 @@
         <mxCell id="v4-d1g_b3" value="&lt;b&gt;3 · Próxima melhor oferta (NBO)&lt;/b&gt;&lt;br&gt;Amazon Personalize: recomendação por cliente em lote para o desconto, e afinidade com item para o mais por menos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="410" y="660" width="300" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1g_b4" value="&lt;b&gt;4 · Cesta de compras (MBA)&lt;/b&gt;&lt;br&gt;SageMaker AI: regras de itens comprados juntos, para os combos, e notebooks de desenvolvimento; o Glue formata as saídas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-d1g_b4" value="&lt;b&gt;4 · Cesta de compras (MBA)&lt;/b&gt;&lt;br&gt;Personalize (SIMS): itens do mesmo pedido, para os combos; o Glue calcula suporte, confiança e lift e formata as saídas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="780" y="660" width="300" height="130" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1g_n_sfn" value="&lt;b&gt;Step Functions&lt;/b&gt;&lt;br&gt;orquestra o preparo, o NBO e a cesta na AWS, com tentativas, erros e alertas; o manifesto no S3 aciona o Step Functions; o S3 apaga as entradas em 30 dias" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1150" y="660" width="300" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1g_n_pre" value="&lt;b&gt;Pré-requisitos&lt;/b&gt;&lt;br&gt;aceite por escrito da 3C para o motor rodar na AWS (a especificação cita Snowflake, Airflow e notebooks na stack interna); contrato de operador 3C e A3 no mês 1; acesso rigoroso aos dados (aba 5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-d1g_n_pre" value="&lt;b&gt;Pré-requisitos&lt;/b&gt;&lt;br&gt;aceite por escrito da 3C para o motor rodar na AWS (a especificação cita Snowflake, Airflow e notebooks na stack interna); contrato de operador 3C e A3 na W0; acesso rigoroso aos dados (aba 5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1520" y="660" width="300" height="130" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1g_e0" value="carga do SAP (já existe)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d1g_sap" target="v4-d1g_b1">
@@ -253,15 +95,15 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="3 Desenho 1 · arquitetura técnica" id="v4-d1t">
+  <diagram name="2 Arquitetura · técnica" id="v4-d1t">
     <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2300" pageHeight="1010" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="v4-d1t_title" value="Desenho 1 (oficial) · arquitetura técnica · fluxo numerado de 1 a 14" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-d1t_title" value="Arquitetura oficial · arquitetura técnica · fluxo numerado de 1 a 14" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="20" y="20" width="1500" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1t_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 3 Desenho 1 · técnica · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-d1t_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 2 Arquitetura · técnica · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.4" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1860" y="10" width="420" height="76" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1t_zs" value="Sistemas da 3C" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FAFAFA;strokeColor=#7F7F7F;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
@@ -339,13 +181,13 @@
         <mxCell id="v4-d1t_pers_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" vertex="1" parent="1">
           <mxGeometry x="1930" y="296" width="48" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1t_sm" value="&lt;b&gt;SageMaker AI · cesta (MBA)&lt;/b&gt;&lt;br&gt;job com regras de associação, independente do NBO; notebooks de desenvolvimento; desafiante de NBO opcional" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-d1t_sm" value="&lt;b&gt;Personalize · cesta (MBA)&lt;/b&gt;&lt;br&gt;SIMS: pares de itens do mesmo pedido (cada pedido como um usuário), independente do NBO; teste de aceite na W1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1920" y="410" width="300" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1t_sm_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;" vertex="1" parent="1">
+        <mxCell id="v4-d1t_sm_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" vertex="1" parent="1">
           <mxGeometry x="1930" y="436" width="48" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1t_glue2" value="&lt;b&gt;Glue · saídas&lt;/b&gt;&lt;br&gt;junta NBO e cesta, aplica o filtro final (estoque, já comprado; pede mais itens que o top-N) e grava o arquivo de sucesso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#8C4FFF;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-d1t_glue2" value="&lt;b&gt;Glue · cesta e saídas&lt;/b&gt;&lt;br&gt;calcula suporte, confiança e lift dos pares da cesta, junta com o NBO, aplica o filtro final (estoque, já comprado; pede mais itens que o top-N) e grava o arquivo de sucesso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#8C4FFF;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1560" y="410" width="300" height="100" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1t_glue2_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;" vertex="1" parent="1">
@@ -360,7 +202,7 @@
         <mxCell id="v4-d1t_n_sec" value="&lt;b&gt;Acesso e chaves&lt;/b&gt;&lt;br&gt;papéis nominais com menor privilégio, verificação em duas etapas, chave de criptografia da 3C, bucket sem acesso público; exceções por papel só para o Personalize e a integração do Snowflake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1200" y="550" width="300" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1t_n_ret2" value="&lt;b&gt;Retenção na AWS&lt;/b&gt;&lt;br&gt;arquivos 30 dias; dados do Personalize enquanto o modelo estiver ativo; métricas, regras de cesta, versões de modelo e logs sem prazo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-d1t_n_ret2" value="&lt;b&gt;Retenção na AWS&lt;/b&gt;&lt;br&gt;entradas e saídas: 30 dias no S3 (valor inicial); dados do Personalize enquanto o modelo estiver ativo; métricas, regras de cesta, versões de modelo e logs sem prazo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1560" y="550" width="300" height="100" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1t_n_aud" value="&lt;b&gt;Auditoria e custo&lt;/b&gt;&lt;br&gt;CloudTrail com eventos de dados do S3, alarme de acesso fora do padrão e alerta de gasto (Budgets)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
@@ -369,7 +211,7 @@
         <mxCell id="v4-d1t_n_leg" value="&lt;b&gt;Como ler&lt;/b&gt;: setas numeradas de 1 a 14 seguem a rodada semanal; as sem número são apoio. Grupos, exposição, medição e painel do teste A/B ficam no Snowflake e no BI da 3C. A AWS só calcula as recomendações e devolve as tabelas por arquivos no S3. Se a 3C carregar as vendas todo dia, só o parâmetro da exportação muda." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1200" y="690" width="1020" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="v4-d1t_n_pre" value="&lt;b&gt;Pré-requisitos&lt;/b&gt;: (1) aceite por escrito da 3C para o motor rodar na AWS, cobrindo os itens 4.1, 4.3.1.2, 4.4.1 a 4.4.3 e RNF04 da especificação e a API prometida no mês 3 da proposta; (2) contrato de operador 3C e A3 no mês 1; (3) integração de armazenamento criada pela 3C no Snowflake; (4) critério de funding confirmado pela AWS." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-d1t_n_pre" value="&lt;b&gt;Pré-requisitos&lt;/b&gt;: (1) aceite por escrito da 3C para o motor rodar na AWS, cobrindo os itens 4.1, 4.3.1.2, 4.4.1 a 4.4.3 e RNF04 da especificação e a API prometida no mês 3 da proposta; (2) contrato de operador 3C e A3 na W0; (3) integração de armazenamento criada pela 3C no Snowflake; (4) critério de funding confirmado pela AWS." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1200" y="830" width="1020" height="100" as="geometry" />
         </mxCell>
         <mxCell id="v4-d1t_e1" value="1 carga do SAP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d1t_sap" target="v4-d1t_src">
@@ -442,209 +284,27 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="4 Desenho 2 · alternativa AWS" id="v4-d2t">
-    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2260" pageHeight="1010" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="v4-d2t_title" value="Desenho 2 (alternativa) · controle do teste A/B também na AWS · fluxo numerado de 1 a 16" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="20" y="20" width="1500" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 4 Desenho 2 · alternativa · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1820" y="10" width="420" height="76" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_zs" value="Sistemas da 3C" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#FAFAFA;strokeColor=#7F7F7F;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="20" y="210" width="240" height="740" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_sap" value="&lt;b&gt;SAP&lt;/b&gt;&lt;br&gt;pedidos, faturamento, clientes, produtos, estoque" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="40" y="270" width="200" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_sf" value="&lt;b&gt;Salesforce&lt;/b&gt;&lt;br&gt;registro das campanhas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="40" y="410" width="200" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_canais" value="&lt;b&gt;Sírius e B2B&lt;/b&gt;&lt;br&gt;executam as campanhas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="40" y="550" width="200" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_ic" value="&lt;b&gt;Inteligência Comercial&lt;/b&gt;&lt;br&gt;escolhe itens e público, aprova o preço" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="40" y="690" width="200" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_zsn" value="Snowflake da 3C · origem e entrega" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
-          <mxGeometry x="340" y="210" width="380" height="740" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_src" value="&lt;b&gt;Dados de origem (só leitura)&lt;/b&gt;&lt;br&gt;pedidos por item, clientes, produtos, estoque" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="360" y="270" width="340" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_prep" value="&lt;b&gt;Visões de exportação&lt;/b&gt;&lt;br&gt;histórico de compras, itens, estoque e exposição; foto versionada da rodada; grava o manifesto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="360" y="410" width="340" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_expo" value="&lt;b&gt;Registro de quem recebeu a oferta&lt;/b&gt;&lt;br&gt;carga feita pela 3C (hipótese: hoje o Sírius não registra a exposição)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="360" y="550" width="340" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_rec" value="&lt;b&gt;Tabelas de recomendação e visões de leitura&lt;/b&gt;&lt;br&gt;semana e histórico, com o grupo do teste; na carga: troca atômica, testes de contrato e aviso à Inteligência Comercial" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="360" y="690" width="340" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_n_acc" value="&lt;b&gt;Acessos&lt;/b&gt;&lt;br&gt;papel de exportação só com as visões de exportação · equipe A3 com acesso nominal aos dados reais, sob contrato de operador · leitores só nas visões" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="360" y="830" width="340" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_airflow" value="&lt;b&gt;Airflow da 3C · só agenda&lt;/b&gt;: toda semana (ou à mão) dispara a exportação no Snowflake; depois espera o arquivo de sucesso da AWS no S3 e carrega as tabelas · não chama a AWS: o manifesto no S3 aciona o Step Functions · nenhuma lógica de recomendação no Airflow" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="740" y="100" width="1440" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_za" value="AWS · conta da 3C · N. Virgínia (us-east-1)" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
-          <mxGeometry x="780" y="210" width="1440" height="740" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_zf" value="Step Functions · orquestra os passos 5 a 9" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_step_functions_workflow;strokeColor=#CD2264;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#CD2264;dashed=0;" vertex="1" parent="1">
-          <mxGeometry x="1140" y="375" width="1060" height="295" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_n_leg" value="&lt;b&gt;Como ler&lt;/b&gt;: setas numeradas de 1 a 16 seguem a rodada. Aqui o sorteio dos grupos (uma vez por campanha), a medição e o painel ficam na AWS; o Snowflake continua sendo a origem dos dados e o destino das tabelas entregues. A exposição e as vendas chegam ao S3 pela exportação semanal (diária quando a 3C entregar a nova carga)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="800" y="270" width="800" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_s3in" value="&lt;b&gt;S3 · entrada&lt;/b&gt;&lt;br&gt;visões exportadas, criptografadas com chave da 3C; o manifesto aciona o Step Functions; apagadas em 30 dias" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7AA116;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="800" y="410" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_s3in_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
-          <mxGeometry x="810" y="436" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_glue1" value="&lt;b&gt;Glue · preparo&lt;/b&gt;&lt;br&gt;arquivos de interações e de itens do Personalize e tabela de pedidos para a cesta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#8C4FFF;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1160" y="410" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_glue1_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;" vertex="1" parent="1">
-          <mxGeometry x="1170" y="436" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_pers" value="&lt;b&gt;Personalize · NBO&lt;/b&gt;&lt;br&gt;duas soluções: desconto e mais por menos (afinidade com item)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1520" y="410" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_pers_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" vertex="1" parent="1">
-          <mxGeometry x="1530" y="436" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_sm" value="&lt;b&gt;SageMaker AI · cesta (MBA)&lt;/b&gt;&lt;br&gt;regras de associação, independente do NBO; notebooks; desafiante de NBO opcional" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1880" y="410" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_sm_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;" vertex="1" parent="1">
-          <mxGeometry x="1890" y="436" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_glue2" value="&lt;b&gt;Glue · saídas e controle&lt;/b&gt;&lt;br&gt;junta NBO e cesta, filtro final, sorteia os grupos A/B, calcula a medição e grava o arquivo de sucesso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#8C4FFF;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1880" y="550" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_glue2_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;" vertex="1" parent="1">
-          <mxGeometry x="1890" y="576" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_lake" value="&lt;b&gt;S3 e catálogo do Glue&lt;/b&gt;&lt;br&gt;saídas e tabelas de controle (grupos, exposição, medição) em formato aberto (Iceberg)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7AA116;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1520" y="550" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_lake_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
-          <mxGeometry x="1530" y="576" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_athena" value="&lt;b&gt;Athena&lt;/b&gt;&lt;br&gt;consultas da medição e visões do painel; paga por consulta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#8C4FFF;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1520" y="690" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_athena_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.athena;" vertex="1" parent="1">
-          <mxGeometry x="1530" y="716" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_grafana" value="&lt;b&gt;Managed Grafana · painel&lt;/b&gt;&lt;br&gt;painel do teste A/B, login corporativo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#E7157B;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1160" y="690" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_grafana_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.managed_service_for_grafana;" vertex="1" parent="1">
-          <mxGeometry x="1170" y="716" width="48" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_users" value="&lt;b&gt;Inteligência Comercial e CRM&lt;/b&gt;&lt;br&gt;abrem o painel no navegador" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="800" y="690" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_n_sec" value="&lt;b&gt;Acesso e chaves&lt;/b&gt;&lt;br&gt;papéis nominais, verificação em duas etapas, chave de criptografia da 3C, bucket sem acesso público; exceções por papel só para o Personalize e a integração do Snowflake" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="800" y="830" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_n_ret2" value="&lt;b&gt;Retenção na AWS&lt;/b&gt;&lt;br&gt;arquivos 30 dias; tabelas de controle e histórico do teste ficam na AWS (prazo a definir com a 3C); logs e métricas sem prazo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1160" y="830" width="300" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_n_pre" value="&lt;b&gt;Pré-requisitos&lt;/b&gt;: aceite por escrito da 3C para o motor e o controle do teste na AWS (a especificação cita Snowflake, Airflow e notebooks na stack interna); contrato de operador 3C e A3 no mês 1; integração de armazenamento criada pela 3C; critério de funding confirmado pela AWS." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1520" y="830" width="660" height="100" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e1" value="1 carga do SAP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_sap" target="v4-d2t_src">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e2" value="2 dispara a rodada" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_airflow" target="v4-d2t_prep">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="740" y="435" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="v4-d2t_e3" value="3 lê" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_src" target="v4-d2t_prep">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e3b" value="e a exposição" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_expo" target="v4-d2t_prep">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e4" value="4 exporta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_prep" target="v4-d2t_s3in">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e6" value="5 manifesto aciona" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_s3in" target="v4-d2t_glue1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e7" value="6 NBO" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_glue1" target="v4-d2t_pers">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e8" value="7 cesta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_pers" target="v4-d2t_sm">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e9" value="8 formata" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_sm" target="v4-d2t_glue2">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e10" value="9 grava e avisa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_glue2" target="v4-d2t_lake">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e11" value="10 o Airflow carrega no Snowflake" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_lake" target="v4-d2t_rec">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="760" y="600" />
-              <mxPoint x="760" y="740" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="v4-d2t_e12" value="11 consulta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_rec" target="v4-d2t_ic">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e13" value="12 ativa a campanha" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_ic" target="v4-d2t_canais">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e14" value="13 quem recebeu" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_canais" target="v4-d2t_expo">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e15" value="registra a campanha" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_canais" target="v4-d2t_sf">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e16" value="14 consulta" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_lake" target="v4-d2t_athena">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e17" value="15 painel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_athena" target="v4-d2t_grafana">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="v4-d2t_e18" value="16 painel diário" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.5;fontSize=10;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="v4-d2t_grafana" target="v4-d2t_users">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram name="5 Dados, acesso e retenção" id="v4-dados">
+  <diagram name="3 Dados, acesso e retenção" id="v4-dados">
     <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="v4-dados_title" value="Dados, acesso e retenção · vale para os dois desenhos" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-dados_title" value="Dados, acesso e retenção" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="20" y="20" width="1500" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v4-dados_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 5 Dados, acesso e retenção · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-dados_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 3 Dados, acesso e retenção · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.4" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1460" y="10" width="420" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="v4-dados_n_c1" value="&lt;b&gt;O que fica onde&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Snowflake da 3C (sistema de registro, sem prazo):&lt;/b&gt;&lt;br&gt;• dados de origem do SAP&lt;br&gt;• histórico de recomendações, grupos do teste, exposição e medição&lt;br&gt;• foto versionada (clone) dos dados de treino de cada rodada, para reproduzir qualquer resultado&lt;br&gt;• tabelas entregues à Inteligência Comercial&lt;br&gt;&lt;br&gt;&lt;b&gt;AWS (cópia de trabalho):&lt;/b&gt;&lt;br&gt;• arquivos de entrada e de saída de cada rodada, por 30 dias (regra de ciclo de vida do S3)&lt;br&gt;• dados do Personalize, enquanto o modelo estiver ativo; removidos ao desativar&lt;br&gt;• artefatos sem dado pessoal, sem prazo: métricas, versões de modelo, regras de cesta (só itens) e logs de auditoria&lt;br&gt;&lt;br&gt;&lt;b&gt;Por que não há datamart na AWS (Desenho 1):&lt;/b&gt; o histórico já vive no Snowflake. Guardar na AWS duplicaria dado fora do país, custo e superfície de risco. No Desenho 2 o histórico do teste passa a viver na AWS e a retenção precisa ser definida." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-dados_n_c1" value="&lt;b&gt;O que fica onde&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Snowflake da 3C (sistema de registro, sem prazo):&lt;/b&gt;&lt;br&gt;• dados de origem do SAP&lt;br&gt;• histórico de recomendações, grupos do teste, exposição e medição&lt;br&gt;• foto versionada (clone) dos dados de treino de cada rodada, para reproduzir qualquer resultado&lt;br&gt;• tabelas entregues à Inteligência Comercial&lt;br&gt;&lt;br&gt;&lt;b&gt;AWS (cópia de trabalho):&lt;/b&gt;&lt;br&gt;• arquivos de entrada e de saída de cada rodada, por 30 dias (regra de ciclo de vida do S3)&lt;br&gt;• dados do Personalize, enquanto o modelo estiver ativo; removidos ao desativar&lt;br&gt;• artefatos sem dado pessoal, sem prazo: métricas, versões de modelo, regras de cesta (só itens) e logs de auditoria&lt;br&gt;&lt;br&gt;&lt;b&gt;Por que não há datamart na AWS:&lt;/b&gt; o histórico já vive no Snowflake. Guardar na AWS duplicaria dado fora do país, custo e superfície de risco." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="20" y="110" width="600" height="600" as="geometry" />
         </mxCell>
         <mxCell id="v4-dados_n_c2" value="&lt;b&gt;Acesso rigoroso (dados reais com código do cliente)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• &lt;b&gt;o código do cliente do SAP substitui o CNPJ nas cópias&lt;/b&gt; (decisão de 27/10): o motor não precisa do CNPJ, e isso reduz a exposição de MEI (microempreendedor) e empresa individual; o CNPJ fica só no Snowflake&lt;br&gt;• acesso nominal por papel, sem usuário compartilhado, com verificação em duas etapas e login corporativo da 3C&lt;br&gt;• papéis separados: pipeline (sem acesso humano), desenvolvedor A3, leitor, auditor da 3C&lt;br&gt;• &lt;b&gt;a equipe da A3 trabalha com os dados reais por enquanto&lt;/b&gt; (decisão de 27/10), com acesso nominal, registrado no CloudTrail e revisado pela 3C, sob contrato de operador; o Step Functions trafega só caminhos de arquivos&lt;br&gt;• chave de criptografia (KMS) da 3C, administrada pela 3C&lt;br&gt;• S3 sem acesso público; acesso por endpoint privado para o pipeline, com exceções por papel para o Personalize e para a integração do Snowflake, que não passam pela rede privada da 3C&lt;br&gt;• CloudTrail com eventos de dados do S3 e alarme de acesso fora do padrão&lt;br&gt;• no Snowflake: integração de armazenamento com papel de menor privilégio e papel de exportação separado&lt;br&gt;• revisão trimestral de acessos pela 3C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="640" y="110" width="600" height="600" as="geometry" />
         </mxCell>
-        <mxCell id="v4-dados_n_c3" value="&lt;b&gt;Qual é o papel da A3 aqui&lt;/b&gt;&lt;br&gt;&lt;br&gt;A A3 é &lt;b&gt;operadora&lt;/b&gt; dos dados da 3C, sob contrato de operador (a assinar no mês 1).&lt;br&gt;&lt;br&gt;&lt;b&gt;A A3 faz:&lt;/b&gt;&lt;br&gt;• desenha e constrói as tabelas, as visões e os jobs&lt;br&gt;• escreve o código de preparação, exportação, modelos e carga de volta&lt;br&gt;• opera a rodada semanal e investiga falhas, usando contagens e relatórios de qualidade&lt;br&gt;• entrega o dicionário de dados e a documentação&lt;br&gt;&lt;br&gt;&lt;b&gt;A 3C faz:&lt;/b&gt;&lt;br&gt;• é dona e controladora dos dados&lt;br&gt;• cria a integração de armazenamento e os papéis no Snowflake e na conta AWS&lt;br&gt;• define a retenção, autoriza exportações e revisa acessos&lt;br&gt;• carrega a exposição das campanhas e, no futuro, as vendas diárias&lt;br&gt;&lt;br&gt;&lt;b&gt;Regra de trabalho:&lt;/b&gt; a equipe da A3 trabalha com os dados reais, com acesso nominal e registrado, sob o contrato de operador; usa só o que a rodada precisa e não copia dados para fora dos ambientes da 3C." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-dados_n_c3" value="&lt;b&gt;Qual é o papel da A3 aqui&lt;/b&gt;&lt;br&gt;&lt;br&gt;A A3 é &lt;b&gt;operadora&lt;/b&gt; dos dados da 3C, sob contrato de operador (a assinar na W0).&lt;br&gt;&lt;br&gt;&lt;b&gt;A A3 faz:&lt;/b&gt;&lt;br&gt;• desenha e constrói as tabelas, as visões e os jobs&lt;br&gt;• escreve o código de preparação, exportação, modelos e carga de volta&lt;br&gt;• opera a rodada semanal e investiga falhas, usando contagens e relatórios de qualidade&lt;br&gt;• entrega o dicionário de dados e a documentação&lt;br&gt;&lt;br&gt;&lt;b&gt;A 3C faz:&lt;/b&gt;&lt;br&gt;• é dona e controladora dos dados&lt;br&gt;• cria a integração de armazenamento e os papéis no Snowflake e na conta AWS&lt;br&gt;• define a retenção, autoriza exportações e revisa acessos&lt;br&gt;• carrega a exposição das campanhas e, no futuro, as vendas diárias&lt;br&gt;&lt;br&gt;&lt;b&gt;Regra de trabalho:&lt;/b&gt; a equipe da A3 trabalha com os dados reais, com acesso nominal e registrado, sob o contrato de operador; usa só o que a rodada precisa e não copia dados para fora dos ambientes da 3C." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1260" y="110" width="620" height="600" as="geometry" />
         </mxCell>
-        <mxCell id="v4-dados_n_d1" value="&lt;b&gt;Retenção · decisões&lt;/b&gt;: 30 dias para arquivos na AWS (era 7 dias na proposta anterior; ajustável com o encarregado de dados da 3C) · dados do Personalize apagados ao desativar o modelo · histórico completo no Snowflake, sem prazo, definido pela 3C · artefatos sem dado pessoal e logs de auditoria sem prazo, com custo baixo. Se o histórico passar a ser útil também para outros projetos, o lugar dele é um datamart no Snowflake, não na AWS." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-dados_n_d1" value="&lt;b&gt;Retenção · decisões&lt;/b&gt;: 30 dias para as entradas e as saídas de cada rodada no S3 (valor inicial definido em 29/10, por regra de ciclo de vida; era 7 dias na proposta anterior; ajustável com o encarregado de dados da 3C) · dados do Personalize apagados ao desativar o modelo · histórico completo no Snowflake, sem prazo, definido pela 3C · artefatos sem dado pessoal e logs de auditoria sem prazo, com custo baixo. Se o histórico passar a ser útil também para outros projetos, o lugar dele é um datamart no Snowflake, não na AWS." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="20" y="730" width="1860" height="130" as="geometry" />
         </mxCell>
         <mxCell id="v4-dados_n_d2" value="&lt;b&gt;Em aberto&lt;/b&gt;: (1) o código do cliente é uma chave que a 3C consegue ligar ao CNPJ: continua sendo dado pessoal quando o cliente é pessoa física; reavaliar se o encarregado de dados (DPO) da 3C exigir pseudonimização adicional. (2) MEI e empresa individual nas cópias, agora com menos exposição. (3) posição jurídica sobre os dados fora do país: a expectativa é de que não haja impedimento, mas ela não foi verificada, e nenhum dado real sai antes da resposta (ARQ-Q43). (4) região do Snowflake da 3C e se a organização AWS da 3C bloqueia regiões (política SCP). (5) preço das ferramentas na calculadora da AWS." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
@@ -653,7 +313,7 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="6 Fases e decisões" id="v4-fases">
+  <diagram name="4 Fases e decisões" id="v4-fases">
     <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1040" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -661,39 +321,39 @@
         <mxCell id="v4-fases_title" value="Fases, decisões e o que mudou em relação à v3" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="20" y="20" width="1500" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v4-fases_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 6 Fases e decisões · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-fases_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 4 Fases e decisões · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.4" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1460" y="10" width="420" height="76" as="geometry" />
         </mxCell>
-        <mxCell id="v4-fases_n_f0" value="&lt;b&gt;Pré-contrato&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Sírius aceita SKU diferente por cliente na mesma campanha? (define o grão do NBO e do A/B)&lt;br&gt;• quem analisa o resultado se a 1ª campanha só entrar em M3?&lt;br&gt;• há congelamento de TI entre dezembro e janeiro?&lt;br&gt;• aceite por escrito da 3C: motor na AWS (itens 4.1, 4.3.1.2, 4.4.1 a 4.4.3, RNF04 e a API do mês 3)&lt;br&gt;• contrato de operador 3C e A3&lt;br&gt;• posição do jurídico e do encarregado de dados sobre dados de clientes fora do país (código do cliente no lugar do CNPJ)&lt;br&gt;• funding: o mínimo de R$ 50 mil é piso rígido? a projeção pode incluir outras cargas da 3C?&lt;br&gt;• organização AWS da 3C: regiões liberadas&lt;br&gt;• dia e hora da carga semanal; data da carga diária&lt;br&gt;• volume de dados: histórico, clientes, itens, pedido por item" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-fases_n_f0" value="&lt;b&gt;W0 · alinhamentos e acessos&lt;/b&gt;&lt;br&gt;&lt;br&gt;• Sírius aceita SKU diferente por cliente na mesma campanha? (define o grão do NBO e do A/B)&lt;br&gt;• quem analisa o resultado?&lt;br&gt;• há congelamento de TI entre dezembro e janeiro?&lt;br&gt;• aceite por escrito da 3C: motor na AWS (itens 4.1, 4.3.1.2, 4.4.1 a 4.4.3, RNF04 e a API do mês 3)&lt;br&gt;• contrato de operador 3C e A3&lt;br&gt;• posição do jurídico e do encarregado de dados sobre dados de clientes fora do país (código do cliente no lugar do CNPJ)&lt;br&gt;• conta AWS, integração do Snowflake com o S3 e papéis nominais liberados&lt;br&gt;• amostra de pedidos reais para os testes de aceite&lt;br&gt;• funding: a AWS confirma a meta de US$ 100 mil de consumo anual projetado e a projeção de plataforma?" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="20" y="110" width="440" height="420" as="geometry" />
         </mxCell>
-        <mxCell id="v4-fases_n_f1" value="&lt;b&gt;Fase 1 · meses 1 a 3&lt;/b&gt;&lt;br&gt;&lt;br&gt;• carga e preparação no Snowflake, relatório de qualidade&lt;br&gt;• &lt;b&gt;piso&lt;/b&gt;: recomendação por popularidade e cesta em SQL no Snowflake, como régua offline e plano de contingência&lt;br&gt;• exportação para o S3 e pipeline na AWS: Glue, Personalize (2 soluções), SageMaker AI, Step Functions&lt;br&gt;• escolha única da janela de tempo do Personalize e registro da decisão&lt;br&gt;• primeira rodada semanal completa, com as tabelas devolvidas ao Snowflake&lt;br&gt;• grupos do teste A/B e registro de exposição&lt;br&gt;• painel diário no BI atual da 3C&lt;br&gt;• &lt;b&gt;decisão E ou D até o fim do mês 1&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-fases_n_f1" value="&lt;b&gt;Fase 1 · W1 a W3 · construção&lt;/b&gt;&lt;br&gt;&lt;br&gt;• &lt;b&gt;W1: testes de aceite do NBO e do MBA no Personalize&lt;/b&gt;, com pedidos reais de 1 filial e 1 a 2 famílias; resultado e decisão do motor (E ou D) no fim da W1&lt;br&gt;• W1 e W2: carga e preparação no Snowflake e pipeline AWS (Glue, Personalize, Step Functions), em paralelo&lt;br&gt;• &lt;b&gt;piso&lt;/b&gt;: popularidade e cesta em SQL no Snowflake, como régua offline e plano de contingência&lt;br&gt;• escolha única da janela de tempo do Personalize&lt;br&gt;• W3: primeira rodada semanal completa, grupos do teste A/B e registro de exposição, painel diário no BI da 3C" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="480" y="110" width="440" height="420" as="geometry" />
         </mxCell>
-        <mxCell id="v4-fases_n_f2" value="&lt;b&gt;Fase 2 · meses 3 a 5&lt;/b&gt;&lt;br&gt;&lt;br&gt;• campanhas com teste A/B nas três mecânicas&lt;br&gt;• ajuste dos modelos com o resultado: filtros, pesos e regras de cesta&lt;br&gt;• desafiante de NBO no SageMaker AI, se houver tempo&lt;br&gt;• medição por grupo e relatório de resultado&lt;br&gt;• transferência de conhecimento para a 3C&lt;br&gt;• análise final até 4 semanas depois do mês 5" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-fases_n_f2" value="&lt;b&gt;Fase 2 · W4 a W6 · campanhas e resultado&lt;/b&gt;&lt;br&gt;&lt;br&gt;• W4 e W5: campanhas com teste A/B nas três mecânicas&lt;br&gt;• W4: ajuste dos modelos com o resultado (filtros, pesos e regras de cesta) e desafiante de NBO com outra receita do Personalize&lt;br&gt;• início da W6 (2 dias): resultado do teste e transferência de conhecimento para a 3C&lt;br&gt;• análise estatística final com o resultado completo das campanhas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="940" y="110" width="440" height="420" as="geometry" />
         </mxCell>
-        <mxCell id="v4-fases_n_f3" value="&lt;b&gt;Evolução (6 a 12 meses)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• recomendação em tempo real, só com consumidor pronto (Sírius em visita, home do B2B); o Personalize cobra um mínimo contínuo por campanha ativa&lt;br&gt;• mais filiais e famílias&lt;br&gt;• retreino e monitoramento de deriva&lt;br&gt;• Desenho 2, se a 3C aceitar a AWS como sistema de registro do teste&lt;br&gt;• decisão por ADR quando houver consumidor" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-fases_n_f3" value="&lt;b&gt;Evolução (6 a 12 meses)&lt;/b&gt;&lt;br&gt;&lt;br&gt;• recomendação em tempo real, só com consumidor pronto (Sírius em visita, home do B2B); o Personalize cobra um mínimo contínuo por campanha ativa&lt;br&gt;• mais filiais e famílias&lt;br&gt;• retreino e monitoramento de deriva&lt;br&gt;• decisão por ADR quando houver consumidor" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1400" y="110" width="480" height="420" as="geometry" />
         </mxCell>
-        <mxCell id="v4-fases_n_g" value="&lt;b&gt;O que mudou em relação à v3&lt;/b&gt;: o Quick, o Bedrock e o Redshift saíram do desenho · o motor agora é Personalize (NBO e mais por menos) e SageMaker AI (cesta), com o Glue só como apoio · o Step Functions orquestra, o manifesto no S3 o aciona e o Airflow só agenda e carrega · toda a AWS fica em us-east-1, sem divisão com São Paulo · o código do cliente do SAP vai para a AWS no lugar do CNPJ, com controle de acesso rigoroso, e a A3 trabalha com os dados reais · retenção de 30 dias nos arquivos da AWS e histórico sem prazo no Snowflake · há dois desenhos: o 1 (oficial, controle do teste no Snowflake) e o 2 (controle também na AWS, com Grafana no painel)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-fases_n_g" value="&lt;b&gt;O que mudou em relação à v3&lt;/b&gt;: o Quick, o Bedrock e o Redshift saíram do desenho · o motor agora é o Personalize (NBO, mais por menos e cesta; direção de 28/10), sem SageMaker AI, e o Glue só como apoio · o Step Functions orquestra, o manifesto no S3 o aciona e o Airflow só agenda e carrega · toda a AWS fica em us-east-1, sem divisão com São Paulo · o código do cliente do SAP vai para a AWS no lugar do CNPJ, com controle de acesso rigoroso, e a A3 trabalha com os dados reais · retenção de 30 dias nos arquivos da AWS e histórico sem prazo no Snowflake · desenho único desde 29/10: grupos do teste, exposição, medição e painel ficam no Snowflake e no BI da 3C (a alternativa com controle na AWS e Grafana foi descartada)." style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="20" y="560" width="1860" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="v4-fases_n_h" value="&lt;b&gt;Pontos de decisão&lt;/b&gt;: (1) aceite da 3C para o motor na AWS, antes do contrato · (2) fim do mês 1: primeira rodada completa com qualidade de dados aceita, e decisão entre o motor na AWS (E) e no Snowflake (D) com base no piso e no desempenho offline · (3) fim do mês 3: primeira campanha no ar · (4) fim do mês 5: resultado do teste A/B e decisão sobre produção em tempo real. &lt;b&gt;Funding&lt;/b&gt;: a AWS paga 10% do consumo anual projetado da produção, na conta da 3C; o mínimo de R$ 50 mil de repasse pede cerca de US$ 7,6 mil por mês de consumo, contra US$ 1,0 a 1,4 mil da produção base (seção 8.7 de arquitetura-proposta.md)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-fases_n_h" value="&lt;b&gt;Pontos de decisão&lt;/b&gt;: (1) aceite da 3C para o motor na AWS, antes do contrato · (2) fim da W1: testes de aceite do NBO e do MBA concluídos, primeira rodada preparada e decisão entre o motor na AWS (E) e no Snowflake (D) com base nos testes, no piso e no desempenho offline · (3) início da W4: primeira campanha no ar · (4) início da W6: resultado do teste A/B e decisão sobre produção em tempo real. &lt;b&gt;Funding&lt;/b&gt;: a AWS paga 10% do consumo anual projetado da produção, na conta da 3C; a meta é US$ 100 mil de consumo anual projetado (≈ US$ 8,3 mil por mês), que rende US$ 10 mil de repasse, contra ≈ US$ 1 mil por mês da produção base; a projeção de plataforma (cenário E2, ≈ US$ 10,7 mil por mês) a cobre (seções 8.7 e 8.8 de arquitetura-proposta.md)." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="20" y="780" width="1860" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="7 POC para o funding" id="v4-poc">
+  <diagram name="5 POC para o funding" id="v4-poc">
     <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="880" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="v4-poc_title" value="POC (prova de valor) para o funding · o Desenho 1 em escala menor, com resultado medido offline" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-poc_title" value="POC (prova de valor) para o funding · a arquitetura oficial em escala menor, com resultado medido offline" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="20" y="20" width="1500" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="v4-poc_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 7 POC para o funding · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.2" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-poc_info" value="&lt;b&gt;Projeto:&lt;/b&gt; 3 Corações · Recomendação de SKU B2B&lt;br&gt;&lt;b&gt;Aba:&lt;/b&gt; 5 POC para o funding · &lt;b&gt;Versão:&lt;/b&gt; v4.0 · &lt;b&gt;Data:&lt;/b&gt; 2026-10-27&lt;br&gt;&lt;b&gt;Status:&lt;/b&gt; proposto · v4.4" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1460" y="10" width="420" height="76" as="geometry" />
         </mxCell>
         <mxCell id="v4-poc_zs" value="Snowflake da 3C · recorte do piloto" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=#F7FBFF;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacingLeft=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
@@ -711,7 +371,7 @@
         <mxCell id="v4-poc_zf" value="Step Functions · orquestra o preparo, o NBO, a cesta e a saída" style="points=[];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_step_functions_workflow;strokeColor=#CD2264;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#CD2264;dashed=0;" vertex="1" parent="1">
           <mxGeometry x="1060" y="340" width="800" height="290" as="geometry" />
         </mxCell>
-        <mxCell id="v4-poc_s3in" value="&lt;b&gt;S3 · entrada&lt;/b&gt;&lt;br&gt;visões exportadas, criptografadas com chave da 3C; apagadas em 30 dias" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7AA116;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-poc_s3in" value="&lt;b&gt;S3 · entrada e saída&lt;/b&gt;&lt;br&gt;visões exportadas e saídas de cada rodada, criptografadas com chave da 3C; apagadas em 30 dias (valor inicial)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#7AA116;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="560" y="370" width="300" height="100" as="geometry" />
         </mxCell>
         <mxCell id="v4-poc_s3in_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
@@ -729,10 +389,10 @@
         <mxCell id="v4-poc_pers_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" vertex="1" parent="1">
           <mxGeometry x="1350" y="396" width="48" height="48" as="geometry" />
         </mxCell>
-        <mxCell id="v4-poc_sm" value="&lt;b&gt;SageMaker AI · cesta&lt;/b&gt;&lt;br&gt;regras de associação (MBA)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="v4-poc_sm" value="&lt;b&gt;Personalize · cesta&lt;/b&gt;&lt;br&gt;SIMS: pares do mesmo pedido (MBA); teste na W1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#01A88D;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1600" y="370" width="240" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="v4-poc_sm_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sagemaker;" vertex="1" parent="1">
+        <mxCell id="v4-poc_sm_ic" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;fillColor=#01A88D;strokeColor=#ffffff;dashed=0;html=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.personalize;" vertex="1" parent="1">
           <mxGeometry x="1610" y="396" width="48" height="48" as="geometry" />
         </mxCell>
         <mxCell id="v4-poc_glue2" value="&lt;b&gt;Glue · saídas&lt;/b&gt;&lt;br&gt;junta NBO e cesta; filtro final; arquivo de sucesso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#8C4FFF;strokeWidth=2;fontSize=11;align=left;spacingLeft=66;spacingRight=6;verticalAlign=middle;" vertex="1" parent="1">
@@ -756,7 +416,7 @@
         <mxCell id="v4-poc_r1" value="&lt;b&gt;Comparação offline&lt;/b&gt;&lt;br&gt;acerto nos 10 primeiros, cobertura do catálogo e ganho sobre o piso (popularidade e cesta em SQL), por mecânica; critério combinado antes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="1200" y="720" width="340" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="v4-poc_r3" value="&lt;b&gt;Calculadora do SOW&lt;/b&gt;&lt;br&gt;projeta o consumo anual da produção na conta da 3C; o funding é 10% dele, e o mínimo de R$ 50 mil pede cerca de US$ 7,6 mil por mês (seção 8.7)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="v4-poc_r3" value="&lt;b&gt;Calculadora do SOW&lt;/b&gt;&lt;br&gt;projeta o consumo anual da produção na conta da 3C; o funding é 10% dele; a meta é US$ 100 mil por ano projetados (≈ US$ 8,3 mil por mês), que rendem US$ 10 mil (seções 8.7 e 8.8)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="780" y="720" width="360" height="120" as="geometry" />
         </mxCell>
         <mxCell id="v4-poc_r4" value="&lt;b&gt;Decisão&lt;/b&gt;&lt;br&gt;seguir para a produção com teste A/B (fase 1 do contrato) ou ajustar os modelos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">

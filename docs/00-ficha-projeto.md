@@ -3,6 +3,13 @@
 Versão: v1 · 2026-10-26 · Status: pré-vendas (proposta em aprovação final na diretoria do cliente)
 Modo de viés tecnológico: aws (restrições do cliente prevalecem: stack Snowflake + Airflow existente)
 
+## Direção vigente (29/10/2026)
+- Motor na AWS (us-east-1), Opção E / ADR-003: Personalize para NBO, mais por menos e MBA (receita SIMS com cada pedido como um "usuário"; o Glue calcula suporte, confiança e lift); Glue só como apoio; Step Functions orquestra; Airflow só agenda e carrega. SageMaker AI excluído da arquitetura. Quick, Bedrock e Redshift fora.
+- Cronograma da POC: W0 (alinhamentos e acessos) a W6, 7 semanas; testes de aceite do NBO e do MBA o quanto antes (W1); se a cesta falhar, piso em SQL e nova decisão com a 3C.
+- Desenho único (29/10): o Desenho 1 é o oficial e o da POC para o funding; o Desenho 2 foi descartado. O S3 de entrada e saída retém os arquivos por 30 dias (valor inicial).
+- Funding: projeção de plataforma mantida em 29/10. Meta: US$ 100 mil de consumo anual projetado, que rendem US$ 10 mil (10%), ≈ US$ 8,3 mil por mês. Cenário de referência E2 (×10 em lote e tempo real mínimo) ≈ US$ 10,7 mil por mês, ≈ US$ 128 mil por ano; E2b ≈ US$ 11,8 mil (arquitetura-proposta.md, seção 8.8). Não entra no material do cliente. O Ricardo vai compartilhar um modelo de SOW para o pedido.
+- Os trechos abaixo desta ficha são o contexto de 26/10 e ficam como histórico.
+
 ## Cliente e oportunidade
 - Cliente: 3 Corações (café e alimentos). Contatos citados na proposta: Marcus Bruno (D&A/Produto) e Thiago Costa. Outros nomes na especificação: João Pedro Felismino (Engenharia), Camila (CRM), Helena (Inteligência Comercial).
 - Objeto: POC/MVP de recomendação de SKU por PDV (B2B) com NBO (Next Best Offer) e MBA (Market Basket Analysis) para três mecânicas de CRM: Combos (MBA), Mais por Menos/Escalonada (NBO) e Desconto (NBO). Validação por teste A/B 50/50, KPI principal: margem de contribuição.

@@ -18,7 +18,7 @@ Status: substituído pelo ADR-003 em 27/10/2026 (o Ricardo retirou Quick, Bedroc
    - Assistente da Inteligência Comercial no Bedrock, com Knowledge Base de dado estruturado (linguagem natural para SQL) tendo Redshift Serverless como motor de consulta, e ferramentas para explicar uma recomendação e montar a lista de campanha para o fluxo de preço (meses 4 e 5). Se o esforço apertar, o assistente sai antes dos painéis.
    - Comparação de modelos com o Amazon Personalize: histórico de compras pseudonimizado no S3 com exclusão em 7 dias; dataset e modelo apagados ao fim de cada rodada; orquestração por Step Functions; métricas e previsões voltam para uma tabela de comparação no Snowflake.
 4. **Parecer jurídico único**, pedido antes do contrato e respondido antes do mês 3, com as seis perguntas da aba 3 do diagrama (dado pessoal ou não; base do art. 33 da LGPD; suficiência da pseudonimização; AWS como suboperadora; confidencialidade comercial; necessidade de RIPD). O contrato de operador entre 3C e A3 é separado e necessário já no mês 1, porque a A3 acessa o Snowflake desde o início.
-5. **Plano B se o parecer for negativo**: fase 1 não muda; painéis só no BI atual; comparação de modelos com SageMaker AI em sa-east-1 (variante C-BR); assistente adiado ou feito no Snowflake (Cortex), sem consumo AWS.
+5. **Plano B se o parecer for negativo**: fase 1 não muda; painéis só no BI atual; comparação de modelos com SageMaker AI em sa-east-1 (variante C-BR, descartada em 28/10 com a exclusão do SageMaker AI); assistente adiado ou feito no Snowflake (Cortex), sem consumo AWS.
 
 ## Por que região única fora do país
 

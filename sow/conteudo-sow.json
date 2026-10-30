@@ -1,0 +1,151 @@
+{
+  "client": "3corações",
+  "client_short": "3corações",
+  "title": "SKU recommendation (NBO and basket) for B2B points of sale on Amazon Personalize",
+  "date_long": "October 29, 2026",
+  "approval_date": "10/29/2026",
+  "description": "3corações sells coffee and food products to a large base of B2B points of sale (PDVs) and builds weekly commercial offers (CRM campaigns) largely by manual and rule-based processes, which limits personalization and makes the gain of each campaign hard to measure. This PoC delivers, on AWS, a weekly recommendation engine for B2B PDVs built on Amazon Personalize: Next Best Offer (NBO, a business term, built with the User-Personalization-v2 recipe) for the discount mechanic, a customer segment per item (Item-Affinity recipe, batch segment jobs) for the 'more for less' mechanic and a market-basket recommendation (combos) based on the SIMS recipe, with support, confidence and lift calculated by AWS Glue. Results are loaded back into the customer's Snowflake and compared offline with a popularity and basket-rules benchmark and, in the last weeks, in A/B campaigns run by 3corações on its own channels.",
+  "expected_impact": [
+    "Evidence, with real 3corações data, of the gain of Amazon Personalize over a popularity and basket-rules benchmark for NBO and basket recommendations, using success criteria agreed with 3corações in W0 (hit rate at 10 and catalog coverage per mechanic, with a minimum relative improvement over the benchmark)",
+    "Weekly recommendation cycle that is traceable, repeatable and measurable through A/B groups, which can replace the manual preparation of offers once in production",
+    "A first directional read of campaign response in the A/B groups; contribution margin is the main KPI for the full A/B read by 3corações after the PoC, with the weekly sales load",
+    "Reusable AWS foundation (data exchange, orchestration, governance and monitoring) that other 3corações use cases can adopt in the same AWS account after the PoC"
+  ],
+  "assumptions": [
+    "3corações provides a project sponsor, a business owner for the commercial rules and technical points of contact for Snowflake, SAP data and the AWS account, available for the weekly checkpoints",
+    "3corações provides, in W0, read access to the Snowflake databases needed (billing, customer 360 feature store, stock and product catalog), a schema with write permission, a warehouse and the storage integration with AWS (CREATE INTEGRATION), and releases a sample of real orders so that the acceptance tests can run in W1",
+    "The PoC data cut is 1 branch and 1 to 2 product families, with 12 months of history per customer and item, to be confirmed at kickoff",
+    "Customer identifiers are pseudonymized with the SAP customer code in the copies sent to AWS (the CNPJ stays in Snowflake); A3Data works with real data as a data operator under contract, with named access recorded in AWS CloudTrail and reviewed by 3corações. At the end of the PoC, the Amazon Personalize dataset groups are deleted or kept, as decided by 3corações",
+    "All data processing runs in the 3corações AWS account in us-east-1, with AWS IAM Identity Center, Amazon Personalize enabled in the region and no service control policy blocking it (to be confirmed in W0); the data source stays in the customer's Snowflake. S3 input and output files are kept for 30 days (initial value, adjustable with the 3corações data protection officer); history stays in Snowflake",
+    "3corações confirms in writing, before the PoC starts, the acceptance of the AWS-based engine and the data transfer to us-east-1 under LGPD",
+    "Campaign execution, channels (CRM, sales force app) and the return of exposure and response data to Snowflake are 3corações's responsibility",
+    "The weekly Snowflake sales load is the current data cadence; the PoC does not depend on a daily load",
+    "Amazon Personalize availability, recipes and prices are those published by AWS at the time of the PoC",
+    "Success criteria and their numeric targets are agreed with 3corações in W0, before the acceptance tests, per mechanic"
+  ],
+  "in_scope": [
+    "Export of the project cut from Snowflake to Amazon S3 with a manifest file, and loading of the results back into Snowflake",
+    "Data preparation and output formatting with AWS Glue (filters for stock, recent purchases and eligibility)",
+    "Amazon Personalize NBO model (User-Personalization-v2) and item-affinity list for the 'more for less' mechanic, with weekly batch recommendations",
+    "Basket (market basket) recommendation with the Amazon Personalize SIMS recipe, with support, confidence and lift calculated by AWS Glue",
+    "Acceptance tests of NBO and basket with real orders in W1, including filters and catalog coverage, and a go/no-go per mechanic at the end of W1: recipe and configuration confirmed; if the SIMS recipe does not outperform the lift-ordered pairs, the basket rules are produced by AWS Glue only",
+    "Popularity and basket-rules benchmark computed in Snowflake, used only as the offline reference for the evaluation",
+    "Orchestration with AWS Step Functions, triggered by the manifest file through Amazon EventBridge; during the PoC, exports and loads back to Snowflake are started manually",
+    "Offline evaluation with success criteria agreed in W0, per mechanic, and support to the A/B campaigns (A/B group assignment and measurement tables in Snowflake)",
+    "Projection of the production-phase AWS consumption with the AWS Pricing Calculator (see Path to production in section 5)",
+    "Security and governance setup: IAM Identity Center, KMS encryption, CloudTrail, AWS Budgets and S3 lifecycle of 30 days"
+  ],
+  "out_of_scope": [
+    "Production deployment, 24x7 operation and ongoing support after the PoC",
+    "Daily or real-time recommendation serving (APIs per customer) and integrations with the customer's sales force app (Sírius), Salesforce or the B2B app",
+    "Execution of marketing campaigns and collection of exposure and response data (3corações); the full A/B read of contribution margin, which needs more campaign cycles",
+    "Ingestion from SAP into Snowflake and development of the Product Feature Store (3corações)",
+    "Training of models on data outside the approved PoC data cut, other branches or other product families",
+    "Generative AI components",
+    "Daily dashboard (D-1) and the weekly production Airflow DAG (during the PoC, exports and loads are started manually), which belong to the production phase"
+  ],
+  "scope_paragraph": "The PoC will be delivered in 7 weeks, from kickoff (W0) to W6, in four phases, with weekly checkpoints with the 3corações team. Acceptance tests of NBO and basket run in W1 so that the go/no-go per mechanic is taken early; A/B campaigns are launched in W4 to W6, with a first directional read at the end of the PoC. The A3Data team is a Project Leader for the whole project (W0 to W6), a Data Architect in the first two weeks (W0 to W1), a Machine Learning Engineer for six weeks (W1 to W6) and a Data Scientist for two weeks of effort distributed over W0 to W6 (success criteria, acceptance tests, offline evaluation and A/B read).",
+  "phases": [
+    {
+      "name": "1. Alignment & Access",
+      "weeks": "W0",
+      "duration": "1 week",
+      "exit_milestone": "Scope, metrics, sample of real orders and AWS/Snowflake access confirmed"
+    },
+    {
+      "name": "2. Acceptance Tests & Data Prep",
+      "weeks": "W1",
+      "duration": "1 week",
+      "exit_milestone": "NBO and basket acceptance tests done; go/no-go per mechanic"
+    },
+    {
+      "name": "3. Pipeline & Model Build",
+      "weeks": "W2 to W3",
+      "duration": "2 weeks",
+      "exit_milestone": "End-to-end weekly pipeline running on the PoC cut"
+    },
+    {
+      "name": "4. A/B Campaigns & Results",
+      "weeks": "W4 to W6",
+      "duration": "3 weeks",
+      "exit_milestone": "Offline results, A/B campaigns launched with a first directional read, consumption projection and final presentation"
+    }
+  ],
+  "total": {
+    "weeks": "W0 to W6",
+    "duration": "7 weeks",
+    "exit_milestone": "PoC result and production go/no-go"
+  },
+  "schedule": {
+    "columns": [
+      "W0",
+      "W1",
+      "W2",
+      "W3",
+      "W4",
+      "W5",
+      "W6"
+    ],
+    "rows": [
+      {
+        "phase": "1. Alignment & Access",
+        "active": [
+          "W0"
+        ]
+      },
+      {
+        "phase": "2. Acceptance Tests & Data Prep",
+        "active": [
+          "W1"
+        ]
+      },
+      {
+        "phase": "3. Pipeline & Model Build",
+        "active": [
+          "W2",
+          "W3"
+        ]
+      },
+      {
+        "phase": "4. A/B Campaigns & Results",
+        "active": [
+          "W4",
+          "W5",
+          "W6"
+        ]
+      }
+    ]
+  },
+  "deliverables": [
+    "Weekly recommendation pipeline running in the 3corações AWS account (Amazon S3, AWS Glue, Amazon Personalize, AWS Step Functions) on the PoC data cut",
+    "NBO, item-affinity and basket recommendation tables loaded in Snowflake, with support, confidence and lift for the basket",
+    "Acceptance test report for NBO and basket (W1) and the go/no-go record per mechanic",
+    "Offline evaluation report against the benchmark, per mechanic, and A/B measurement tables with a first directional read",
+    "AWS consumption projection for the production phase, based on the AWS Pricing Calculator",
+    "Operational package: architecture documentation, data access and retention rules, runbook and handover session"
+  ],
+  "project_overview": "The solution exports weekly cuts of orders, customers and products from Snowflake to Amazon S3, with a manifest file that triggers AWS Step Functions through Amazon EventBridge. AWS Glue prepares the inputs; Amazon Personalize trains the NBO and basket models and generates batch recommendations; AWS Glue calculates support, confidence and lift for the basket and formats and filters the outputs. A success file releases the load of the results back into Snowflake, where A/B groups, exposure and measurement tables live. Path to production: after the PoC, the same architecture is planned to be extended to all branches and product families (about 300 thousand PDVs), to additional 3corações use cases in the same AWS account and, later, to real-time serving for the sales force app; the production-phase consumption projection is made with the AWS Pricing Calculator using the same Amazon Personalize recipes as the PoC.",
+  "architecture_summary": "The architecture is hosted in the 3corações AWS account in us-east-1 and uses Amazon S3 (input and output with a 30-day lifecycle), AWS Glue, Amazon Personalize (User-Personalization-v2, Item-Affinity and SIMS recipes), AWS Step Functions and Amazon EventBridge. Security and governance rely on AWS IAM Identity Center with named access, AWS KMS encryption, AWS CloudTrail auditing, Amazon CloudWatch monitoring, AWS Budgets and VPC endpoints for S3 access from the pipeline. The Snowflake integration uses an IAM role assumed by Snowflake with an external ID. Customer identifiers are pseudonymized with the SAP customer code in the copies sent to AWS.",
+  "diagram_image": "diagrama-arquitetura-sow.png",
+  "aws_calculator_url": null,
+  "team": null,
+  "contribution": null,
+  "residue_terms": [
+    "Acme",
+    "Direcional"
+  ],
+  "team_roles": [
+    {
+      "role": "Project Leader (W0 to W6)"
+    },
+    {
+      "role": "Data Architect (2 weeks, W0 to W1)"
+    },
+    {
+      "role": "Machine Learning Engineer (6 weeks, W1 to W6)"
+    },
+    {
+      "role": "Data Scientist (2 weeks of effort, distributed over W0 to W6)"
+    }
+  ]
+}

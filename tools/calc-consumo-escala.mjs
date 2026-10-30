@@ -1,10 +1,10 @@
-// Modelo de consumo AWS (Personalize + apoio) para o cenário de escala. Desde 28/10 o MBA roda no Personalize: o fixo não inclui SageMaker AI (reserva), só Glue, S3/logs e Athena/Grafana. O uso do Personalize para a cesta não está modelado (preço A VERIFICAR).
+// Modelo de consumo AWS (Personalize + apoio) para o cenário de escala. Desde 28/10 o MBA roda no Personalize e o SageMaker AI está fora; desde 29/10 o Desenho 2 (Athena, Grafana) foi descartado. O fixo (apoio) é só Glue, S3, chaves, Step Functions e logs. A cesta está modelada (SIMS + Glue).
 // Preços: página oficial do Personalize consultada em 27/10/2026 (us-east-1 não está explícito na página; A VERIFICAR na calculadora).
 // Uso: node tools/calc-consumo-escala.mjs   (altere CENARIOS para testar outras premissas)
 const SEMANAS = 4.33;
 const CAMBIO = 5.5;           // R$/US$ (suposição)
 const REPASSE = 0.10;         // 10% do consumo anual projetado
-const MINIMO_REPASSE_BRL = 50000;
+const META_CONSUMO_ANUAL_USD = 100000; // meta do funding (29/10): US$ 100 mil de consumo anual projetado => repasse de US$ 10 mil
 
 // Faixas da segmentação (por 1.000 usuários, por consulta de item)
 function segmentacao(usuarios) {
@@ -31,13 +31,13 @@ const PISO_RT_REQ = 1 * 3600 * 24 * 30; // 1 TPS ligado o mês inteiro = 2,592 M
 
 const CENARIOS = [
   // interacoesM: milhões de interações por treino; usuarios: clientes no lote; mecanicas: lotes por rodada; itensAfin: itens consultados por semana
-  // rtCampanhas / rtReq: campanhas em tempo real e requisições por mês; fixo: SageMaker + Glue + apoio + Athena/Grafana (ponto médio)
+  // rtCampanhas / rtReq: campanhas em tempo real e requisições por mês; fixo: Glue + S3, chaves, Step Functions e logs (apoio). Em 29/10 saiu o ponto médio de Athena/Grafana (US$ 175, Desenho 2 descartado) dos cenários de escala
   { id: 'P1 · Produção base (hoje)', interacoesM: 30, usuarios: 300e3, mecanicas: 2, itensAfin: 20, rtCampanhas: 0, rtReq: 0, fixo: 585, horasTreinoClassico: 8, cestaHoras: 20, cestaDpuH: 4 },
-  { id: 'E1 · Plataforma ×10, só lote', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 0, rtReq: 0, fixo: 1500, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
+  { id: 'E1 · Plataforma ×10, só lote', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 0, rtReq: 0, fixo: 1325, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
   // E2 (28/10): ×10 em lote + tempo real mínimo = campanhas ligadas só no piso de 1 TPS (sem tráfego acima do piso). Alvo do Ricardo: ≈ US$ 10,5 mil/mês (2 campanhas); E2b: 5 campanhas no piso ≈ US$ 12 mil/mês.
-  { id: 'E2 · ×10 lote + tempo real mínimo (2 campanhas)', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 2, rtReq: 0, fixo: 1800, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
-  { id: 'E2b · ×10 lote + tempo real mínimo (5 campanhas)', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 5, rtReq: 0, fixo: 1800, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
-  { id: 'E3 · ×10 + tempo real intenso', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 10, rtReq: 100e6, fixo: 2300, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
+  { id: 'E2 · ×10 lote + tempo real mínimo (2 campanhas)', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 2, rtReq: 0, fixo: 1625, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
+  { id: 'E2b · ×10 lote + tempo real mínimo (5 campanhas)', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 5, rtReq: 0, fixo: 1625, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
+  { id: 'E3 · ×10 + tempo real intenso', interacoesM: 300, usuarios: 3e6, mecanicas: 2, itensAfin: 20, rtCampanhas: 10, rtReq: 100e6, fixo: 2125, horasTreinoClassico: 80, cestaHoras: 200, cestaDpuH: 40 },
 ];
 
 const fmt = (n) => Math.round(n).toLocaleString('pt-BR');
@@ -64,8 +64,8 @@ for (const c of CENARIOS) {
     ['clássica', { treino: treinoC, lote: loteC, tempoReal: rtC }, totalC],
   ]) {
     const ano = total * 12;
-    const repasseBRL = ano * REPASSE * CAMBIO;
-    linhas.push({ cenario: c.id, receita: rec, treino: fmt(parts.treino), lote: fmt(parts.lote), tempoReal: fmt(parts.tempoReal), afinidade: fmt(afin + afinTreino), cesta: fmt(cesta), fixo: fmt(c.fixo), mes: fmt(total), ano: fmt(ano), 'repasse R$': fmt(repasseBRL), 'atinge R$ 50 mil': repasseBRL >= MINIMO_REPASSE_BRL ? 'sim' : 'não' });
+    const repasseUSD = ano * REPASSE;
+    linhas.push({ cenario: c.id, receita: rec, treino: fmt(parts.treino), lote: fmt(parts.lote), tempoReal: fmt(parts.tempoReal), afinidade: fmt(afin + afinTreino), cesta: fmt(cesta), fixo: fmt(c.fixo), mes: fmt(total), ano: fmt(ano), 'repasse US$': fmt(repasseUSD), 'repasse R$': fmt(repasseUSD * CAMBIO), 'folga sobre US$ 100 mil/ano': Math.round((ano / META_CONSUMO_ANUAL_USD - 1) * 100) + '%', 'atinge US$ 100 mil/ano': ano >= META_CONSUMO_ANUAL_USD ? 'sim' : 'não' });
   }
 }
 console.table(linhas);

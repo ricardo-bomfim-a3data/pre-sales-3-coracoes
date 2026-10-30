@@ -1,6 +1,6 @@
 # ADR-001 — Motor de recomendação e faseamento da arquitetura
 
-- Status: **proposto**
+- Status: **proposto**, em parte superado pelo ADR-003 (motor na AWS com Personalize para NBO e MBA; o SageMaker AI foi excluído da arquitetura em 28/10/2026)
 - Data: 2026-10-26
 - Decisor: Ricardo Bomfim (Arquiteto de Dados, A3)
 - Autor do rascunho: ARQ (squad A3)
