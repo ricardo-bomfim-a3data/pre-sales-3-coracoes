@@ -4,7 +4,7 @@ Olá, time! Preciso da ajuda de vocês para fechar os critérios de sucesso de u
 
 **Contexto em 5 linhas**
 - Vamos usar o Amazon Personalize em 3 mecânicas: (1) NBO, o próximo melhor item para cada cliente; (2) "Mais por menos", que aponta os clientes mais propensos a comprar um item promovido; (3) Cesta, itens que costumam ser comprados juntos.
-- A PoC dura 7 semanas. Na primeira semana de dados (W1) fazemos um teste de aceite, e cada mecânica tem um go/no-go.
+- A PoC dura 7 semanas. Nas duas primeiras semanas de dados (W1 e W2) fazemos os testes de aceite, e cada mecânica tem um go/no-go no fim da W2.
 - Os dados são 12 meses de pedidos reais de 1 filial e 1 a 2 famílias de produto.
 - A comparação é com um benchmark simples, calculado no Snowflake: o que mais vende para o cliente ou região (NBO e Mais por menos) e os pares de produtos por lift (cesta).
 - Os números que vocês indicarem vão para o cliente aprovar por escrito, então preciso de valores realistas, nem fáceis demais nem inalcançáveis.
@@ -63,6 +63,6 @@ Sugestão: meta de 50% de sobreposição e mínimo de 30%. Meta ____ %. Mínimo 
 
 **E3.** Quais riscos de dados vocês veem nesse recorte (poucos pedidos por cliente, itens novos, sazonalidade, promoções)? ____
 
-**E4.** Essas metas são para o teste de aceite (W1), com pouca iteração, ou para a avaliação completa (W4 e W5)? Podem ser as mesmas ou o teste da W1 deve ter um piso mais baixo? ____
+**E4.** Essas metas são para os testes de aceite (W1 e W2), com pouca iteração, ou para a avaliação completa (W4 e W5)? Podem ser as mesmas ou o teste de aceite deve ter um piso mais baixo? ____
 
 Obrigado! Qualquer dúvida, me chamem.

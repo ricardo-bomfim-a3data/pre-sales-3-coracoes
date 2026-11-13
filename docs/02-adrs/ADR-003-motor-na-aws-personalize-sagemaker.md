@@ -15,7 +15,7 @@ Limites verificados (docs AWS, 28/10): SIMS considera até 500 milhões de inter
 
 ## Contexto
 
-- A especificação da 3C (E§4.4.1 a 4.4.3) pede notebooks na stack interna, Snowflake e Airflow semanal com execução manual. A proposta A3 V1 previa o Personalize como motor. O ADR-001 resolveu a contradição com o motor no Snowflake e o Personalize como desafiante; o ADR-002 acrescentou uma camada de consumo AWS com Quick, Bedrock e Redshift Serverless.
+- A especificação da 3C (E§4.4.1 a 4.4.3) pede notebooks na stack interna, Snowflake e Airflow semanal com execução manual. O ADR-001 resolveu a contradição com o motor no Snowflake e o Personalize como desafiante; o ADR-002 acrescentou uma camada de consumo AWS com Quick, Bedrock e Redshift Serverless.
 - Em 27/10/2026 o Ricardo decidiu: (a) o Personalize e o SageMaker AI bastam para entregar NBO e MBA completos; (b) estruturar dados para Quick e Bedrock foi um erro agora que a arquitetura está de ponta a ponta; (c) o objetivo é provar valor rápido e sustentar o funding.
 
 ## Decisão
@@ -27,9 +27,9 @@ Limites verificados (docs AWS, 28/10): SIMS considera até 500 milhões de inter
    - ~~Desenho 2 (alternativa)~~ **descartado em 29/10/2026 pelo Ricardo** (histórico): sorteio dos grupos, medição e painel também na AWS, com tabelas Iceberg no catálogo do Glue, Athena e Amazon Managed Grafana. Só volta por nova decisão.
 4. **Dados e acesso.** O código do cliente do SAP substitui o CNPJ nas cópias para a AWS (decisão de 27/10); o CNPJ fica só no Snowflake. A equipe da A3 trabalha com os dados reais por enquanto, sob contrato de operador, com acesso nominal, registrado no CloudTrail e revisado pela 3C. Controle de acesso rigoroso: papéis nominais, verificação em duas etapas, chave KMS administrada pela 3C, bucket sem acesso público. MEI e empresário individual: a chave ainda liga ao CNPJ, reavaliar se o DPO exigir.
 5. **Retenção.** Arquivos de entrada e saída na AWS: 30 dias, por regra de ciclo de vida do S3 (valor inicial definido em 29/10, ajustável com o encarregado de dados da 3C; vale também na POC do funding). Dataset do Personalize: enquanto o modelo estiver ativo. Métricas, regras de cesta, versões de modelo e logs de auditoria: sem prazo. Histórico completo no Snowflake, sem prazo, definido pela 3C. Não há datamart na AWS.
-6. **Aceite da 3C como condição.** O motor na AWS contraria E§4.1, 4.3.1.2, 4.4.1 a 4.4.3 e RNF04, e a proposta prometia API no M3; o aceite por escrito (ARQ-Q46) e o contrato de operador 3C e A3 na W0 são pré-requisitos do contrato. Plano alternativo: Opção D (motor no Snowflake, v3). Na fase 1 a A3 mantém um piso em SQL no Snowflake (popularidade e cesta) como régua offline e contingência; a decisão entre E e D sai no fim da W1, com base nos testes de aceite. Em 27/10 o Ricardo informou que as decisões de arquitetura se mantêm e que o foco imediato é a POC para o funding; o aceite não foi retirado, apenas saiu do foco imediato.
+6. **Aceite da 3C como condição.** O motor na AWS contraria E§4.1, 4.3.1.2, 4.4.1 a 4.4.3 e RNF04; o aceite por escrito (ARQ-Q46) e o contrato de operador 3C e A3 na W0 são pré-requisitos do contrato. Plano alternativo: Opção D (motor no Snowflake, v3). Na fase 1 a A3 mantém um piso em SQL no Snowflake (popularidade e cesta) como régua offline e contingência; a decisão entre E e D sai no fim da W2, com base nos testes de aceite. Em 27/10 o Ricardo informou que as decisões de arquitetura se mantêm e que o foco imediato é a POC para o funding; o aceite não foi retirado, apenas saiu do foco imediato.
 7. **Painel diário (RNF02).** Hoje a carga de vendas é semanal. Até o time da 3C entregar a carga diária (ARQ-Q45), o painel D-1 atualiza semanalmente; depois basta trocar o parâmetro.
-8. **POC para o funding.** Desenho 1 em escala menor (1 filial, 1 a 2 famílias, 7 semanas da W0 à W6, disparo à mão), com comparação offline contra o piso em SQL e projeção de consumo da produção na calculadora do SOW (aba 5 do diagrama v4; seção 4.8 de arquitetura-proposta.md).
+8. **POC para o funding.** Desenho 1 em escala menor (1 filial, 1 a 2 famílias, 7 semanas da W0 à W6, disparo à mão; a carga de trabalho inicial distribuída entre a W1 e a W2), com comparação offline contra o piso em SQL e projeção de consumo da produção na calculadora do SOW (aba 5 do diagrama v4; seção 4.8 de arquitetura-proposta.md).
 9. **Orquestração aprovada.** O Airflow não chama a AWS; manifesto no S3 aciona o Step Functions e arquivo de sucesso libera a carga (aprovado pelo Ricardo em 27/10: "o que funcionar").
 
 ## Fatos verificados (documentação AWS, 27/10/2026)
@@ -54,7 +54,7 @@ Limites verificados (docs AWS, 28/10): SIMS considera até 500 milhões de inter
 
 ## Consequências
 
-- Positivas: entrega mais direta e próxima da proposta V1; NBO e MBA com serviços gerenciados; consumo AWS para o funding; sem camada de consumo extra a operar.
+- Positivas: entrega mais direta; NBO e MBA com serviços gerenciados; consumo AWS para o funding; sem camada de consumo extra a operar.
 - Negativas: o motor sai do Snowflake e exige aceite; a rodada semanal depende da AWS e da integração de armazenamento do Snowflake; CNPJ real fora do país; o consumo em lote é pequeno para sustentar o funding sozinho; competência de ML em AWS no squad; menos explicabilidade para a Inteligência Comercial (compensar com colunas de motivo nas tabelas).
 - Itens das listas afetados: ARQ-Q43 a ARQ-Q50, ARQ-D12, ESP-Q08, ESP-Q09, ESP-D02, ESP-D03.
 

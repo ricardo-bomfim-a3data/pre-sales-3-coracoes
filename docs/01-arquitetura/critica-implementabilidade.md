@@ -188,7 +188,7 @@ Cruzamento com o squad:
 ## 4. Pontos para o ARQ reconsiderar
 
 - ENG-01 [ALTA] Fronteira A3 × 3C para DAG, RF06/RF07 e "pipelines de dados e IA" (P§Premissa 10) contradiz E§4.4.2; e "pipeline batch 100% manual" (P§Escopo Inicial) contradiz Airflow semanal → explicitar no desenho quem constrói e quem opera cada caixa.
-- ENG-02 [ALTA] Squad sem engenheiro de dados e sem engenharia em M4–M5 → incluir no desenho o modelo de operação (quem é acionado) e sinalizar ao comercial o reforço.
+- ENG-02 [ALTA] Sem engenheiro de dados dedicado → incluir no desenho o modelo de operação (quem é acionado) e sinalizar o reforço. **Atualização de 12/11/2026 (Opção E, POC de 7 semanas):** o Engenheiro de Dados cobre da W0 à W2, a 50% do tempo (ambiente AWS, carga e início do pipeline), e o Engenheiro de ML da W2 à W6, também a 50%, com a operação das campanhas, o runbook e a transferência incluídos; depois da W2 não há engenheiro de dados dedicado, e o risco foi aceito pelo Ricardo.
 - ENG-03 [ALTA] Gate "MBA se FS Produtos ok" no lugar errado → mover gate para NBO itens novos; MBA usa faturamento + mestre mínimo de SKU.
 - ENG-04 [MÉDIA] RF07 como SCD2 clássico × execução manual intra-semana → armazenamento append-only por `run_id` + view SCD2; idempotência por run, não por semana; congelamento por campanha.
 - ENG-05 [MÉDIA] Um modelo por abertura × janela não é operável → modelo por qualificação com abertura e janelas como features; backoff só em MBA e regras.
