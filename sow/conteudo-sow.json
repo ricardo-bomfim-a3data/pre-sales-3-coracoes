@@ -2,8 +2,8 @@
   "client": "3corações",
   "client_short": "3corações",
   "title": "SKU recommendation (NBO and basket) for B2B points of sale on Amazon Personalize",
-  "date_long": "October 29, 2026",
-  "approval_date": "10/29/2026",
+  "date_long": "November 13, 2026",
+  "approval_date": "13/11/2026",
   "description": "3corações sells coffee and food products to a large base of B2B points of sale (PDVs) and builds weekly commercial offers (CRM campaigns) largely by manual and rule-based processes, which limits personalization and makes the gain of each campaign hard to measure. This PoC delivers, on AWS, a weekly recommendation engine for B2B PDVs built on Amazon Personalize: Next Best Offer (NBO, a business term, built with the User-Personalization-v2 recipe) for the discount mechanic, a customer segment per item (Item-Affinity recipe, batch segment jobs) for the 'more for less' mechanic and a market-basket recommendation (combos) based on the SIMS recipe, with support, confidence and lift calculated by AWS Glue. Results are loaded back into the customer's Snowflake and compared offline with a popularity and basket-rules benchmark and, in the last weeks, in A/B campaigns run by 3corações on its own channels.",
   "expected_impact": [
     "Evidence, with real 3corações data, of the gain of Amazon Personalize over a popularity and basket-rules benchmark for NBO and basket recommendations, using success criteria agreed with 3corações in W0 (hit rate at 10 and catalog coverage per mechanic, with a minimum relative improvement over the benchmark)",
@@ -192,5 +192,6 @@
       "hours": 42
     }
   ],
-  "fx_rate": 5.4
+  "fx_rate": 5.4,
+  "approver": "Ricardo Bomfim"
 }
