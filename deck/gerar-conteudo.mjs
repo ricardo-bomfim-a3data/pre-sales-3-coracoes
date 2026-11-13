@@ -1,7 +1,8 @@
 // Slides de conteúdo do deck de arquitetura da 3 Corações (padrão visual A3Data).
 // Grade de desenho: 1920 x 1080 px sobre um slide de 20 x 11,25 pol (mesmo tamanho do template da abertura).
 // Uso: node gerar-conteudo.mjs [saida.pptx]
-import pptxgen from 'pptxgenjs';
+// PREVIA=1 troca o pptxgenjs por uma prévia em HTML (previa-html.mjs), para conferir o layout sem PowerPoint ou LibreOffice
+const pptxgen = (process.env.PREVIA ? await import('./previa-html.mjs') : await import('pptxgenjs')).default;
 
 const pres = new pptxgen();
 pres.defineLayout({ name: 'A3_20x11', width: 20, height: 11.25 });
@@ -72,7 +73,7 @@ function tag(s, text, x, y, w, color) {
   tb(s, text.toUpperCase(), x, y, w || 400, 18, { px: 13.5, fontFace: H, color: color || C.NAVY, charSpacing: 1.1, valign: 'middle' });
 }
 function pill(s, text, x, y, w, estilo = 'dark', h = 30) {
-  const e = { dark: [C.DARK, C.WHITE, null], pale: [C.PALE, C.NAVY, C.BORDER], solid: [C.BLUE, C.WHITE, null] }[estilo];
+  const e = { dark: [C.DARK, C.WHITE, null], navy: [C.NAVY, C.WHITE, null], pale: [C.PALE, C.NAVY, C.BORDER], solid: [C.BLUE, C.WHITE, null] }[estilo];
   rrect(s, x, y, w, h, h / 2, { fill: { color: e[0] }, line: e[2] ? { color: e[2], width: 0.75 } : { type: 'none' } });
   tb(s, text.toUpperCase(), x, y, w, h, { px: 13.5, fontFace: H, color: e[1], align: 'center', valign: 'middle', charSpacing: 0.5 });
 }
@@ -122,9 +123,9 @@ function notas(s, texto) { s.addNotes(texto); }
   const s = novoSlide('Contexto', 'Contexto: Da Escolha Manual à Recomendação por Cliente', { legenda: 'Fonte: especificação técnica da 3 Corações' });
   const xs = [165, 740, 1315];
   cardTexto(s, xs[0], 290, 535, 470, '01', 'O pedido', 'Recomendar o SKU certo para cada cliente B2B', [
-    'Substituir a escolha manual de SKUs nas campanhas',
-    'Recomendação por cliente (próxima melhor oferta) e por combinações de itens (cesta de compras)',
-    'Três mecânicas: combos, mais por menos e desconto']);
+    'NBO (próxima melhor oferta): qual item oferecer a cada cliente',
+    'MBA (análise de cesta de compras): quais itens formam um combo',
+    'Três mecânicas: combos (MBA), mais por menos e desconto (NBO)']);
   cardTexto(s, xs[1], 290, 535, 470, '02', 'Como é hoje', 'Decisão manual, da diretoria e das filiais', [
     'A Inteligência Comercial escolhe itens e público',
     'O preço passa por aprovação antes da campanha',
@@ -148,7 +149,7 @@ function notas(s, texto) { s.addNotes(texto); }
   const xs = [165, 603, 1041, 1479];
   const passos = [
     ['01', 'Preparar · Snowflake da 3C', 'Preparação da rodada', ['Lê vendas, clientes, produtos e estoque', 'Filtra itens sem estoque e já comprados no mês', 'Gera relatório de qualidade e foto versionada']],
-    ['02', 'Recomendar · AWS', 'Motor de recomendação', ['Personalize: próxima melhor oferta e mais por menos', 'Personalize e Glue: regras de cesta para os combos', 'Glue prepara e formata os dados']],
+    ['02', 'Recomendar · AWS', 'Motor de recomendação', ['NBO no Personalize: próxima melhor oferta e mais por menos', 'MBA no Personalize e Glue: regras de cesta para os combos', 'Glue prepara e formata os dados']],
     ['03', 'Entregar · Snowflake da 3C', 'Tabelas de recomendação', ['Recomendação da semana por cliente, item e mecânica', 'Histórico de todas as semanas', 'Visões de leitura para a Inteligência Comercial']],
     ['04', 'Medir · Snowflake e BI da 3C', 'Teste A/B e painel', ['Grupos fixos: recebe a recomendação ou segue o processo atual', 'Registro de quem recebeu a oferta', 'Painel de faturamento, margem e conversão']],
   ];
@@ -168,7 +169,7 @@ function notas(s, texto) { s.addNotes(texto); }
     { t: 'Origem na 3C', accent: C.GREY, itens: [['SAP', 'Pedidos, faturamento, clientes e produtos.'], ['Feature Store de Clientes', 'Visão 360° do cliente, no Snowflake.'], ['Produtos e estoque', 'Cadastros e saldo por filial.'], ['Canais e regiões', 'Hierarquias comerciais para as aberturas.']] },
     { t: 'Snowflake da 3C', accent: C.NAVY, itens: [['Preparação da rodada', 'Filtros, relatório de qualidade e foto versionada.'], ['Tabelas de recomendação', 'Semana, histórico e regras de cesta.'], ['Grupos do teste A/B', 'Fixos por campanha.'], ['Medição', 'Faturamento, margem, sortimento e frequência por grupo.']] },
     { t: 'Orquestração', accent: C.NAVY, itens: [['Airflow da 3C', 'Agenda a rodada, carrega as tabelas e roda à mão.'], ['Manifesto no S3', 'A exportação avisa que há dados novos.'], ['Step Functions', 'Orquestra a AWS, com tentativas e alertas.'], ['Arquivo de sucesso', 'Libera a carga no Snowflake.']] },
-    { t: 'AWS · motor', accent: C.BLUE, destaque: true, itens: [['S3', 'Entrada e saída, apagadas em 30 dias.', 's3'], ['Glue', 'Prepara, mede a cesta e formata as saídas.', 'glue'], ['Personalize', 'Melhor oferta, mais por menos e cesta.', 'personalize'], ['CloudTrail', 'Registra quem acessou os dados.', 'cloudtrail']] },
+    { t: 'AWS · motor', accent: C.BLUE, destaque: true, itens: [['S3', 'Entrada e saída, apagadas em 30 dias.', 's3'], ['Glue', 'Prepara, mede a cesta e formata as saídas.', 'glue'], ['Personalize', 'NBO, mais por menos e cesta (MBA).', 'personalize'], ['CloudTrail', 'Registra quem acessou os dados.', 'cloudtrail']] },
     { t: 'Uso na 3C', accent: C.NAVY, itens: [['Inteligência Comercial', 'Consulta a recomendação e aprova o preço.'], ['Sírius e B2B', 'Ativam combos, mais por menos e desconto.'], ['Salesforce', 'Registro das campanhas.'], ['BI da 3C', 'Painel do teste A/B.']] },
   ];
   cols.forEach((c, i) => {
@@ -194,52 +195,62 @@ function notas(s, texto) { s.addNotes(texto); }
 }
 
 // =====================================================================================
-// 6 · Fluxo em raias (serpentina)
+// 6 · Fluxo em raias (swimlane em degraus: cada raia começa onde a anterior termina)
 // =====================================================================================
 {
   const s = novoSlide('Fluxo', 'Fluxo: Da Carga do SAP ao Painel do Teste A/B', { semFaixa: true, legenda: 'Numeração igual à do diagrama de arquitetura (passos 1 a 14)' });
+  const LX = 165, LW = 1685, LH = 215, LG = 20, LY = 262;
+  const NW = 140, NH = 150, PITCH = 160, X0 = 410, PURPLE = '732DC5';
   const lanes = [
-    { y: 285, tag: 'Na 3C', nome: 'Snowflake e Airflow', accent: C.NAVY },
-    { y: 535, tag: 'Na AWS', nome: 'Motor de recomendação', accent: C.BLUE },
-    { y: 785, tag: 'Na 3C', nome: 'Snowflake e canais', accent: C.NAVY },
+    { tag: 'Na 3C', nome: 'Snowflake e Airflow', bar: C.NAVY, fill: C.WHITE, line: C.HAIR, top: C.BLUE, pill: 'solid' },
+    { tag: 'Na AWS', nome: 'Motor de recomendação', bar: C.BLUE, fill: C.PALE, line: C.BORDER, top: C.NAVY, pill: 'navy' },
+    { tag: 'Na 3C', nome: 'Snowflake e canais', bar: C.NAVY, fill: C.WHITE, line: C.HAIR, top: C.BLUE, pill: 'solid' },
   ];
-  lanes.forEach((l) => {
-    card(s, 165, l.y, 1685, 215, l.accent);
-    tag(s, l.tag, 189, l.y + 30, 140, l.accent === C.BLUE ? C.BLUE : C.NAVY);
-    tb(s, l.nome, 189, l.y + 54, 140, 80, { px: 21, fontFace: H });
+  const laneY = (i) => LY + i * (LH + LG);
+  lanes.forEach((l, i) => {
+    rrect(s, LX, laneY(i), LW, LH, 14, { fill: { color: l.bar }, shadow: sh() });
+    rrect(s, LX + 8, laneY(i), LW - 8, LH, 14, { fill: { color: l.fill }, line: { color: l.line, width: 0.75 } });
+    tag(s, l.tag, LX + 36, laneY(i) + 34, 200, l.bar === C.BLUE ? C.BLUE : C.NAVY);
+    tb(s, l.nome, LX + 36, laneY(i) + 58, 190, 90, { px: 24, fontFace: H });
   });
-  const cx = [335, 723, 1111, 1499];
+  // cada raia começa na coluna em que a anterior termina (04 e 05 na mesma coluna; 08-09 e 10 na mesma coluna)
   const nodes = [
-    // raia 1 (esquerda para a direita, colunas 1 a 3)
-    { l: 0, c: 1, n: '01', t: 'Carga do SAP', d: 'Pedidos e cadastros chegam ao Snowflake: semanal hoje, diária quando a 3C entregar a nova carga.' },
-    { l: 0, c: 2, n: '02·03', t: 'Rodada e preparo', d: 'O Airflow dispara; o Snowflake lê e prepara os dados da semana.' },
-    { l: 0, c: 3, n: '04', t: 'Exporta para o S3', d: 'Visões de exportação e manifesto vão ao S3 na conta da 3C.' },
-    // raia 2 (direita para a esquerda, colunas 3 a 0)
-    { l: 1, c: 3, n: '05', t: 'Manifesto aciona', d: 'O manifesto dispara o Step Functions; o Glue prepara os arquivos.' },
-    { l: 1, c: 2, n: '06', t: 'Personalize', d: 'Próxima melhor oferta e mais por menos, em lote.' },
-    { l: 1, c: 1, n: '07', t: 'Personalize · cesta', d: 'Pares do mesmo pedido (SIMS); o Glue calcula suporte, confiança e lift.' },
-    { l: 1, c: 0, n: '08·09', t: 'Glue grava a saída', d: 'Junta as saídas, aplica o filtro final e grava o arquivo de sucesso.' },
-    // raia 3 (esquerda para a direita, colunas 0 a 3)
-    { l: 2, c: 0, n: '10', t: 'Carga no Snowflake', d: 'O Airflow vê o arquivo de sucesso e carrega as tabelas.' },
-    { l: 2, c: 1, n: '11', t: 'Consulta e aprova', d: 'A Inteligência Comercial consulta, escolhe e aprova o preço.' },
-    { l: 2, c: 2, n: '12·13', t: 'Campanha e exposição', d: 'Os canais ativam a oferta e registram quem a recebeu.' },
-    { l: 2, c: 3, n: '14', t: 'Medição e painel', d: 'O teste A/B é medido e vai ao painel do BI da 3C.' },
+    { l: 0, c: 0, n: '01', t: 'Carga do SAP' },
+    { l: 0, c: 1, n: '02-03', t: 'Rodada e preparo' },
+    { l: 0, c: 2, n: '04', t: 'Exporta para o S3' },
+    { l: 1, c: 2, n: '05', t: 'Manifesto aciona' },
+    { l: 1, c: 3, n: '06', t: 'Personalize · NBO' },
+    { l: 1, c: 4, n: '07', t: 'Personalize · cesta (MBA)' },
+    { l: 1, c: 5, n: '08-09', t: 'Glue grava a saída' },
+    { l: 2, c: 5, n: '10', t: 'Carga no Snowflake' },
+    { l: 2, c: 6, n: '11', t: 'Consulta e aprova' },
+    { l: 2, c: 7, n: '12-13', t: 'Campanha e exposição' },
+    { l: 2, c: 8, n: '14', t: 'Medição e painel' },
   ];
+  const nx = (c) => X0 + c * PITCH, ny = (l) => laneY(l) + 32;
   nodes.forEach((n) => {
-    const x = cx[n.c], y = lanes[n.l].y + 30, w = 330, h = 155;
-    rrect(s, x, y, w, h, 10, { fill: { color: C.SOFT }, line: { color: C.HAIR, width: 0.75 } });
-    rect(s, x + 12, y, w - 24, 5, { fill: { color: lanes[n.l].accent } });
-    pill(s, n.n, x + 16, y + 16, n.n.length > 3 ? 84 : 56, 'solid', 28);
-    tb(s, n.t, x + 16, y + 52, w - 32, 26, { px: 20, fontFace: H });
-    tb(s, n.d, x + 16, y + 82, w - 32, 66, { px: 15, color: C.SUB });
+    const x = nx(n.c), y = ny(n.l), L = lanes[n.l];
+    rrect(s, x, y, NW, NH, 10, { fill: { color: C.WHITE }, line: { color: n.l === 1 ? C.BORDER : 'D9D9D9', width: 0.75 }, shadow: sh() });
+    rect(s, x + 10, y, NW - 20, 5, { fill: { color: L.top } });
+    pill(s, n.n, x + 12, y + 20, n.n.length > 2 ? 70 : 46, L.pill, 26);
+    tb(s, n.t, x + 12, y + 58, NW - 24, 86, { px: 17, fontFace: H });
   });
-  // setas (segundo laço, depois de todos os blocos)
-  [[1, 2], [2, 3]].forEach(([a, b]) => arrow(s, 'RIGHT_ARROW', cx[a] + 330 + 11, 285 + 30 + 62, 36, 28));
-  [[3, 2], [2, 1], [1, 0]].forEach(([a, b]) => arrow(s, 'LEFT_ARROW', cx[b] + 330 + 11, 535 + 30 + 62, 36, 28));
-  [[0, 1], [1, 2], [2, 3]].forEach(([a, b]) => arrow(s, 'RIGHT_ARROW', cx[a] + 330 + 11, 785 + 30 + 62, 36, 28));
-  arrow(s, 'DOWN_ARROW', cx[3] + 165 - 17, 285 + 215 + 2, 34, 31);
-  arrow(s, 'DOWN_ARROW', cx[0] + 165 - 17, 535 + 215 + 2, 34, 31);
-  notas(s, 'Mensagem: a rodada semanal começa no Snowflake, passa pela AWS para o cálculo e volta ao Snowflake, onde a Inteligência Comercial decide e o teste A/B é medido.\nPontos a confirmar: quem cria a integração de armazenamento do Snowflake com o S3 (3C); onde roda o Airflow e se ele consegue listar o stage do Snowflake.\n[Sources] Arquitetura proposta v4, aba 3 (Desenho 1, passos 1 a 14).');
+  // setas dentro da raia e passagens entre raias (segundo laço, depois de todos os blocos)
+  nodes.forEach((n, i) => {
+    const m = nodes[i + 1];
+    if (m && m.l === n.l) arrow(s, 'RIGHT_ARROW', nx(n.c) + NW + 3, ny(n.l) + NH / 2 - 9, 14, 18);
+  });
+  [[0, 2, 'S3 · manifesto'], [1, 5, 'S3 · arquivo de sucesso']].forEach(([l, c, rotulo]) => {
+    const x = nx(c) + NW / 2, y1 = ny(l) + NH + 3, y2 = ny(l + 1) - 4;
+    s.addShape(pres.shapes.LINE, { x: x * k, y: y1 * k, w: 0, h: (y2 - y1) * k, line: { color: PURPLE, width: 2.2, dashType: 'dash', endArrowType: 'triangle' } });
+    tb(s, rotulo, x + 16, laneY(l) + LH, 300, LG, { px: 15, fontFace: H, color: PURPLE, valign: 'middle' });
+  });
+  tb(s, [
+    { text: 'Cadência da carga: ', options: { color: C.SUB } },
+    { text: 'semanal hoje', options: { color: C.TEXT, bold: true } },
+    { text: ', diária quando a 3C entregar a nova carga. Linhas tracejadas = passagem entre a conta da 3C e a AWS via S3.', options: { color: C.SUB } },
+  ], LX, laneY(2) + LH + 16, LW, 26, { px: 17 });
+  notas(s, 'Mensagem: a rodada semanal começa no Snowflake, passa pela AWS para o cálculo e volta ao Snowflake, onde a Inteligência Comercial decide e o teste A/B é medido.\nPasso a passo: 01 pedidos e cadastros chegam ao Snowflake (semanal hoje, diária quando a 3C entregar a nova carga). 02-03 o Airflow dispara a rodada e o Snowflake lê e prepara os dados da semana. 04 visões de exportação e manifesto vão ao S3 na conta da 3C. 05 o manifesto dispara o Step Functions e o Glue prepara os arquivos. 06 o Personalize calcula a próxima melhor oferta (NBO) e o mais por menos, em lote. 07 o Personalize (receita SIMS) ranqueia os pares de itens do mesmo pedido e o Glue calcula suporte, confiança e lift: é a análise de cesta de compras (MBA) dos combos. 08-09 o Glue junta as saídas, aplica o filtro final e grava o arquivo de sucesso. 10 o Airflow vê o arquivo de sucesso e carrega as tabelas no Snowflake. 11 a Inteligência Comercial consulta, escolhe e aprova o preço. 12-13 os canais ativam a oferta e registram quem a recebeu. 14 o teste A/B é medido e vai ao painel do BI da 3C.\nPontos a confirmar: quem cria a integração de armazenamento do Snowflake com o S3 (3C); onde roda o Airflow e se ele consegue listar o stage do Snowflake.\n[Sources] Arquitetura proposta v4, aba 3 (Desenho 1, passos 1 a 14).');
 }
 
 // =====================================================================================
@@ -251,13 +262,18 @@ function notas(s, texto) { s.addNotes(texto); }
   const cel = (t, o = {}) => ({ text: t, options: Object.assign({ color: C.TEXT, fontSize: pt(17) }, o) });
   const rows = [
     [hd('Mecânica'), hd('Pergunta que responde'), hd('Como calculamos'), hd('Serviço AWS'), hd('O que entra na tabela semanal')],
-    [cel('Desconto', { bold: true, color: C.NAVY }), cel('Qual item oferecer a cada cliente?'), cel('Próxima melhor oferta: nota por cliente e item, separando itens novos e recompra'), cel('Amazon Personalize'), cel('Itens ranqueados por cliente, com nota e motivo')],
-    [cel('Mais por menos', { bold: true, color: C.NAVY, fill: { color: C.SOFT } }), cel('Quais clientes devem receber a oferta de um item?', { fill: { color: C.SOFT } }), cel('Afinidade com o item: clientes mais propensos ao SKU em oferta', { fill: { color: C.SOFT } }), cel('Amazon Personalize (afinidade com item)', { fill: { color: C.SOFT } }), cel('Clientes ranqueados por item em oferta', { fill: { color: C.SOFT } })],
-    [cel('Combos', { bold: true, color: C.NAVY }), cel('Quais itens comprados juntos formam um combo?'), cel('Pares de itens do mesmo pedido, ranqueados pelo Personalize; suporte, confiança e lift por canal e região'), cel('Amazon Personalize (SIMS) e AWS Glue (métricas)'), cel('Pares e trios de itens com as métricas da regra')],
+    [cel('Desconto (NBO)', { bold: true, color: C.NAVY }), cel('Qual item oferecer a cada cliente?'), cel('Próxima melhor oferta: nota por cliente e item, separando itens novos e recompra'), cel('Amazon Personalize'), cel('Itens ranqueados por cliente, com nota e motivo')],
+    [cel('Mais por menos (NBO)', { bold: true, color: C.NAVY, fill: { color: C.SOFT } }), cel('Quais clientes devem receber a oferta de um item?', { fill: { color: C.SOFT } }), cel('Afinidade com o item: clientes mais propensos ao SKU em oferta', { fill: { color: C.SOFT } }), cel('Amazon Personalize (afinidade com item)', { fill: { color: C.SOFT } }), cel('Clientes ranqueados por item em oferta', { fill: { color: C.SOFT } })],
+    [cel('Combos (MBA)', { bold: true, color: C.NAVY }), cel('Quais itens comprados juntos formam um combo?'), cel('Análise de cesta de compras (MBA): pares de itens do mesmo pedido, ranqueados pelo Personalize; suporte, confiança e lift por canal e região'), cel('Amazon Personalize (SIMS) e AWS Glue (métricas)'), cel('Pares e trios de itens com as métricas da regra')],
     [cel('As três', { bold: true, color: C.NAVY, fill: { color: C.SOFT } }), cel('O que vale para todas?', { fill: { color: C.SOFT } }), cel('Filtros de estoque, de itens já comprados no mês, de canal e de região', { fill: { color: C.SOFT } }), cel('AWS Glue (apoio)', { fill: { color: C.SOFT } }), cel('Tabela única com a mecânica, o grupo do teste e a vigência', { fill: { color: C.SOFT } })],
   ];
   s.addTable(rows, { x: 165 * k, y: 290 * k, w: 1685 * k, colW: [250, 400, 440, 280, 315].map((v) => v * k), rowH: [0.55, 1.15, 1.15, 1.15, 1.15],
     fontFace: 'Lato', valign: 'middle', border: { type: 'solid', color: C.HAIR, pt: 0.75 }, margin: [8, 12, 8, 12] });
+  tb(s, [
+    { text: 'NBO ', options: { color: C.NAVY, bold: true } }, { text: 'Next Best Offer, a próxima melhor oferta para cada cliente', options: { color: C.SUB } },
+    { text: '     ·     ', options: { color: C.GREY } },
+    { text: 'MBA ', options: { color: C.NAVY, bold: true } }, { text: 'Market Basket Analysis, a análise de cesta de compras que define os combos', options: { color: C.SUB } },
+  ], 165, 800, 1685, 30, { px: 18, valign: 'middle' });
   destaque(s, 'Regra de negócio', 'Estoque e itens já comprados no mês são filtrados na preparação e conferidos de novo na saída, antes de publicar.', 165, 850, 1685, 120);
   notas(s, 'Mensagem: cada mecânica usa o método que responde à sua pergunta. O Personalize cobre as três: desconto, mais por menos e a cesta de compras (combos). Na cesta, cada pedido entra como um "usuário" no Personalize (receita SIMS), que devolve os itens mais associados a cada item; o Glue calcula suporte, confiança e lift desses pares, por canal e região, com a mesma tabela de pedidos. Direção do Ricardo em 28/10/2026, com base em uma POC anterior de um cientista de dados da A3 para a mesma 3C, na qual as métricas de suporte, confiança e lift saíram do próprio Personalize, com a unidade sendo o pedido. O desenho oficial usa só o Personalize como motor.\nPontos a confirmar: o recurso do Personalize que gera as regras de cesta não está na documentação pública consultada em 27/10/2026 e o projeto da POC anterior foi apagado; por isso os testes de aceite do NBO e do MBA com pedidos reais rodam já na W1, antes de fixar o desenho; se a cesta não for confirmada, o plano é o piso em SQL e nova decisão com a 3C. O lote da SIMS devolve só a lista de itens, sem pontuação; por isso as três métricas são calculadas no Glue, e não lidas do Personalize. Também confirmar se o Personalize usa o cadastro de clientes (canal, região, área) e a janela de histórico (uma só).\n[Sources] Documentação AWS: Personalize (receitas, filtros, lote, afinidade com item), consultada em 26 e 27/10/2026; relato verbal do cientista de dados da A3 (sem evidência anexada).');
 }
@@ -329,13 +345,13 @@ function notas(s, texto) { s.addNotes(texto); }
     'Disparo à mão, sem depender do Airflow']);
   cardTexto(s, xs[1], 290, 535, 440, '02', 'Como medimos', 'Contra um piso simples', [
     'Acerto nos 10 primeiros itens e cobertura do catálogo',
-    'Ganho sobre popularidade e cesta em SQL',
+    'Ganho sobre popularidade (NBO) e sobre regras de cesta em SQL (MBA)',
     'Critério combinado antes dos resultados']);
   cardTexto(s, xs[2], 290, 535, 440, '03', 'O que entregamos', 'Recomendação e decisão', [
-    'Recomendações e regras de cesta nas tabelas do Snowflake',
+    'Recomendações e regras de cesta (MBA) nas tabelas do Snowflake',
     'Relatório de comparação por mecânica',
     'Recomendação sobre seguir ao teste A/B']);
-  pill(s, '4 semanas · W0 a W3', 165 + 535 - 34 - 250, 296, 250, 'pale', 30);
+  pill(s, '7 semanas · W0 a W6', 165 + 535 - 34 - 250, 296, 250, 'pale', 30);
   faixaEscura(s, 'Por que uma POC', 'Evidência antes de escalar', [
     { big: 'Menor risco', text: 'dados reais em 1 filial e 1 a 2 famílias' },
     { big: 'Piso claro', text: 'comparação com popularidade e cesta em SQL' },
@@ -344,80 +360,100 @@ function notas(s, texto) { s.addNotes(texto); }
 }
 
 // =====================================================================================
-// 11 · Cronograma
+// 11 · Cronograma (layout novo: fundo escuro, atividades à esquerda, barras por semana; sem a dedicação da equipe)
 // =====================================================================================
 {
-  const s = novoSlide('Cronograma', 'Cronograma: Sete Semanas, da W0 à W6', { semFaixa: true, legenda: 'Cronograma proposto, a validar com a 3C · semana de 5 dias úteis · W0 = alinhamentos e acessos' });
-  const gx = 700, gw = 1150, nW = 7, ww = gw / nW, y0 = 280;
-  const FIM = 6.4; // fim do projeto: W6 + 2 dias (6 semanas e 2 dias depois do início da W0)
-  const FASE1 = 4; // W0 a W3
-  rrect(s, 165, y0, 1685, 720, 14, { fill: { color: C.WHITE }, shadow: sh() });
-  const ry = y0 + 76, rh = 36, teamY = ry + 10 * rh + 28, th = 36, my = teamY + 4 * th + 6, fundo = my + 56;
-  // folga depois do fim do projeto
-  rect(s, gx + FIM * ww, ry - 6, (nW - FIM) * ww, fundo - ry + 6, { fill: { color: 'F0F0F0' } });
-  // cabeçalho: fases e semanas
-  rrect(s, gx, y0 + 12, ww * FASE1 - 6, 28, 14, { fill: { color: C.NAVY } });
-  tb(s, 'FASE 1 · CONSTRUÇÃO · W0 A W3', gx, y0 + 12, ww * FASE1 - 6, 28, { px: 13.5, fontFace: H, color: C.WHITE, align: 'center', valign: 'middle', charSpacing: 0.5 });
-  rrect(s, gx + ww * FASE1, y0 + 12, ww * (nW - FASE1), 28, 14, { fill: { color: C.BLUE } });
-  tb(s, 'FASE 2 · CAMPANHAS E RESULTADO · W4 A W6', gx + ww * FASE1, y0 + 12, ww * (nW - FASE1), 28, { px: 13.5, fontFace: H, color: C.WHITE, align: 'center', valign: 'middle', charSpacing: 0.5 });
-  for (let i = 0; i < nW; i++) tb(s, 'W' + i, gx + i * ww, y0 + 46, ww, 22, { px: 16, fontFace: H, color: C.NAVY, align: 'center' });
-  // linhas verticais (semanas finas, limite de fase grosso)
-  for (let i = 0; i <= nW; i++) rect(s, gx + i * ww - (i === FASE1 ? 1 : 0.5), ry - 6, i === FASE1 ? 2 : 1, fundo - ry + 6, { fill: { color: i === FASE1 ? 'C9C9C9' : C.HAIR } });
+  slideAtual = 'Cronograma';
+  const s = pres.addSlide();
+  s.background = { color: '0B1A6B' };
+  img(s, 'assets/fundo-gradiente-16x9.jpg', 0, 0, 1920, 1080);
+  const CLARO = 'F5F5F5', FAIXA = 'ADD3FF', AZUL = '3165F5', ROSA = 'EA9999', AMARELO = 'FFD966';
+  tb(s, 'Cronograma: Sete Semanas', 148, 74, 800, 72, { px: 54, fontFace: H, color: CLARO, valign: 'middle' });
+  // legenda (canto superior direito)
+  const lg = (x, w, txt, fill, tr) => { tb(s, txt, x, 96, w, 26, { px: 19, color: CLARO, valign: 'middle' }); rrect(s, x + w + 8, 94, 100, 30, 15, { fill: tr ? { color: 'FFFFFF', transparency: tr } : { color: fill } }); };
+  lg(1010, 74, 'A3Data', 'EFEFEF');
+  lg(1212, 28, '3C', ROSA);
+  lg(1376, 170, 'Trilha paralela', 'EFEFEF', 55);
+  s.addShape(pres.shapes.DIAMOND, { x: 1700 * k, y: 94 * k, w: 29 * k, h: 29 * k, fill: { color: AMARELO }, line: { type: 'none' } });
+  tb(s, 'Marco', 1738, 96, 90, 26, { px: 19, color: CLARO, valign: 'middle' });
+
+  const LX = 62, LW = 330, GX = 400, GW = 1458, nW = 7, ww = GW / nW, FASE1 = 4;
+  const RY0 = 290, RH = 46;
+  // faixas de fase e semanas
+  const faixa = (x, w, t) => { rect(s, x, 168, w, 52, { fill: { color: FAIXA } }); tb(s, t, x, 168, w, 52, { px: 19, bold: true, color: AZUL, align: 'center', valign: 'middle' }); };
+  faixa(GX, ww * FASE1 - 3, 'FASE 1 · CONSTRUÇÃO · W0 A W3');
+  faixa(GX + ww * FASE1 + 3, ww * (nW - FASE1) - 3, 'FASE 2 · CAMPANHAS E RESULTADO · W4 A W6');
+  rect(s, LX, 230, LW, 52, { fill: { color: '1F3FB5' }, line: { color: 'FFFFFF', width: 0.75 } });
+  tb(s, 'ATIVIDADES', LX + 20, 230, LW - 30, 52, { px: 19, bold: true, color: 'FFFFFF', valign: 'middle' });
+  for (let i = 0; i < nW; i++) {
+    rect(s, GX + i * ww, 230, ww, 52, { fill: { color: FAIXA }, line: { color: 'FFFFFF', width: 0.75 } });
+    tb(s, 'W' + i, GX + i * ww, 230, ww, 52, { px: 21, bold: true, color: AZUL, align: 'center', valign: 'middle' });
+  }
   const atividades = [
     ['Alinhamentos, liberação de acessos e contrato de operador', 0, 1, 'cli'],
-    ['Testes de aceite do NBO e do MBA no Personalize', 1, 2, 'a3'],
-    ['Carga e preparação no Snowflake', 1, 3, 'a3'],
-    ['Pipeline AWS: Glue, Personalize e Step Functions', 1, 3, 'a3'],
+    ['Aceite do NBO e do MBA (cesta), divisão e piso em SQL', 1, 3, 'a3'],
+    ['Ambiente AWS, carga e preparação no Snowflake', 1, 3, 'a3'],
+    ['Pipeline AWS: Glue, Personalize e Step Functions', 2, 4, 'a3'],
     ['Primeira rodada semanal completa', 3, 4, 'a3'],
-    ['Grupos do teste A/B e registro de exposição', 3, 4, 'cli'],
-    ['Painel diário no BI da 3C', 3, 4, 'cli'],
+    ['Grupos do teste A/B e tabelas de medição', 3, 4, 'a3'],
+    ['Registro de exposição e painel diário no BI da 3C', 3, 4, 'cli'],
     ['Campanhas com teste A/B', 4, 6, 'a3'],
-    ['Ajuste dos modelos e desafiante de NBO', 4, 5, 'par'],
-    ['Resultado e transferência de conhecimento', 6, FIM, 'a3'],
+    ['Ajuste dos modelos e desafiante de NBO', 4, 6, 'par'],
+    ['Avaliação offline e revisão da medição', 4, 6, 'a3'],
+    ['Resultado e transferência de conhecimento', 6, 7, 'a3'],
   ];
-  const dur = (a, b) => { const d = Math.round((b - a) * 5); return d < 5 ? d + ' dias' : (d / 5) + (d === 5 ? ' semana' : ' semanas'); };
-  atividades.forEach((l, i) => tb(s, l[0], 199, ry + i * rh, 480, rh, { px: 15, valign: 'middle' }));
+  const fundoY = RY0 + atividades.length * RH;
+  // grade pontilhada (linhas finas e translúcidas)
+  for (let i = 0; i <= nW; i++) rect(s, GX + i * ww - 0.5, RY0, 1, fundoY - RY0, { fill: { color: 'FFFFFF', transparency: 78 } });
+  for (let i = 0; i <= atividades.length; i++) rect(s, GX, RY0 + i * RH - 0.5, GW, 1, { fill: { color: 'FFFFFF', transparency: 78 } });
   atividades.forEach((l, i) => {
-    const y = ry + i * rh + 6, bx = gx + l[1] * ww, bw = (l[2] - l[1]) * ww;
-    const e = { a3: [C.BAND, C.BLUE, 'solid'], cli: [C.WHITE, C.DARK, 'solid'], par: [C.PALE, C.BLUE, 'dash'] }[l[3]];
-    rrect(s, bx, y, bw, 24, 6, { fill: { color: e[0] }, line: { color: e[1], width: 1.5, dashType: e[2] } });
-    tb(s, dur(l[1], l[2]), bx, y, bw, 24, { px: 13.5, fontFace: H, color: C.NAVY, align: 'center', valign: 'middle' });
+    const y = RY0 + i * RH;
+    rect(s, LX, y, LW, RH, { fill: { color: FAIXA }, line: { color: 'FFFFFF', width: 0.75 } });
+    tb(s, l[0], LX + 12, y + 2, LW - 24, RH - 4, { px: 16, bold: true, color: '000000', valign: 'middle' });
+    const bx = GX + l[1] * ww + 6, bw = (l[2] - l[1]) * ww - 12;
+    const fill = l[3] === 'cli' ? { color: ROSA } : l[3] === 'par' ? { color: 'FFFFFF', transparency: 55 } : { color: 'EFEFEF' };
+    rrect(s, bx, y + (RH - 22) / 2, bw, 22, 11, { fill });
   });
-  // equipe
-  tag(s, 'Equipe e dedicação', 199, teamY - 24, 400);
-  const equipe = [
-    ['Arquiteto de soluções', 0, 2, 'Arquiteto · 2 semanas'],
-    ['Engenheiro de ML: engenharia de dados e parte do Personalize', 1, 5, 'Engenheiro de ML · 1 mês'],
-    ['Cientista de dados', 3.4, FIM, 'Cientista de dados · 3 semanas'],
-    ['CLP', 0, FIM, 'CLP · do início ao fim do projeto'],
-  ];
-  equipe.forEach((l, i) => tb(s, l[0], 199, teamY + i * th, 480, th, { px: 15, valign: 'middle' }));
-  equipe.forEach((l, i) => {
-    const y = teamY + i * th + 6, bx = gx + l[1] * ww, bw = (l[2] - l[1]) * ww;
-    rrect(s, bx, y, bw, 24, 6, { fill: { color: C.NAVY } });
-    tb(s, l[3], bx, y, bw, 24, { px: 13.5, fontFace: H, color: C.WHITE, align: 'center', valign: 'middle' });
-  });
-  // marcos
-  tb(s, 'Marcos', 199, my + 4, 300, 30, { px: 17, fontFace: H, color: C.NAVY });
-  [[2, 'Testes de aceite'], [4, '1ª campanha'], [FIM, 'Resultado do teste']].forEach(([m, t]) => {
-    const mx = gx + m * ww;
-    s.addShape(pres.shapes.DIAMOND, { x: (mx - 14) * k, y: (my + 2) * k, w: 28 * k, h: 28 * k, fill: { color: C.DARK }, line: { type: 'none' } });
-    tb(s, t, mx - 110, my + 34, 220, 20, { px: 14, color: C.SUB, align: 'center' });
-  });
-  tb(s, 'FOLGA', gx + FIM * ww, ry + 6, (nW - FIM) * ww, 20, { px: 13.5, fontFace: H, color: C.GREY, align: 'center' });
-  tb(s, '0,6 sem.', gx + FIM * ww, ry + 26, (nW - FIM) * ww, 20, { px: 13.5, fontFace: H, color: C.GREY, align: 'center' });
-  // legenda
-  const ly = fundo + 14;
-  const chave = (x, fill, line, dash, texto, w) => { rrect(s, x, ly, 40, 18, 4, { fill: { color: fill }, line: { color: line, width: 1.5, dashType: dash } }); tb(s, texto, x + 49, ly - 2, w, 22, { px: 14, color: C.SUB, valign: 'middle' }); };
-  chave(199, C.BAND, C.BLUE, 'solid', 'Execução A3Data', 180);
-  chave(450, C.WHITE, C.DARK, 'solid', 'Depende da 3C', 160);
-  chave(690, C.PALE, C.BLUE, 'dash', 'Trilha paralela', 160);
-  chave(930, C.NAVY, C.NAVY, 'solid', 'Equipe A3Data', 160);
-  notas(s, 'Mensagem: o projeto cabe em sete semanas, da W0 à W6, dentro dos dois meses, com folga de 0,6 semana. A W0 é a semana de alinhamentos, liberação de acessos e contrato de operador. Os testes de aceite do NBO e do MBA no Personalize rodam já na W1, com uma amostra de pedidos reais, em paralelo à carga no Snowflake e ao pipeline AWS (ambos de 2 semanas, W1 e W2). A primeira rodada, o painel e os grupos do teste correm juntos na W3; as campanhas ocupam a W4 e a W5, com o ajuste dos modelos na W4; o resultado e a transferência de conhecimento levam 2 dias no início da W6.\nEquipe: arquiteto na W0 e na W1 (apoia os testes de aceite e o desenho do pipeline); engenheiro de ML por 1 mês, de W1 a W4 (engenharia de dados e parte do trabalho do Personalize); cientista de dados por 3 semanas, do meio da W3 ao fim; CLP do início ao fim.\nPontos a confirmar: acessos e uma amostra de pedidos liberados até o fim da W0; congelamento de mudanças de TI; registro de exposição pela 3C; data da carga diária de vendas; significado e custo do perfil CLP. O engenheiro de ML concentra testes, carga e pipeline na W1: o arquiteto cobre essa semana.\n[Sources] Durações, equipe e W0 definidas pela A3Data (Ricardo, 28/10/2026); arquitetura proposta v4.');
+  // marcos (losangos nas barras)
+  const marco = (cx, linha) => s.addShape(pres.shapes.DIAMOND, { x: (cx - 14.5) * k, y: (RY0 + linha * RH + (RH - 29) / 2) * k, w: 29 * k, h: 29 * k, fill: { color: AMARELO }, line: { type: 'none' } });
+  marco(GX + 3 * ww - 6, 1);
+  marco(GX + 4 * ww + 6, 7);
+  marco(GX + 7 * ww - 6, 10);
+  // texto de apoio
+  tb(s, 'Sete semanas, da W0 à W6: alinhamentos e acessos na W0; testes de aceite do NBO e do MBA e preparação do ambiente na W1 e na W2; pipeline semanal na AWS até a W3; campanhas com teste A/B e avaliação offline na W4 e na W5; resultado e transferência de conhecimento na W6.', 64, 812, 1790, 70, { px: 22, color: CLARO });
+  tb(s, '◆  Marcos: testes de aceite e go/no-go ao fim da W2 · 1ª campanha no início da W4 · resultado do teste ao fim da W6. Cronograma proposto, a validar com a 3C; semana de 5 dias úteis.', 64, 896, 1790, 70, { px: 22, color: CLARO });
+  // rodapé
+  img(s, 'assets/logo-a3data-branco.png', 42, 1037, 88, 17);
+  tb(s, '© 2026 · A3DATA CONSULTORIA S/A.', 161, 1036, 400, 20, { px: 10.5, fontFace: 'Poppins Medium', color: CLARO, valign: 'middle' });
+  tb(s, 'LOUCOS POR DADOS APAIXONADOS POR GENTE', 440, 1036, 800, 20, { px: 10.5, fontFace: 'Poppins Medium', color: CLARO, valign: 'middle' });
+  notas(s, 'Mensagem: o projeto cabe em sete semanas, da W0 à W6, com o tempo distribuído entre as etapas. A W0 é a semana de alinhamentos, liberação de acessos e contrato de operador. A W1 começa os testes de aceite do NBO e do MBA no Personalize, com uma amostra de pedidos reais e a divisão treino e teste, e prepara o ambiente AWS e o início da carga no Snowflake. A W2 traz o piso em SQL, a comparação com os testes e o go/no-go por mecânica no fim da semana, junto com o fim da carga e o início do pipeline AWS, que fecha na W3, quando também correm a primeira rodada semanal, o painel e os grupos do teste; as campanhas ocupam a W4 e a W5, com o ajuste dos modelos, o desafiante de NBO e a avaliação offline ao longo das duas semanas; o resultado e a transferência de conhecimento ocupam a W6 inteira.\nLeitura do slide: barras claras são atividades da A3Data, barras rosa dependem da 3C, a barra translúcida é uma trilha paralela e os losangos amarelos são os marcos.\nPontos a confirmar: acessos e uma amostra de pedidos liberados até o fim da W0; congelamento de mudanças de TI; registro de exposição pela 3C; data da carga diária de vendas.\n[Sources] Durações e W0 definidas pela A3Data (Ricardo, 28/10/2026); cronograma definido em 03/11 e 12/11/2026; arquitetura proposta v4.');
 }
 
 // =====================================================================================
-// 12 · Responsabilidades (tabela)
+// 12 · Entregáveis (tabela)
+// =====================================================================================
+{
+  const s = novoSlide('Entregáveis', 'Entregáveis: O Que a 3C Recebe em Sete Semanas', { semFaixa: true, legenda: 'Semanas conforme o cronograma proposto, a validar com a 3C' });
+  const hd = (t) => ({ text: t, options: { bold: true, fill: { color: C.BAND }, color: C.NAVY, fontSize: pt(19.5) } });
+  const linhas = [
+    ['Testes de aceite e piso em SQL', 'Relatório com pedidos reais da 3C, divisão treino e teste, filtros, cobertura do catálogo, comparação com o piso (popularidade e cesta em SQL) e go/no-go por mecânica', 'W2'],
+    ['Pipeline na AWS', 'Amazon S3, AWS Glue, Amazon Personalize e AWS Step Functions na conta da 3C, sobre o recorte da POC, com disparo manual', 'W3'],
+    ['Tabelas de recomendação no Snowflake', 'NBO, mais por menos e cesta (MBA), com suporte, confiança e lift; primeira rodada semanal completa', 'W3'],
+    ['Grupos do teste A/B e tabelas de medição', 'Divisão dos clientes em grupos e tabelas de medição no Snowflake, prontas para receber o registro de exposição da 3C', 'W3'],
+    ['Avaliação offline', 'Relatório por mecânica, contra o piso de popularidade e regras de cesta, com os modelos ajustados', 'W5'],
+    ['Medição do teste A/B', 'Medição por grupo e primeira leitura direcional do resultado das campanhas', 'W6'],
+    ['Projeção de consumo AWS', 'Estimativa para a fase de produção, feita na AWS Pricing Calculator', 'W6'],
+    ['Pacote operacional e repasse', 'Documentação da arquitetura, regras de acesso e retenção, runbook e sessão de transferência de conhecimento', 'W6'],
+    ['Resultado e recomendação de produção', 'Apresentação final com o resultado da POC, o go/no-go de produção e o plano de continuidade', 'W6'],
+  ];
+  const rows = [[hd('#'), hd('Entregável'), hd('Conteúdo'), hd('Semana')]].concat(linhas.map((l, i) => [String(i + 1).padStart(2, '0')].concat(l).map((t, j) => ({ text: t, options: { fontSize: pt(19.5), color: j === 0 ? C.NAVY : C.TEXT, bold: j === 0, fill: { color: i % 2 ? C.WHITE : C.SOFT } } }))));
+  s.addTable(rows, { x: 165 * k, y: 280 * k, w: 1685 * k, colW: [90, 420, 1005, 170].map((v) => v * k), rowH: [56].concat(linhas.map(() => 62)).map((v) => v * k),
+    fontFace: 'Lato', valign: 'middle', border: { type: 'solid', color: 'DADADA', pt: 0.75 }, margin: [6, 12, 6, 12] });
+  notas(s, 'Mensagem: nove entregas, cada uma com a semana em que chega à 3C; os testes de aceite fecham na W2, o pipeline, as tabelas e os grupos do teste na W3, a avaliação offline na W5 e o pacote final com a recomendação de produção na W6.\nPontos a confirmar: formato do relatório de aceite e da avaliação offline; datas exatas após o kick-off.\n[Sources] SOW da PoC (seção de entregáveis e escopo); cronograma proposto (slide anterior); arquitetura proposta v4.');
+}
+
+// =====================================================================================
+// 13 · Responsabilidades (tabela)
 // =====================================================================================
 {
   const s = novoSlide('Responsabilidades', 'Responsabilidades: O Que Precisamos da 3C', { semFaixa: true, legenda: 'Responsáveis sugeridos, a confirmar com a 3C' });
@@ -439,7 +475,7 @@ function notas(s, texto) { s.addNotes(texto); }
 }
 
 // =====================================================================================
-// 13 · Riscos e alternativas
+// 14 · Riscos e alternativas
 // =====================================================================================
 {
   const s = novoSlide('Riscos', 'Riscos: O Que Pode Mudar o Desenho e Como Tratamos', { semFaixa: true, legenda: 'Níveis: avaliação da A3Data' });
@@ -450,7 +486,7 @@ function notas(s, texto) { s.addNotes(texto); }
     ['A carga de vendas semanal limita o painel diário', 'MÉDIO', 'Painel semanal até a carga diária; basta trocar um parâmetro depois', 'W3'],
     ['Dados de clientes saem do país', 'MÉDIO', 'Código do cliente no lugar do CNPJ, acesso nominal e posição do jurídico antes do primeiro dado', 'Antes do primeiro dado'],
     ['O Sírius ainda não registra quem recebeu a oferta', 'MÉDIO', 'Carga feita pela 3C; sem ela, a medição perde precisão', 'W3'],
-    ['NBO e regras de cesta ainda não confirmados no Personalize com os pedidos da 3C', 'MÉDIO', 'Testes de aceite com pedidos reais na W1; se a cesta falhar, regras em SQL (piso) e nova decisão', 'W1'],
+    ['NBO e MBA (regras de cesta) ainda não confirmados no Personalize com os pedidos da 3C', 'MÉDIO', 'Testes de aceite com pedidos reais na W1; se a cesta falhar, regras em SQL (piso) e nova decisão', 'W1'],
   ];
   const rows = [[hd('Risco'), hd('Nível'), hd('O que fazemos'), hd('Quando decidimos')]].concat(lin.map((l, i) => l.map((t, j) => ({ text: t, options: { fontSize: pt(16), bold: j === 1, color: j === 1 ? (t === 'ALTO' ? C.RED : C.NAVY) : C.TEXT, align: j === 1 ? 'center' : 'left', fill: { color: i % 2 ? C.SOFT : C.WHITE } } }))));
   s.addTable(rows, { x: 165 * k, y: 290 * k, w: 1685 * k, colW: [560, 130, 690, 305].map((v) => v * k), rowH: [0.5].concat(lin.map(() => 0.72)),
@@ -458,12 +494,12 @@ function notas(s, texto) { s.addNotes(texto); }
   faixaEscura(s, 'Alternativas', 'Se o motor não puder sair do Snowflake', [
     { big: 'No Snowflake', text: 'motor em Python e Snowpark, com tabelas no próprio Snowflake' },
     { big: 'Piso em SQL', text: 'regras de cesta e popularidade no Snowflake, se o Personalize não confirmar a cesta' },
-    { big: 'Fim da W1', text: 'decisão com base nos testes de aceite, no piso e no desempenho offline' }], 165, 800, 1685, 190);
+    { big: 'Fim da W2', text: 'decisão com base nos testes de aceite, no piso e no desempenho offline' }], 165, 800, 1685, 190);
   notas(s, 'Mensagem: os dois riscos altos têm tratamento definido, e há um plano alternativo se o motor não puder sair do Snowflake.\nPontos a confirmar: aceite da 3C; posição do jurídico; se o Sírius registra a exposição.\n[Sources] Arquitetura proposta v4 (seções 4.7, 4.8 e 11), revisão do especialista (docs/08, seção 9).');
 }
 
 // =====================================================================================
-// 14 · Próximos passos
+// 15 · Próximos passos
 // =====================================================================================
 {
   const s = novoSlide('Próximos passos', 'Próximos Passos: Do Alinhamento à Primeira Rodada', { legenda: 'Datas e responsáveis a confirmar com a 3C' });
@@ -471,7 +507,7 @@ function notas(s, texto) { s.addNotes(texto); }
   const passos = [
     ['01', 'Alinhar', 'Alinhamento na W0', ['Aceite sobre onde roda o motor', 'Contrato de operador', 'Posição do jurídico'], '3C e A3Data'],
     ['02', 'Liberar', 'Acessos e conta', ['Conta AWS da 3C', 'Integração do Snowflake com o S3', 'Papéis nominais'], '3C'],
-    ['03', 'Provar', 'Testes de aceite e POC', ['Testes do NBO e do MBA na W1', '1 filial e 1 a 2 famílias', 'Comparação com o piso'], 'A3Data'],
+    ['03', 'Provar', 'Testes de aceite e POC', ['Testes do NBO e do MBA (W1 e W2)', '1 filial e 1 a 2 famílias', 'Comparação com o piso'], 'A3Data'],
     ['04', 'Decidir', 'Produção com teste A/B', ['Primeira campanha', 'Painel de resultado', 'Plano de continuidade'], '3C e A3Data'],
   ];
   passos.forEach((p, i) => {
