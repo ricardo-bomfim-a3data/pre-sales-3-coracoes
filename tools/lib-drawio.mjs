@@ -25,6 +25,13 @@ export const AWS = {
   sagemaker: { res: 'sagemaker', fill: '#01A88D' },
   sfn: { res: 'step_functions', fill: '#E7157B' },
   grafana: { res: 'managed_service_for_grafana', fill: '#E7157B' },
+  eventbridge: { res: 'eventbridge', fill: '#E7157B' },
+  kms: { res: 'key_management_service', fill: '#DD344C' },
+  cloudtrail: { res: 'cloudtrail', fill: '#E7157B' },
+  cloudwatch: { res: 'cloudwatch', fill: '#E7157B' },
+  budgets: { res: 'budgets', fill: '#7AA116' },
+  sso: { res: 'single_sign_on', fill: '#DD344C' },
+  endpoints: { res: 'endpoints', fill: '#8C4FFF' },
 };
 
 export class Page {
@@ -40,7 +47,7 @@ export class Page {
   title(text) { return this.vtx('title', 20, 20, 1500, 40, text, ST.title, 'text'); }
   info(aba, extra = '') {
     return this.vtx('info', this.w - 440, 10, 420, 76,
-      `<b>Projeto:</b> 3 Corações · Recomendação de SKU B2B<br><b>Aba:</b> ${aba} · <b>Versão:</b> v4.0 · <b>Data:</b> 2026-10-27<br><b>Status:</b> proposto${extra ? ' · ' + extra : ''}`, ST.info, 'info');
+      `<b>Projeto:</b> 3 Corações · Recomendação de SKU B2B<br><b>Aba:</b> ${aba} · <b>Versão:</b> v4.5 · <b>Data:</b> 2026-11-12<br><b>Status:</b> proposto${extra ? ' · ' + extra : ''}`, ST.info, 'info');
   }
   zone(id, x, y, w, h, label, style) { return this.vtx(id, x, y, w, h, label, style, 'zone'); }
   box(id, x, y, w, h, html, style) { return this.vtx(id, x, y, w, h, html, style, 'box'); }

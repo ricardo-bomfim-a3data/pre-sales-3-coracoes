@@ -1,6 +1,6 @@
 # 3 Corações · PoC · Critérios de sucesso para alinhar (interno A3)
 
-Uso: texto de trabalho para a reunião interna com o Líder de projeto, o Arquiteto de Dados, o Engenheiro de ML e o Cientista de Dados. O que for fechado aqui vai à 3 Corações na W0, para acordo por escrito. O SOW diz apenas que os critérios e as metas numéricas são acordados com a 3C na W0, por mecânica. Os valores da coluna "Sugestão" são ponto de partida para a discussão, não valores validados. Preencha os campos `____`.
+Uso: texto de trabalho para a reunião interna com o CLP (Consultor Líder de Projetos), o Engenheiro de Dados, o Engenheiro de ML e o Cientista de Dados. Fluxo definido em 12/11/2026: o Engenheiro de ML é o dono técnico dos critérios; o time de Ciência de Dados fornece os números antes da W0 (mensagem em `mensagem-time-ciencia-de-dados.md`), o CLP os leva à 3C na W0 e os confirma no 1º dia da W1, antes dos testes de aceite, e o Engenheiro de ML os valida ao entrar na W2, antes do go/no-go. O que for fechado aqui vai à 3 Corações na W0, para acordo por escrito. O SOW diz apenas que os critérios e as metas numéricas são acordados com a 3C na W0, por mecânica. Os valores da coluna "Sugestão" são ponto de partida para a discussão, não valores validados. Preencha os campos `____`.
 
 ## 1. Regras comuns (valem para todas as mecânicas)
 
@@ -11,7 +11,7 @@ Uso: texto de trabalho para a reunião interna com o Líder de projeto, o Arquit
 | Quem entra no teste | Clientes com pelo menos ____ compras no período de treino e com compra no período de teste (sugestão: pelo menos 2 compras) | ____ |
 | Benchmark | Popularidade (mais vendidos do cliente e da região) para NBO e Mais por menos; pares por lift para a cesta. Calculado no Snowflake, sobre o mesmo recorte e a mesma divisão. Serve só de comparação, não é alternativa de entrega | ____ |
 | Lista recomendada | Top ____ itens por cliente, depois dos filtros de estoque, compra recente e elegibilidade (sugestão: 10) | ____ |
-| Quem mede | Engenheiro de ML na W1 (testes de aceite) e Cientista de Dados na W4 e W5 (avaliação offline completa) | ____ |
+| Quem mede | Engenheiro de Dados na W1 (preparação e primeiros testes de aceite) e Engenheiro de ML na W2 (testes de aceite, comparação com o benchmark e go/no-go) e Cientista de Dados da W4 à W5 (avaliação offline completa); a leitura direcional do A/B na W6 é do Engenheiro de ML, com o Cientista só revisando a medição | ____ |
 
 ## 2. Critérios por mecânica
 
@@ -23,13 +23,13 @@ Uso: texto de trabalho para a reunião interna com o Líder de projeto, o Arquit
 | Cesta (MBA, SIMS) | Aderência aos pares por lift | % dos pares recomendados para um item âncora que também estão entre os melhores pares por lift calculados nos pedidos reais (suporte mínimo ____, lift acima de 1,0) | Pelo menos 50% de sobreposição com os pares por lift | ____ % | ____ % |
 | Cesta (MBA, SIMS) | Cobertura de itens âncora | % dos itens âncora com pelo menos 1 par recomendado válido | ____ | ____ % | ____ % |
 
-Regra para a tabela: a "meta acordada" é o que a 3C aceita como prova de valor; o "mínimo para seguir" é o piso abaixo do qual a mecânica não passa no go/no-go da W1. O mínimo costuma ficar abaixo da meta.
+Regra para a tabela: a "meta acordada" é o que a 3C aceita como prova de valor; o "mínimo para seguir" é o piso abaixo do qual a mecânica não passa no go/no-go (fim da W2). O mínimo costuma ficar abaixo da meta.
 
-## 3. Regra do go/no-go da W1 (por mecânica)
+## 3. Regra do go/no-go (fim da W2) (por mecânica)
 
-- Mecânica atinge o mínimo para seguir: segue para a construção do pipeline (W2 e W3).
+- Mecânica atinge o mínimo para seguir: segue para a rodada completa e as campanhas (o pipeline já está em construção na W2 e na W3).
 - Mecânica abaixo do mínimo: registrar o resultado, decidir com a 3C o que fazer (ajustar dados ou receita, ou retirar a mecânica do restante da PoC) e atualizar o SOW por escrito.
-- Quem decide: ____ (A3) e ____ (3C). Prazo da decisão: ____ dias úteis depois do relatório da W1.
+- Dono técnico dos critérios: Engenheiro de ML. Quem decide: ____ (A3) e ____ (3C). Prazo da decisão: ____ dias úteis depois do relatório dos testes de aceite.
 
 ## 4. Perguntas para fechar antes da W0
 
@@ -38,7 +38,7 @@ Regra para a tabela: a "meta acordada" é o que a 3C aceita como prova de valor;
 3. A janela de teste de ____ semanas representa a sazonalidade do recorte (feriados, promoções)? ____
 4. Quem na 3C valida os itens "elegíveis" (regras comerciais, estoque, exclusões)? ____
 5. Para o A/B (W4 a W6): que grupos, em que canal e por quanto tempo? A leitura é direcional, sem significância estatística, e a margem de contribuição fica para depois da PoC. ____
-6. O teste de aceite da W1 pode usar a mesma divisão e o mesmo benchmark da avaliação completa da W4/W5, para os números serem comparáveis? (Recomendado: sim.) ____
+6. Os testes de aceite (W1 e W2) podem usar a mesma divisão e o mesmo benchmark da avaliação completa da W4/W5, para os números serem comparáveis? (Recomendado: sim.) ____
 
 ## 5. Registro final (preencher na W0, com a assinatura ou o e-mail de aceite da 3C)
 

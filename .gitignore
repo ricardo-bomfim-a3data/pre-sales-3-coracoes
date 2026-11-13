@@ -3,3 +3,6 @@ desktop.ini
 *.tmp
 _patch-*.mjs
 .env
+deck/saida/previa.html
+deck/saida/prev*.png
+deck/saida/3Coracoes_*.pptx

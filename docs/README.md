@@ -8,11 +8,13 @@ Rodada de 2026-10-26, atualizada em 2026-10-29 (decisões: MBA no Personalize, S
 | Desenho completo da arquitetura (opções A/B/C + C-BR, recomendação C, contratos RF06/RF07, segurança/LGPD, operação, custo, roadmap) | `01-arquitetura/arquitetura-proposta.md` |
 | Diagrama editável draw.io v2, 6 abas (Contexto, Técnica, Fluxo de dados, Segurança e LGPD, Operação, Fases e roadmap) | `01-arquitetura/diagramas/3coracoes_to-be_v2.drawio` |
 | Diagrama v3.1 (histórico): 4 abas, fluxo numerado de 1 a 25, motor no Snowflake e camada de consumo AWS (Opção D) | `01-arquitetura/diagramas/3coracoes_to-be_v3.drawio` |
-| **Diagrama v4.4 (vigente)**: 5 abas (Arquitetura visão geral e técnica, Dados/acesso/retenção, Fases, POC para o funding). Desenho único (Desenho 1); o Desenho 2 foi descartado em 29/10 | `01-arquitetura/diagramas/3coracoes_to-be_v4.drawio` |
+| **Diagrama v4.5 (vigente)**: 6 abas (Arquitetura visão geral e técnica, Dados/acesso/retenção, Fases, POC para o funding, visão em colunas). Desenho único (Desenho 1); o Desenho 2 foi descartado em 29/10 | `01-arquitetura/diagramas/3coracoes_to-be_v4.drawio` |
 | ADR proposto: motor de recomendação e fases | `02-adrs/ADR-001-motor-de-recomendacao-e-fases.md` |
 | ADR substituído: camada de consumo AWS com Quick e Bedrock (Opção D) | `02-adrs/ADR-002-camada-de-consumo-aws-bedrock.md` |
 | ADR proposto (vigente): motor na AWS com Personalize (NBO, mais por menos e MBA; SageMaker AI excluído em 28/10; desenho único desde 29/10) | `02-adrs/ADR-003-motor-na-aws-personalize-sagemaker.md` |
 | Crítica de implementabilidade, esforço P/M/G, riscos | `01-arquitetura/critica-implementabilidade.md` |
+| Revisão da nova equipe e do cronograma (EQP-01 a EQP-11: equipe, entregáveis, memória de cálculo v1.4, início em 23/11/2026) | `09-revisao-nova-equipe-2026-11-03.md` |
+| Memória de cálculo oficial da squad (A3 Copilot v1.4; venda R$ 60.071,13, margem 45,0%), PDF e Excel de conferência | `../sow/memoria-de-calculo-squad.md`, `../sow/memoria-de-calculo-copilot-v1.4.pdf` |
 | Requisitos, conflitos espec × proposta, glossário, perguntas de negócio | `06-requisitos-e-glossario.md` |
 | Dados × perguntas de negócio, dicionário de métricas, consultas de perfilamento | `07-metricas-e-consumo.md` |
 | Revisão crítica independente, redundâncias, 13 decisões pré-assinatura | `08-revisao-especialista.md` |
