@@ -152,7 +152,14 @@ Ajuste a concordância "confiança da {{CLIENTE}}" para "do" quando o nome for m
 
 **Arquitetura AWS/Azure com ícones.** Conta com borda E7157B, VPC com borda 8C4FFF, ícones oficiais de 38–56 px, uma frase de função por componente.
 
-**Fluxograma de raias.** Raias horizontais, cada uma num card com rótulo à esquerda ("A cada ciclo de coleta", "A cada pergunta"). Nós em caixas SOFT com barra superior colorida, título e uma frase. Conectores tracejados entre nós.
+**Fluxograma de raias (swimlane em degraus).** Padrão aprovado em nov/2026; use sempre que o slide mostrar um fluxo que passa por mais de um ambiente ou time (ex.: "Na 3C" e "Na AWS"). Não use serpentina (raia que volta da direita para a esquerda).
+
+- **Raias:** uma por ambiente ou time, empilhadas, 1685 px de largura, ~215 px de altura, gap de 20 px. Cartão branco com **barra lateral grossa** à esquerda (NAVY nas raias do cliente, BLUE na raia da AWS/nuvem) e a raia da nuvem em fundo PALE com borda BORDER. À esquerda de cada raia: tag em caixa alta ("NA 3C", "NA AWS") e o nome da raia em Lato 900, 24 px.
+- **Nós em degraus:** a grade tem uma coluna por nó (passo 160 px, nó 140 × 150 px, vão de 20 px para a seta). **Cada raia começa na coluna em que a anterior termina**: o último nó da raia 1 fica exatamente acima do primeiro da raia 2, e assim por diante. O fluxo lê-se da esquerda para a direita e de cima para baixo, em diagonal, sem voltar.
+- **Nó:** cartão branco com borda fina e sombra, barra superior de 5 px (BLUE nas raias do cliente, NAVY na da nuvem), pílula com o número do passo ("01", "02-03"; BLUE ou NAVY, sólida) e **só o título curto, em até três linhas** (Lato 900, 17 px). Nada de frase de descrição no nó: o detalhe de cada passo vai nas notas do apresentador.
+- **Setas:** triângulo BLUE pequeno (14 × 18 px) no vão entre nós da mesma raia. Entre raias, conector **tracejado roxo `732DC5`** (2,2 px, ponta triangular, forma LINE) do pé do último nó ao topo do primeiro nó da raia seguinte, com rótulo roxo ao lado, no espaço entre as raias (ex.: "S3 · manifesto"). Desenhe setas e rótulos num segundo laço, depois de todos os nós.
+- **Rodapé do slide:** uma linha explicando a cadência e a legenda da linha tracejada ("Linhas tracejadas = passagem entre a conta da 3C e a AWS via S3"), em Lato 17 px SUB, logo abaixo da última raia.
+- Sem faixa BAND de fundo (`semFaixa: true`). Implementação de referência: slide "Fluxo" em `deck/gerar-conteudo.mjs` do projeto 3 Corações.
 
 **Tabela.** Sempre `addTable` nativo. Cabeçalho BAND com texto NAVY, linhas zebradas SOFT e branco, coluna de número ou status em NAVY ou BLUE, linha de total em DARK com texto branco.
 
@@ -190,6 +197,7 @@ Ajuste a concordância "confiança da {{CLIENTE}}" para "do" quando o nome for m
 - Crie um objeto de sombra novo a cada forma. O pptxgenjs altera o objeto que recebe.
 - Texto com várias cores na mesma linha: array de runs `[{ text, options }]`, com `breakLine: true` para quebrar.
 - Imagens: prefira PNG em 2x com fundo transparente. SVG tem suporte irregular nos visualizadores.
+- **Sem `soffice` na máquina** (Windows sem LibreOffice nem PowerPoint, e `winget` de usuário sem instalador): confira o layout com uma prévia em HTML. No projeto 3 Corações, `PREVIA=1 node gerar-conteudo.mjs saida/previa.html` troca o pptxgenjs por `previa-html.mjs`, que desenha os mesmos objetos em 1920 × 1080; abra `previa.html?s=N` (ou capture com o Edge em modo headless) e olhe cada slide. É só para posição, quebra de texto e sobreposição; a conferência final no PowerPoint continua valendo.
 - **Equilíbrio vertical.** A área de conteúdo vai até `y = 1002`. Se o último bloco termina antes de `y ≈ 900`, o slide fica com um vazio grande no pé — cresça os cards ou empurre os blocos para baixo. O oposto também vale: texto espremido dentro do card é bug.
 
 ---

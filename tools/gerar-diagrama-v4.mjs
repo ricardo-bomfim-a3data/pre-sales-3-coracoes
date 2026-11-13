@@ -1,6 +1,6 @@
 // Gera docs/01-arquitetura/diagramas/3coracoes_to-be_v4.drawio: node tools/gerar-diagrama-v4.mjs <saida.drawio>
 import fs from 'node:fs';
-import { Page, ST, wrapFile } from './lib-drawio.mjs';
+import { Page, ST, AWS, wrapFile } from './lib-drawio.mjs';
 
 const R = [270, 410, 550, 690, 830]; // linhas
 const H = 100;
@@ -9,7 +9,7 @@ const H = 100;
 function d1Geral() {
   const p = new Page('1 Arquitetura · visão geral', 'v4-d1g', 1900, 960);
   p.title('Arquitetura oficial · recomendação de SKU para o B2B da 3 Corações · visão geral');
-  p.info('1 Arquitetura · visão geral', 'v4.4');
+  p.info('1 Arquitetura · visão geral', 'v4.5');
   p.zone('z1', 20, 100, 1840, 190, 'Já existe na 3 Corações', ST.zone('#FAFAFA', '#7F7F7F'));
   p.box('sap', 40, 150, 300, 110, '<b>SAP</b><br>pedidos, faturamento, clientes, produtos e estoque', ST.sys);
   p.box('ic', 780, 150, 300, 110, '<b>Inteligência Comercial</b><br>escolhe itens e público, passa pela aprovação de preço e ativa a campanha', ST.sys);
@@ -47,7 +47,7 @@ function d1Geral() {
 function d1Tec() {
   const p = new Page('2 Arquitetura · técnica', 'v4-d1t', 2300, 1010);
   p.title('Arquitetura oficial · arquitetura técnica · fluxo numerado de 1 a 14');
-  p.info('2 Arquitetura · técnica', 'v4.4');
+  p.info('2 Arquitetura · técnica', 'v4.5');
   p.zone('zs', 20, 210, 240, 740, 'Sistemas da 3C', ST.zone('#FAFAFA', '#7F7F7F'));
   p.box('sap', 40, R[0], 200, H, '<b>SAP</b><br>pedidos, faturamento, clientes, produtos, estoque', ST.sys);
   p.box('ic', 40, R[1], 200, H, '<b>Inteligência Comercial</b><br>escolhe itens e público, aprova o preço', ST.sys);
@@ -110,7 +110,7 @@ function d1Tec() {
 function dados() {
   const p = new Page('3 Dados, acesso e retenção', 'v4-dados', 1900, 1200, { flow: false });
   p.title('Dados, acesso e retenção');
-  p.info('3 Dados, acesso e retenção', 'v4.4');
+  p.info('3 Dados, acesso e retenção', 'v4.5');
   const w = 600, y = 110, h = 600;
   p.box('n_c1', 20, y, w, h, '<b>O que fica onde</b><br><br><b>Snowflake da 3C (sistema de registro, sem prazo):</b><br>• dados de origem do SAP<br>• histórico de recomendações, grupos do teste, exposição e medição<br>• foto versionada (clone) dos dados de treino de cada rodada, para reproduzir qualquer resultado<br>• tabelas entregues à Inteligência Comercial<br><br><b>AWS (cópia de trabalho):</b><br>• arquivos de entrada e de saída de cada rodada, por 30 dias (regra de ciclo de vida do S3)<br>• dados do Personalize, enquanto o modelo estiver ativo; removidos ao desativar<br>• artefatos sem dado pessoal, sem prazo: métricas, versões de modelo, regras de cesta (só itens) e logs de auditoria<br><br><b>Por que não há datamart na AWS:</b> o histórico já vive no Snowflake. Guardar na AWS duplicaria dado fora do país, custo e superfície de risco.', ST.tab);
   p.box('n_c2', 640, y, w, h, '<b>Acesso rigoroso (dados reais com código do cliente)</b><br><br>• <b>o código do cliente do SAP substitui o CNPJ nas cópias</b> (decisão de 27/10): o motor não precisa do CNPJ, e isso reduz a exposição de MEI (microempreendedor) e empresa individual; o CNPJ fica só no Snowflake<br>• acesso nominal por papel, sem usuário compartilhado, com verificação em duas etapas e login corporativo da 3C<br>• papéis separados: pipeline (sem acesso humano), desenvolvedor A3, leitor, auditor da 3C<br>• <b>a equipe da A3 trabalha com os dados reais por enquanto</b> (decisão de 27/10), com acesso nominal, registrado no CloudTrail e revisado pela 3C, sob contrato de operador; o Step Functions trafega só caminhos de arquivos<br>• chave de criptografia (KMS) da 3C, administrada pela 3C<br>• S3 sem acesso público; acesso por endpoint privado para o pipeline, com exceções por papel para o Personalize e para a integração do Snowflake, que não passam pela rede privada da 3C<br>• CloudTrail com eventos de dados do S3 e alarme de acesso fora do padrão<br>• no Snowflake: integração de armazenamento com papel de menor privilégio e papel de exportação separado<br>• revisão trimestral de acessos pela 3C', ST.sec);
@@ -124,14 +124,14 @@ function dados() {
 function fases() {
   const p = new Page('4 Fases e decisões', 'v4-fases', 1900, 1040, { flow: false });
   p.title('Fases, decisões e o que mudou em relação à v3');
-  p.info('4 Fases e decisões', 'v4.4');
+  p.info('4 Fases e decisões', 'v4.5');
   const y = 110, h = 420, w = 440;
   p.box('n_f0', 20, y, w, h, '<b>W0 · alinhamentos e acessos</b><br><br>• Sírius aceita SKU diferente por cliente na mesma campanha? (define o grão do NBO e do A/B)<br>• quem analisa o resultado?<br>• há congelamento de TI entre dezembro e janeiro?<br>• aceite por escrito da 3C: motor na AWS (itens 4.1, 4.3.1.2, 4.4.1 a 4.4.3, RNF04 e a API do mês 3)<br>• contrato de operador 3C e A3<br>• posição do jurídico e do encarregado de dados sobre dados de clientes fora do país (código do cliente no lugar do CNPJ)<br>• conta AWS, integração do Snowflake com o S3 e papéis nominais liberados<br>• amostra de pedidos reais para os testes de aceite<br>• funding: a AWS confirma a meta de US$ 100 mil de consumo anual projetado e a projeção de plataforma?', ST.warn);
-  p.box('n_f1', 480, y, w, h, '<b>Fase 1 · W1 a W3 · construção</b><br><br>• <b>W1: testes de aceite do NBO e do MBA no Personalize</b>, com pedidos reais de 1 filial e 1 a 2 famílias; resultado e decisão do motor (E ou D) no fim da W1<br>• W1 e W2: carga e preparação no Snowflake e pipeline AWS (Glue, Personalize, Step Functions), em paralelo<br>• <b>piso</b>: popularidade e cesta em SQL no Snowflake, como régua offline e plano de contingência<br>• escolha única da janela de tempo do Personalize<br>• W3: primeira rodada semanal completa, grupos do teste A/B e registro de exposição, painel diário no BI da 3C', ST.proc);
-  p.box('n_f2', 940, y, w, h, '<b>Fase 2 · W4 a W6 · campanhas e resultado</b><br><br>• W4 e W5: campanhas com teste A/B nas três mecânicas<br>• W4: ajuste dos modelos com o resultado (filtros, pesos e regras de cesta) e desafiante de NBO com outra receita do Personalize<br>• início da W6 (2 dias): resultado do teste e transferência de conhecimento para a 3C<br>• análise estatística final com o resultado completo das campanhas', ST.tab);
+  p.box('n_f1', 480, y, w, h, '<b>Fase 1 · W1 a W3 · construção</b><br><br>• <b>W1: testes de aceite do NBO e do MBA no Personalize</b>, com pedidos reais de 1 filial e 1 a 2 famílias, divisão treino e teste, ambiente AWS e início da carga no Snowflake<br>• <b>W2: piso em SQL</b> e comparação com os testes, go/no-go por mecânica e decisão do motor (E ou D) no fim da W2; fim da carga e início do pipeline AWS (Glue, Personalize, Step Functions)<br>• <b>piso</b> (W2): popularidade e cesta em SQL no Snowflake, como régua offline e plano de contingência<br>• escolha única da janela de tempo do Personalize<br>• W3: fim do pipeline, primeira rodada semanal completa, grupos do teste A/B e registro de exposição, painel diário no BI da 3C', ST.proc);
+  p.box('n_f2', 940, y, w, h, '<b>Fase 2 · W4 a W6 · campanhas e resultado</b><br><br>• W4 e W5: campanhas com teste A/B nas três mecânicas<br>• W4 e W5: ajuste dos modelos com o resultado (filtros, pesos e regras de cesta) e desafiante de NBO com outra receita do Personalize<br>• W6: resultado do teste e transferência de conhecimento para a 3C<br>• análise estatística final com o resultado completo das campanhas', ST.tab);
   p.box('n_f3', 1400, y, 480, h, '<b>Evolução (6 a 12 meses)</b><br><br>• recomendação em tempo real, só com consumidor pronto (Sírius em visita, home do B2B); o Personalize cobra um mínimo contínuo por campanha ativa<br>• mais filiais e famílias<br>• retreino e monitoramento de deriva<br>• decisão por ADR quando houver consumidor', ST.note);
   p.box('n_g', 20, 560, 1860, 190, '<b>O que mudou em relação à v3</b>: o Quick, o Bedrock e o Redshift saíram do desenho · o motor agora é o Personalize (NBO, mais por menos e cesta; direção de 28/10), sem SageMaker AI, e o Glue só como apoio · o Step Functions orquestra, o manifesto no S3 o aciona e o Airflow só agenda e carrega · toda a AWS fica em us-east-1, sem divisão com São Paulo · o código do cliente do SAP vai para a AWS no lugar do CNPJ, com controle de acesso rigoroso, e a A3 trabalha com os dados reais · retenção de 30 dias nos arquivos da AWS e histórico sem prazo no Snowflake · desenho único desde 29/10: grupos do teste, exposição, medição e painel ficam no Snowflake e no BI da 3C (a alternativa com controle na AWS e Grafana foi descartada).', ST.info);
-  p.box('n_h', 20, 780, 1860, 220, '<b>Pontos de decisão</b>: (1) aceite da 3C para o motor na AWS, antes do contrato · (2) fim da W1: testes de aceite do NBO e do MBA concluídos, primeira rodada preparada e decisão entre o motor na AWS (E) e no Snowflake (D) com base nos testes, no piso e no desempenho offline · (3) início da W4: primeira campanha no ar · (4) início da W6: resultado do teste A/B e decisão sobre produção em tempo real. <b>Funding</b>: a AWS paga 10% do consumo anual projetado da produção, na conta da 3C; a meta é US$ 100 mil de consumo anual projetado (≈ US$ 8,3 mil por mês), que rende US$ 10 mil de repasse, contra ≈ US$ 1 mil por mês da produção base; a projeção de plataforma (cenário E2, ≈ US$ 10,7 mil por mês) a cobre (seções 8.7 e 8.8 de arquitetura-proposta.md).', ST.sec);
+  p.box('n_h', 20, 780, 1860, 220, '<b>Pontos de decisão</b>: (1) aceite da 3C para o motor na AWS, antes do contrato · (2) fim da W2: testes de aceite do NBO e do MBA concluídos, primeira rodada preparada e decisão entre o motor na AWS (E) e no Snowflake (D) com base nos testes, no piso e no desempenho offline · (3) início da W4: primeira campanha no ar · (4) W6: resultado do teste A/B e decisão sobre produção em tempo real. <b>Funding</b>: a AWS paga 10% do consumo anual projetado da produção, na conta da 3C; a meta é US$ 100 mil de consumo anual projetado (≈ US$ 8,3 mil por mês), que rende US$ 10 mil de repasse, contra ≈ US$ 1 mil por mês da produção base; a projeção de plataforma (cenário E2, ≈ US$ 10,7 mil por mês) a cobre (seções 8.7 e 8.8 de arquitetura-proposta.md).', ST.sec);
   return p;
 }
 
@@ -140,7 +140,7 @@ function fases() {
 function poc() {
   const p = new Page('5 POC para o funding', 'v4-poc', 1900, 880);
   p.title('POC (prova de valor) para o funding · a arquitetura oficial em escala menor, com resultado medido offline');
-  p.info('5 POC para o funding', 'v4.4');
+  p.info('5 POC para o funding', 'v4.5');
   p.zone('zs', 20, 100, 1860, 180, 'Snowflake da 3C · recorte do piloto', ST.zone('#F7FBFF', '#6c8ebf'));
   p.box('p1', 40, 150, 420, 110, '<b>Recorte do piloto</b><br>1 filial e 1 a 2 famílias de produto; 12 meses de histórico por cliente e item; código do cliente do SAP no lugar do CNPJ; foto versionada dos dados', ST.tab);
   p.box('p2', 500, 150, 420, 110, '<b>Visões de exportação e manifesto</b><br>histórico de compras, itens e estoque; papel de exportação separado; disparo à mão (o Airflow entra só na produção)', ST.proc);
@@ -172,7 +172,71 @@ function poc() {
   return p;
 }
 
-const pages = [d1Geral(), d1Tec(), dados(), fases(), poc()];
+
+// ---------- aba 6: visão em colunas (o desenho do slide de arquitetura do deck, com o desenho vigente) ----------
+function colunas() {
+  const p = new Page('6 Arquitetura · visão em colunas', 'v4-d6', 2080, 1010, { flow: false });
+  p.title('Arquitetura · dados no Snowflake, cálculo na AWS · visão em colunas');
+  p.info('6 Arquitetura · visão em colunas', 'v4.5');
+  const CX = [20, 390, 760, 1130, 1760], CW = [300, 300, 300, 560, 300];
+  const Y0 = 110, ZH = 720, RY = [160, 330, 500, 670], BH = 140;
+  const zst = ST.zone('#FAFAFA', '#7F7F7F');
+  p.zone('z1', CX[0], Y0, CW[0], ZH, 'Origem na 3C · o que já existe', zst);
+  p.zone('z2', CX[1], Y0, CW[1], ZH, 'Snowflake da 3C · dados, teste A/B e tabelas', ST.zone('#F7FBFF', '#6c8ebf'));
+  p.zone('z3', CX[2], Y0, CW[2], ZH, 'Orquestração · Airflow da 3C e serviços AWS', ST.zone('#FFFFFF', '#001863'));
+  p.vtx('z4', CX[3], Y0, CW[3], ZH, 'AWS · motor · conta da 3C · N. Virgínia (us-east-1)', ST.cloud, 'zone');
+  p.zone('z5', CX[4], Y0, CW[4], ZH, 'Uso na 3C · campanhas e painel', zst);
+  const bx = (c) => CX[c] + 15, bw = (c) => CW[c] - 30;
+  // coluna 1
+  [['sap', 'SAP', 'pedidos, faturamento, clientes e produtos'], ['fs', 'Feature Store de Clientes', 'visão 360° do cliente, no Snowflake'],
+    ['prod', 'Produtos e estoque', 'cadastros e saldo por filial'], ['can', 'Canais e regiões', 'hierarquias comerciais para as aberturas']]
+    .forEach(([id, t, d], i) => p.box(id, bx(0), RY[i], bw(0), BH, `<b>${t}</b><br>${d}`, ST.sys));
+  // coluna 2
+  p.box('prep', bx(1), RY[0], bw(1), BH, '<b>1 · Preparação da rodada</b><br>filtros (estoque, já comprado no mês), relatório de qualidade e foto versionada; gera o recorte e o manifesto', ST.proc);
+  p.box('tab', bx(1), RY[1], bw(1), BH, '<b>6 · Tabelas de recomendação</b><br>semana, histórico e regras de cesta com suporte, confiança e lift', ST.tab);
+  p.box('ab', bx(1), RY[2], bw(1), BH, '<b>Grupos do teste A/B</b><br>sorteados na rodada e fixos por campanha; registro de quem recebeu a oferta', ST.tab);
+  p.box('med', bx(1), RY[3], bw(1), BH, '<b>7 · Medição e avaliação offline</b><br>faturamento, margem, sortimento e frequência por grupo; comparação com o piso (popularidade e cesta por lift)', ST.tab);
+  // coluna 3
+  p.box('air', bx(2), RY[0], bw(2), BH, '<b>Airflow da 3C</b><br>agenda a rodada (ou à mão), espera o arquivo de sucesso e carrega as tabelas; não chama a AWS', ST.proc);
+  p.aws('eb', bx(2), RY[1], bw(2), BH, 'eventbridge', '<b>2 · Manifesto no S3 e EventBridge</b><br>a exportação grava o manifesto; o EventBridge aciona o Step Functions');
+  p.aws('sf', bx(2), RY[2], bw(2), BH, 'sfn', '<b>3 · Step Functions</b><br>orquestra os passos 4a a 4d, com tentativas, erros e alertas');
+  p.aws('ok', bx(2), RY[3], bw(2), BH, 's3', '<b>5 · Arquivo de sucesso</b><br>gravado no S3 ao fim do último passo; libera a carga no Snowflake');
+  // coluna 4 (AWS)
+  const L = CX[3] + 20, Rr = CX[3] + 300, W4 = 240;
+  p.aws('s3in', L, 160, W4, 120, 's3', '<b>S3 · entrada</b><br>recorte criptografado; apagado em 30 dias');
+  p.aws('s3out', Rr, 160, W4, 120, 's3', '<b>S3 · saída</b><br>recomendações e arquivo de sucesso; apagados em 30 dias');
+  p.vtx('zf', CX[3] + 10, 300, 540, 340, 'Step Functions · passos 4a a 4d', ST.sfn, 'zone');
+  p.aws('g1', L, 345, W4, 120, 'glue', '<b>4a · Glue · preparo</b><br>monta as entradas do Personalize e a tabela de pedidos da cesta');
+  p.aws('pn', L, 495, W4, 120, 'personalize', '<b>4b · Personalize · NBO</b><br>User-Personalization-v2 (desconto) e afinidade com item (mais por menos)');
+  p.aws('pc', Rr, 495, W4, 120, 'personalize', '<b>4c · Personalize · cesta (MBA)</b><br>receita SIMS, cada pedido como "usuário"; independente do NBO');
+  p.aws('g2', Rr, 345, W4, 120, 'glue', '<b>4d · Glue · métricas e filtros</b><br>suporte, confiança e lift; filtros de estoque e compra recente; formata as saídas');
+  p.zone('zsec', CX[3] + 10, 660, 540, 155, 'Segurança, auditoria e custo', ST.zone('#FFFFFF', '#DD344C'));
+  const sec = [['sso', 'IAM Identity Center'], ['kms', 'KMS · chave da 3C'], ['cloudtrail', 'CloudTrail'], ['cloudwatch', 'CloudWatch'], ['budgets', 'Budgets'], ['endpoints', 'Endpoint do S3']];
+  sec.forEach(([k, t], i) => {
+    const cx = CX[3] + 10 + 45 + i * 90;
+    p.vtx('si_' + k, cx - 22, 700, 44, 44, '', ST.icon(AWS[k].res, AWS[k].fill), 'icon');
+    p.vtx('st_' + k, cx - 42, 748, 84, 56, t, 'text;html=1;whiteSpace=wrap;fontSize=10;align=center;verticalAlign=top;', 'text');
+  });
+  // coluna 5
+  [['ic', 'Inteligência Comercial', 'consulta a recomendação e aprova o preço'], ['can2', 'Sírius e B2B', 'ativam combos, mais por menos e desconto'],
+    ['sf2', 'Salesforce', 'registro das campanhas'], ['bi', 'BI da 3C', 'painel diário do teste A/B']]
+    .forEach(([id, t, d], i) => p.box(id, bx(4), RY[i], bw(4), BH, `<b>${t}</b><br>${d}`, ST.sys));
+  // setas entre colunas (como no slide) e dentro do motor
+  const big = { color: '#0033FF', width: 3, ex: [1, 0.5], en: [0, 0.5] };
+  p.edge('c12', 'z1', 'z2', '', big); p.edge('c23', 'z2', 'z3', '', big); p.edge('c34', 'z3', 'z4', '', big); p.edge('c45', 'z4', 'z5', '', big);
+  p.edge('a1', 's3in', 'g1', '', { ex: [0.9, 1], en: [0.9, 0] });
+  p.edge('a2', 'g1', 'pn', '', { ex: [0.5, 1], en: [0.5, 0] });
+  p.edge('a3', 'pn', 'pc', '', {});
+  p.edge('a4', 'pc', 'g2', '', { ex: [0.5, 0], en: [0.5, 1] });
+  p.edge('a5', 'g2', 's3out', '', { ex: [0.5, 0], en: [0.5, 1] });
+  p.box('nota', 20, 850, 2040, 90,
+    '<b>Fluxo semanal</b>: 1 o Airflow da 3C agenda e o Snowflake prepara o recorte · 2 a exportação grava o manifesto no S3 e o EventBridge aciona o Step Functions · 3 e 4a a 4d o Step Functions executa o preparo, o NBO, a cesta e as métricas · 5 o arquivo de sucesso libera a carga · 6 o Airflow carrega as tabelas no Snowflake · 7 avaliação offline e medição do teste A/B · uso nos canais da 3C.<br>'
+    + 'Na PoC, a exportação e a carga são disparadas à mão (o Airflow agendado entra só na produção). Os arquivos no S3 são apagados em 30 dias; o histórico fica no Snowflake. Tudo na conta da 3C, em us-east-1. As campanhas do teste A/B são executadas pela 3C nos próprios canais.<br>'
+    + 'Cores: laranja = sistemas da 3C · azul e verde = processos e tabelas no Snowflake · caixas com ícone = serviços AWS · setas azuis = sentido geral do fluxo entre as colunas.', ST.note);
+  return p;
+}
+
+const pages = [d1Geral(), d1Tec(), dados(), fases(), poc(), colunas()];
 let bad = 0;
 for (const p of pages) {
   const errs = p.validate();
